@@ -3,6 +3,7 @@ call plug#begin("~/.vim/plugged")
 
   Plug 'Luxed/ayu-vim'
   Plug 'preservim/nerdtree'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'
 
   " Fuzzy finder
