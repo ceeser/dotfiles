@@ -1,11 +1,23 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH
 export OS=$(uname)
+
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cypher"
+if test -f $HOME/.oh-my-zsh/themes/powerlevel10k.zsh-theme; then
+  ZSH_THEME="powerlevel10k"
+else
+  ZSH_THEME="cypher"
+fi
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -15,7 +27,7 @@ ZSH_THEME="cypher"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
- DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -110,10 +122,6 @@ export LC_ALL=en_US.UTF-8
 #   export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
 #   export PS2="| => "
 
-#   Set Paths
-#   ------------------------------------------------------------
-export PATH="$PATH:/usr/local/bin/:/usr/local/sbin"
-
 #   Set Default Editor (change 'Nano' to the editor of your choice)
 #   ------------------------------------------------------------
 type nvim > /dev/null \
@@ -139,7 +147,7 @@ export BLOCKSIZE=1k
 #   Add color to terminal
 #   ------------------------------------------------------------
 export TERM=xterm-256color
-export COLUMNS=80
+export COLUMNS=120
 
 
 #   -----------------------------
@@ -386,4 +394,5 @@ then
    alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get clean && sudo apt-get autoremove'
 fi
 
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
