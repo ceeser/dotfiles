@@ -353,12 +353,16 @@ alias gpr='git pull --rebase'
 alias gs='git status'
 
 #   ---------------------------------------
-#   DOCKER
+#   DOCKER / PODMAN
 #   ---------------------------------------
+type podman > /dev/null && alias docker=podman
 
 alias dockerremovevolumesdangling='docker volume rm $(docker volume ls -f dangling=true -q)'
 alias dockerpruneall='docker container prune -f && docker system prune -f && docker volume rm $(docker volume ls -f dangling=true -q)'
 
+#   ---------------------------------------
+#   NVIM
+#   ---------------------------------------
 type nvim > /dev/null \
 && alias vi=nvim \
 && alias vim=nvim
