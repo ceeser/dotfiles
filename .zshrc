@@ -1,3 +1,7 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
+export OS=$(uname)
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -47,9 +51,7 @@ ZSH_DISABLE_COMPFIX=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git sublime kubectl)
 
-source $ZSH/oh-my-zsh.sh
-
-export OS=$(uname)
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
