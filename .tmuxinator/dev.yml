@@ -1,0 +1,57 @@
+# ~/.tmuxinator/develop.yml
+
+name: dev
+root: ./
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+# Specitifes (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
+# startup_pane: 1
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t develop
+
+windows:
+  - dev:
+      layout: 6c87,272x78,0,0{153x78,0,0,0,118x78,154,0[118x48,154,0,2,118x29,154,49,3]} 
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - #empty
+        - #empty
+        - #empty 
+  - terminal:
+#h      layout: even-horizontal
+      panes:
+ #        - vim
+        - #empty 
+ #  - stats: 
+    #  layout: even-horizontal 
+ #     panes: 
+#       - empty
+#        - htop
+#        - glances
+#        - top -u -s 5 -R -F
+#   - nettop -c -d -P -t wifi -J bytes_in,bytes_out
+#        - docker stats 
+    #- logs: tail -f log/development.log
