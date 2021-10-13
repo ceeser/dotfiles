@@ -15,7 +15,7 @@ fi
 if test -f $HOME/.oh-my-zsh/themes/powerlevel10k.zsh-theme; then
   ZSH_THEME="powerlevel10k"
 else
-  ZSH_THEME="cypher"
+  ZSH_THEME="fwalch"
 fi
 
 
