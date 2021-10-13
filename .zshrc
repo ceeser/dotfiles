@@ -61,7 +61,7 @@ ZSH_DISABLE_COMPFIX=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime kubectl)
+plugins=(git sublime kubectl vscode)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
@@ -72,6 +72,10 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -368,6 +372,12 @@ type nvim > /dev/null \
 && alias vim=nvim
 
 alias fucking=sudo
+alias brewupgrade='brew update && brew upgrade && brew cleanup'
+
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -d "/usr/local/opt/ruby/bin" ] && export PATH="/usr/local/opt/ruby/bin:$PATH"
+type fastly > /dev/null && eval "$(fastly --completion-script-zsh)" # loads fastly cli completion
 
 
 if [[ $OS = "Darwin" ]]
@@ -393,6 +403,10 @@ then
     #    networking
     #   -----------------------------------------------------------------------------------
     alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
+    #   ---------------------------------------
+    #   DISK UTIL
+    #   ---------------------------------------
+    alias diskimagecreate='hdiutil create -srcfolder ./ -fs APFS -attach -encryption -stdinpass'
 elif [[ $OS = "Linux" ]]
 then
    alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get clean && sudo apt-get autoremove'
@@ -400,3 +414,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+[ -s "$HOME/.zshrc-extras" ] && source $HOME/.zshrc-extras
