@@ -12,8 +12,8 @@ fi
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-if test -f $HOME/.oh-my-zsh/themes/powerlevel10k.zsh-theme; then
-  ZSH_THEME="powerlevel10k"
+if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 else
   ZSH_THEME="fwalch"
 fi
