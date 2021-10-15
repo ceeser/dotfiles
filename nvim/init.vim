@@ -56,7 +56,7 @@ endif
 " scheme
 colorscheme ayu
 set background=dark
-let g:ayucolor="mirage"
+let g:ayucolor="dark"
 
 
 " show trailing whitespace chars
