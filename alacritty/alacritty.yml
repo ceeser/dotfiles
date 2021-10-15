@@ -304,9 +304,9 @@ live_config_reload: true
 shell:
   program: /bin/zsh
   args:
-    - --login
+    - -l
     - -c
-    - tmux attach -t dev || tmuxinator dev
+    - type tmux > /dev/null && (tmux attach -t dev || tmuxinator dev)
 
 # Startup directory
 #
