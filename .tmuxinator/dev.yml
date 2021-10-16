@@ -1,4 +1,4 @@
-# ~/.tmuxinator/develop.yml
+# ~/.tmuxinator/dev.yml
 
 name: dev
 root: ./
@@ -29,29 +29,19 @@ root: ./
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t develop
-
 windows:
-  - dev:
-      layout: 6c87,272x78,0,0{153x78,0,0,0,118x78,154,0[118x48,154,0,2,118x29,154,49,3]} 
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
+  - system:
+        # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+        # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+        # synchronize: after
       panes:
-        - #empty
-        - #empty
-        - #empty 
+        - type ytop > /dev/null && ytop -b -I 2
+  - app:
+      layout: 1281,238x128,0,0[238x63,0,0{148x63,0,0,1,89x63,149,0,3},238x64,0,64,4]
+      panes:
+        - type cdwf > /dev/null && cdwf; tmux send-keys C-l
+        - type cdwf > /dev/null && cdwf; tmux send-keys C-l
+        - type cdwf > /dev/null && cdwf; tmux send-keys C-l
   - terminal:
-#h      layout: even-horizontal
       panes:
- #        - vim
-        - #empty 
- #  - stats: 
-    #  layout: even-horizontal 
- #     panes: 
-#       - empty
-#        - htop
-#        - glances
-#        - top -u -s 5 -R -F
-#   - nettop -c -d -P -t wifi -J bytes_in,bytes_out
-#        - docker stats 
-    #- logs: tail -f log/development.log
+         - #empty
