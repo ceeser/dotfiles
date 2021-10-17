@@ -409,7 +409,7 @@ then
     alias diskimagecreate='hdiutil create -srcfolder ./ -fs APFS -attach -encryption -stdinpass'
 elif [[ $OS = "Linux" ]]
 then
-   alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get clean && sudo apt-get autoremove'
+   alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
