@@ -38,7 +38,8 @@ cleanup = true
 max_concurrency = 3
 # Additional git repositories to pull
 repos = [
-  "~/Documents/source/oh-my-zsh-theme-powerlevel10k",
+  "~/Documents/source/dotfiles",
+  "~/.oh-my-zsh/custom/themes/powerlevel10k",
 ]
 
 # Don't pull the predefined git repos
