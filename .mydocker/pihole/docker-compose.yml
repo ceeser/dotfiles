@@ -27,8 +27,8 @@ services:
       - IPv6=false
       - TZ=Europe/London
       - DNSMASQ_LISTENING=all
-      - WEBPASSWORD=admin
       - PIHOLELOG=/dev/null
+      #- WEBPASSWORD=admin
     networks:
       pihole_net:
         ipv4_address: 10.0.0.3
