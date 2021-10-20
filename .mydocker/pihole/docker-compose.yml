@@ -22,6 +22,8 @@ services:
       - "${HOME}/Documents/dockerData/pihole/etc-pihole/:/etc/pihole"
       - "${HOME}/Documents/dockerData/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d"
       - "/dev/null:/var/log/pihole.log:ro"
+    env_file:
+      - ./.env
     environment:
       - PIHOLE_DNS_=10.0.0.2#5054;1.1.1.2#53
       - IPv6=false
