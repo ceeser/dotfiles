@@ -359,7 +359,7 @@ alias gs='git status'
 #   ---------------------------------------
 #   DOCKER / PODMAN
 #   ---------------------------------------
-#type podman > /dev/null && alias docker=podman
+type podman > /dev/null && alias docker=podman
 
 alias dockerremovevolumesdangling='docker volume rm $(docker volume ls -f dangling=true -q)'
 alias dockerpruneall='docker container prune -f && docker system prune -f && docker volume rm $(docker volume ls -f dangling=true -q)'
