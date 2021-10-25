@@ -409,8 +409,29 @@ then
     alias diskimagecreate='hdiutil create -srcfolder ./ -fs APFS -attach -encryption -stdinpass'
 elif [[ $OS = "Linux" ]]
 then
-   alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
+   #alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
 fi
+
+
+#   ---------------------------------------
+#   UPDATES
+#   ---------------------------------------
+function doUpgrades {
+  if type topgrade > /dev/null; then
+    echo "Topgrade found. Invoking topgrade ..."
+    topgrade
+  elif [[ $OS = "Linux" && "$(uname -a | grep -i ubuntu)" ]]; then
+    echo "Found ubuntu. Invoking apt"
+    alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
+  fi
+}
+
+
+
+
+
+
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
