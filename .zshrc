@@ -409,7 +409,7 @@ then
     alias diskimagecreate='hdiutil create -srcfolder ./ -fs APFS -attach -encryption -stdinpass'
 elif [[ $OS = "Linux" ]]
 then
-   #alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
+   alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
 fi
 
 
@@ -422,7 +422,7 @@ function doUpgrades {
     topgrade
   elif [[ $OS = "Linux" && "$(uname -a | grep -i ubuntu)" ]]; then
     echo "Found ubuntu. Invoking apt"
-    alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
+    ,aptupgrade
   fi
 }
 
