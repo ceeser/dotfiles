@@ -341,8 +341,8 @@ alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when boo
 #   --- tmux
 #   ---------------------------------------
 
-alias tmuxdev='tmux attach -t dev || tmuxinator dev'
-alias tmuxkill='tmux kill-session -t dev'
+alias tmd='tmux attach -t dev || tmuxinator dev'
+alias tmk='tmux kill-session -t dev'
 
 # ---------------------------------------
 #   --- GIT
