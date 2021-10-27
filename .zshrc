@@ -160,7 +160,12 @@ export COLUMNS=120
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias ls='ls -FGlAhpks'                     # Preferred 'ls' implementation
+
+# Preferred 'ls' implementation
+type lsd > /dev/null \
+  && alias ls='lsd -Fla' \
+  || alias ls='ls -FGlAhpks'
+
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 # cd() { builtin cd "$@"; ls; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
@@ -182,7 +187,7 @@ alias cic='set completion-ignore-case On'   # cic:          Make tab-completion 
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
-alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
+alias DT='tee ~/Downloads/terminalOut.txt'  # DT:           Pipe content to file in MacOS Downloads Dir
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
