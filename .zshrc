@@ -1,8 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH
-export OS=$(uname)
-export CARGOBIN=$(which cargo)
 
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -68,7 +65,10 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export OS=$(uname)
+export CARGOBIN=$(which cargo)
+
+rusttools=(bandwhich bat battop cargo-update du-dust exa gitui procs rates tealdeer topgrade ytop)
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -78,15 +78,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -405,6 +396,7 @@ function cargo {
   fi
 }
 
+alias cargoinstalltools='cargo install $rusttools'
 
 alias fucking=sudo
 alias brewupgrade='brew update && brew upgrade && brew cleanup'
