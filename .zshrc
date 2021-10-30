@@ -2,6 +2,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH
 export OS=$(uname)
+export CARGOBIN=$(which cargo)
 
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -262,6 +263,10 @@ EOT
     }
 
 
+#   bat:  better cat
+#   ------------------------------------------
+alias cat='bat'
+
 #   ---------------------------
 #   --- SEARCHING
 #   ---------------------------
@@ -380,6 +385,26 @@ alias dockerpruneall='docker container prune -f && docker system prune -f && doc
 type nvim > /dev/null \
 && alias vi=nvim \
 && alias vim=nvim
+
+
+
+#   ---------------------------------------
+#   CARGO
+#   ---------------------------------------
+#
+# Use cargo quick install, if available
+function cargo {
+  if [ -z "$1" ]; then
+    $CARGOBIN --help
+  else
+    OPTION=$1
+    case $1 in
+      install)     type cargo-quickinstall > /dev/null && $CARGOBIN quickinstall ${@:2} || $CARGOBIN install ${@:2};;
+      *)           $CARGOBIN ${@:1};;
+    esac
+  fi
+}
+
 
 alias fucking=sudo
 alias brewupgrade='brew update && brew upgrade && brew cleanup'
