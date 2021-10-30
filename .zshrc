@@ -162,8 +162,8 @@ alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 
 # Preferred 'ls' implementation
-type lsd > /dev/null \
-  && alias ls='lsd -Fla' \
+type exa > /dev/null \
+  && alias ls='exa -Flagh' \
   || alias ls='ls -FGlAhpks'
 
 alias less='less -FSRXc'                    # Preferred 'less' implementation
