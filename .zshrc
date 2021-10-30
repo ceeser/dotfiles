@@ -163,7 +163,7 @@ alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 
 # Preferred 'ls' implementation
 type exa > /dev/null \
-  && alias ls='exa -Flagh' \
+  && alias ls='exa -FalghSH' \
   || alias ls='ls -FGlAhpks'
 
 alias less='less -FSRXc'                    # Preferred 'less' implementation
@@ -193,6 +193,11 @@ alias DT='tee ~/Downloads/terminalOut.txt'  # DT:           Pipe content to file
 #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 
+#   lt:  Full Recursive Directory Tree
+#   ------------------------------------------
+alias lt='ls -T'
+
+#
 #   mans:   Search manpage given in argument '1' for term given in argument '2' (case insensitive)
 #           displays paginated result with colored search terms and two lines surrounding each hit.            Example: mans mplayer codec
 #   --------------------------------------------------------------------
