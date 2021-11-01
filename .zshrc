@@ -74,7 +74,7 @@ rusttools=(bandwhich bat battop cargo-update du-dust exa gitui procs rates teald
 DOTFILE_REPO=$HOME/Projects/dotfiles
 
 function setdotfilesymlinks {
-  dotfiles=('.gitconfig' '.p10k.zsh' '.tmux.conf' '.tmuxinator' '.zshrc' '.config/alacritty' '.config/gitui' '.config/nvim' '.config/topgrade.toml')
+  dotfiles=('.gitconfig' '.mydocker' '.p10k.zsh' '.tmux.conf' '.tmuxinator' '.zshrc' '.config/alacritty' '.config/gitui' '.config/nvim' '.config/topgrade.toml')
 
   for dotfile in $dotfiles; do
     if [[ -e "$HOME/$dotfile" ]]; then
