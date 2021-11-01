@@ -70,6 +70,29 @@ export CARGOBIN=$(which cargo)
 
 rusttools=(bandwhich bat battop cargo-update du-dust exa gitui procs rates tealdeer topgrade ytop)
 
+
+DOTFILE_REPO=$HOME/Projects/dotfiles
+
+function setdotfilesymlinks {
+  dotfiles=('.gitconfig' '.p10k.zsh' '.tmux.conf' '.tmuxinator' '.zshrc' '.config/alacritty' '.config/gitui' '.config/nvim' '.config/topgrade.toml')
+
+  for dotfile in $dotfiles; do
+    if [[ -e "$HOME/$dotfile" ]]; then
+      if [[ -L "$HOME/$dotfile" ]]; then
+        rm $HOME/$dotfile
+        echo "removed symlink at $HOME/$dotfile";
+      else
+        mv $HOME/$dotfile $HOME/$dotfile.bak
+        echo "backed up file $HOME/$dotfile";
+      fi
+    fi
+    ln -s $DOTFILE_REPO/$dotfile $HOME/$dotfile
+    echo "Created link to $DOTFILE_REPO/$dotfile"
+  done
+
+}
+
+
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
