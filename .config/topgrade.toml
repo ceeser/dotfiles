@@ -38,7 +38,7 @@ cleanup = true
 max_concurrency = 3
 # Additional git repositories to pull
 repos = [
-  "~/Documents/source/dotfiles",
+  "~/Projects/dotfiles",
   "~/.oh-my-zsh/custom/themes/powerlevel10k",
 ]
 
