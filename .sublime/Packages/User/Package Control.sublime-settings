@@ -1,0 +1,15 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ayu",
+		"Package Control",
+		"Rust Enhanced",
+		"RustFmt",
+		"SFTP",
+		"TOML",
+	],
+}

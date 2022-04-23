@@ -1,0 +1,4 @@
+{
+	"rust_syntax_checking_method": "clippy",
+	"tab_size": 2,
+}

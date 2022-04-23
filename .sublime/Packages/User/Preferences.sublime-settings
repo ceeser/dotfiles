@@ -1,0 +1,11 @@
+{
+	"color_scheme": "ayu-dark.sublime-color-scheme",
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"tab_size": 2,
+	"translate_tabs_to_spaces": false,
+	"theme": "ayu-dark.sublime-theme",
+}

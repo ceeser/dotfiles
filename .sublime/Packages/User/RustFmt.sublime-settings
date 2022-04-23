@@ -1,0 +1,4 @@
+// RustFmt Settings - User
+{
+	"format_on_save": true,
+}
