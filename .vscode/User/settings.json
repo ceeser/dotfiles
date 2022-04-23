@@ -1,0 +1,39 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "Ayu Mirage",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active",
+    "editor.find.seedSearchStringFromSelection": false,
+    "javascript.validate.enable": false,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "breadcrumbs.enabled": true,
+    "editor.rulers": [
+      80,
+      120,
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "eslint.packageManager": "yarn",
+    "eslint.format.enable": true,
+    "editor.renderControlCharacters": false,
+    "flow.lazyMode": "ide",
+    "flow.showStatus": false,
+    "flow.runOnEdit": false,
+    "openInGitHub.defaultBranch": "main",
+    "files.exclude": {
+      "**/.github": true,
+      "**/.tmp": true,
+      "**/build": true,
+      "**/node_modules": true,
+      "**/tmp": true
+    },
+    "search.exclude": {
+      "**/.git": true,
+      "**/.github": true,
+      "**/.vscode": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "workbench.tree.renderIndentGuides": "always"
+}
