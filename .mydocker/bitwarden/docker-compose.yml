@@ -4,13 +4,13 @@ version: '3'
 services:
   bitwarden:
     image: vaultwarden/server:latest
-    restart: always
+    restart: unless-stopped
     ports:
       - 8000:80
     volumes:
       - ${HOME}/Documents/dockerData/bitwarden/data:/data
-    env_file:
-      - ./.env
     #environment:
       #WEBSOCKET_ENABLED: 'true' # Required to use websockets
       #SIGNUPS_ALLOWED: 'false'   # set to false to disable signups
+    env_file:
+      - ./.env

@@ -4,12 +4,10 @@ services:
   letsencrypt:
     container_name: letsencrypt
     image: linuxserver/letsencrypt
-    restart: always
+    restart: unless-stopped
     ports:
       - "443:443"
       - "80:80"
-    env_file:
-      - ./.env
     environment:
       PUID: '1000'
       PGID: '1000'
@@ -21,3 +19,5 @@ services:
     # Volumes store your data between container upgrades
     volumes:
       - '${HOME}/Documents/dockerData/letsencrypt/config:/config'
+    env_file:
+      - ./.env

@@ -4,12 +4,12 @@ services:
   duckdns:
     container_name: duckdns
     image: linuxserver/duckdns
-    env_file:
-      - ./.env
+    restart: unless-stopped
     environment:
       TZ: 'America/Chicago'
       # SUBDOMAINS: 'your,comma,separated,domains'
       # TOKEN: 'your duckdns token'
     volumes:
       - ${HOME}/Documents/dockerData/duckdns/config:/config
-    restart: always
+    env_file:
+      - ./.env

@@ -3,6 +3,7 @@ services:
   unifi-controller:
     image: ghcr.io/linuxserver/unifi-controller
     container_name: unifi-controller
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -19,4 +20,5 @@ services:
       - 8880:8880 #optional
       - 6789:6789 #optional
       - 5514:5514/udp #optional
-    restart: always
+    env_file:
+      - ./.env

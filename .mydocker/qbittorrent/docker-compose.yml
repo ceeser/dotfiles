@@ -3,7 +3,7 @@ services:
   qbittorrent:
     container_name: qbittorrent
     image: linuxserver/qbittorrent
-    restart: always
+    restart: unless-stopped
     ports:
       - 6881:6881
       - 6881:6881/udp
@@ -17,3 +17,5 @@ services:
     volumes:
       - ${HOME}/Documents/dockerData/qbittorrent/config:/config
       - ${HOME}/Documents/dockerData/qbittorrent/downloads:/downloads
+    env_file:
+      - ./.env
