@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+
+  traefik:
+    image: "traefik:v2.6"
+    container_name: "traefik"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "${HOME}/Documents/dockerData/reverseProxy/traefik.toml:/traefik.toml"
+      - "${HOME}/Documents/dockerData/reverseProxy/traefik_dynamic.toml:/traefik_dynamic.toml"
+      - "${HOME}/Documents/dockerData/reverseProxy/acme.json:/acme.json"
+    env_file:
+      - ./.env
