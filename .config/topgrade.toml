@@ -13,6 +13,9 @@ disable = ["firmware"]
 # Do not ask to retry failed steps (default: false)
 no_retry = true
 
+# Do not notify, can cause issues in some distros
+skip_notify = true
+
 # Run inside tmux
 #run_in_tmux = true
 
