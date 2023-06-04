@@ -68,7 +68,8 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 export OS=$(uname)
 export CARGOBIN=$(which cargo)
 
-rusttools=(bandwhich bat battop cargo-update du-dust exa gitui procs rates tealdeer topgrade ytop)
+rusttools=(bandwhich bat battop cargo-upgrade-command du-dust exa gitui procs rates tealdeer topgrade ytop)
+rusttoolsessential=(bat cargo-upgrade-command du-dust exa topgrade ytop)
 
 
 DOTFILE_REPO=$HOME/Projects/dotfiles
@@ -420,6 +421,7 @@ function cargo {
 }
 
 alias cargoinstalltools='cargo install $rusttools'
+alias cargoinstalltoolsessential='cargo install $rusttoolsessential'
 
 alias fucking=sudo
 alias brewupgrade='brew update && brew upgrade && brew cleanup'
