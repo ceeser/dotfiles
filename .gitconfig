@@ -39,6 +39,7 @@
 	signingkey = B5A4627F4B252385
 [push]
 	default = current
+	autoSetupRemote = true
 
 [init]
 	defaultBranch = main
