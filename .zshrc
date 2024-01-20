@@ -386,8 +386,6 @@ function cargo {
 
 alias cargoinstalltools='cargo install $rusttools'
 alias cargoinstalltoolsessential='cargo install $rusttoolsessential'
-
-alias fucking=sudo
 alias brewupgrade='brew update && brew upgrade && brew cleanup'
 
 
@@ -425,28 +423,8 @@ then
     alias diskimagecreate='hdiutil create -srcfolder ./ -fs APFS -attach -encryption -stdinpass'
 elif [[ $OS = "Linux" ]]
 then
-   alias ,aptupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get clean && sudo apt-get autoremove'
+  
 fi
-
-
-#   ---------------------------------------
-#   UPDATES
-#   ---------------------------------------
-function doUpgrades {
-  if type topgrade > /dev/null; then
-    echo "Topgrade found. Invoking topgrade ..."
-    topgrade
-  elif [[ $OS = "Linux" && "$(uname -a | grep -i ubuntu)" ]]; then
-    echo "Found ubuntu. Invoking apt"
-    ,aptupgrade
-  fi
-}
-
-
-
-
-
-
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
