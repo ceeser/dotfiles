@@ -10,11 +10,12 @@ fi
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
-  ZSH_THEME="powerlevel10k/powerlevel10k"
-else
-  ZSH_THEME="fwalch"
-fi
+#if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
+#  ZSH_THEME="powerlevel10k/powerlevel10k"
+#else
+#  ZSH_THEME="fwalch"
+#fi
+#ZSH_THEME="fwalch"
 
 
 # Uncomment the following line to use case-sensitive completion.
