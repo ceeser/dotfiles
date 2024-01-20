@@ -131,30 +131,6 @@ export HOMEBREW_CASK_OPTS=--require-sha
 #   --- ENVIRONMENT CONFIGURATION
 #   -------------------------------
 
-#   Change Prompt
-#   ------------------------------------------------------------
-#   export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-
-#   export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
-#   export PS2="| => "
-
-#   Set Default Editor (change 'Nano' to the editor of your choice)
-#   ------------------------------------------------------------
-type nvim > /dev/null \
-&& export EDITOR=nvim \
-|| export EDITOR=vim
-if [[ -n $SSH_CONNECTION ]]; then
-  export BROWSER=w3m
-else
-  if [[ $OS = "Linux" ]]
-  then
-    export BROWSER=firefox
-  elif [[ $OS = "Darwin" ]]
-  then
-    export BROWSER=open
-  fi
-fi
-
 #   Set default blocksize for ls, df, du
 #   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
 #   ------------------------------------------------------------
@@ -389,14 +365,6 @@ type podman > /dev/null && alias docker=podman
 
 alias dockerremovevolumesdangling='docker volume rm $(docker volume ls -f dangling=true -q)'
 alias dockerpruneall='docker container prune -f && docker system prune -f && docker volume rm $(docker volume ls -f dangling=true -q)'
-
-#   ---------------------------------------
-#   NVIM
-#   ---------------------------------------
-type nvim > /dev/null \
-&& alias vi=nvim \
-&& alias vim=nvim
-
 
 
 #   ---------------------------------------
