@@ -99,6 +99,7 @@
       firefox
       librewolf
       thunderbird
+      tor-browser
       vscodium
     ];
   };
