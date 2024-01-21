@@ -123,8 +123,8 @@
     ndg = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system";
     ngc = "sudo nix-collect-garbage --delete-old";
     nlg = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-    nr = "sudo nixos-rebuild switch -I nixos-config=configuration.nix";
-    nu = "sudo nixos-rebuild switch --upgrade -I nixos-config=configuration.nix";
+    nr = "cd ~/ && sudo nixos-rebuild switch -I nixos-config=configuration.nix";
+    nu = "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=configuration.nix";
 
     # Misc
     sudo = "sudo "; # fix for recognizing aliases when sudoing

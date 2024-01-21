@@ -1,5 +1,3 @@
-# This is a basic configuration example for SpaceVim
-
 # All SpaceVim options are below [options] snippet
 [options]
     # set spacevim theme. by default colorscheme layer is not loaded,
