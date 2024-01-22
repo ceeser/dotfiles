@@ -120,11 +120,13 @@
     gs = "git status";
 
     # Nix commands
-    nec = "spacevim ~/configuration.nix";
-    ndg = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system";
+    nec = "spacevim ~/configuration.nix"; # edit home config
+    ndg = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system"; # delete specified generations
     ngc = "sudo nix-collect-garbage --delete-old";
-    nlg = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-    nr = "cd ~/ && sudo nixos-rebuild switch -I nixos-config=configuration.nix";
+    nlg = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system"; # list all generations
+    nr = "cd ~/ && sudo nixos-rebuild switch -I nixos-config=configuration.nix"; # rebuild from home config 
+    nrollb = "sudo nix-env --rollback --profile /nix/var/nix/profiles/system"; # rollback to previous gen
+    nsg = "sudo nix-env --switch-generation --profile /nix/var/nix/profiles/system"; # switch to specified gen
     nu = "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=configuration.nix";
 
     # Misc
