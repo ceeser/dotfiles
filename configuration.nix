@@ -143,6 +143,8 @@
     bat
     diff-so-fancy
     git
+    libreoffice
+    localsend
     spacevim
     tailscale
     tmux
