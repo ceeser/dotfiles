@@ -145,6 +145,7 @@
     alacritty
     bat
     diff-so-fancy
+    gimp
     git
     libreoffice
     localsend
@@ -153,7 +154,6 @@
     tmux
     tmuxinator
     vlc
-    zathura
     zsh
   ];
 
@@ -193,8 +193,8 @@
 
   # List services that you want to enable:
 
-   services.tailscale.enable = true;
    services.flatpak.enable = true;
+   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
