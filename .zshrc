@@ -384,51 +384,13 @@ function cargo {
   fi
 }
 
-alias cargoinstalltools='cargo install $rusttools'
-alias cargoinstalltoolsessential='cargo install $rusttoolsessential'
-alias brewupgrade='brew update && brew upgrade && brew cleanup'
-
+#alias cargoinstalltools='cargo install $rusttools'
+#alias cargoinstalltoolsessential='cargo install $rusttoolsessential'
+#alias brewupgrade='brew update && brew upgrade && brew cleanup'
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -d "/usr/local/opt/ruby/bin" ] && export PATH="/usr/local/opt/ruby/bin:$PATH"
-type fastly > /dev/null && eval "$(fastly --completion-script-zsh)" # loads fastly cli completion
-
-
-if [[ $OS = "Darwin" ]]
-then
-    #   cleanupDS:  Recursively delete .DS_Store files
-    #   -------------------------------------------------------------------
-    alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
-
-    #   finderShowHidden:   Show hidden files in Finder
-    #   finderHideHidden:   Hide hidden files in Finder
-    #   -------------------------------------------------------------------
-    alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
-    alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
-
-    #   cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
-    #   -----------------------------------------------------------------------------------
-    alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-    #    screensaverDesktop: Run a screensaver on the Desktop
-    alias screensaverDesktop='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background'
-    #   -----------------------------------------------------------------------------------
-
-    #    networking
-    #   -----------------------------------------------------------------------------------
-    alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
-    #   ---------------------------------------
-    #   DISK UTIL
-    #   ---------------------------------------
-    alias diskimagecreate='hdiutil create -srcfolder ./ -fs APFS -attach -encryption -stdinpass'
-elif [[ $OS = "Linux" ]]
-then
-  
-fi
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 [ -s "$HOME/.zshrc-extras" ] && source $HOME/.zshrc-extras
+eval "$(starship init zsh)"

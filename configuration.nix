@@ -150,6 +150,7 @@
     libreoffice
     localsend
     spacevim
+    starship
     tailscale
     tmux
     tmuxinator
@@ -167,12 +168,6 @@
   # };
 
   programs.zsh.enable = true;
-
-  programs.zsh.ohMyZsh = {
-    enable = true;
-    plugins = [ "git" "vscode" "docker" ];
-    theme = "robbyrussell";
-  };
 
   programs.neovim = {
     enable = true;
