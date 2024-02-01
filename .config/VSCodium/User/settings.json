@@ -1,0 +1,35 @@
+{
+    "breadcrumbs.enabled": true,
+    "eslint.alwaysShowStatus": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.detectIndentation": false,
+    "editor.find.seedSearchStringFromSelection": false,
+    "editor.guides.bracketPairs":"active",
+    "editor.renderControlCharacters": false,
+    "editor.rulers": [
+      80,
+      120,
+    ],
+    "editor.tabSize": 2,
+    "files.exclude": {
+      "**/.github": true,
+      "**/.tmp": true,
+      "**/build": true,
+      "**/node_modules": true,
+      "**/tmp": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.validate.enable": false,
+    "openInGitHub.defaultBranch": "main",
+    "search.exclude": {
+      "**/.git": true,
+      "**/.github": true,
+      "**/.vscode": true
+      "**/.config": true
+    },
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "workbench.colorTheme": "Catppuccin Mocha"
+    "workbench.tree.renderIndentGuides": "always"
+}
