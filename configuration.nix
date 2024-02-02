@@ -107,7 +107,7 @@
     ];
   };
 
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
 
   environment.shellAliases = {
     # Convenience
@@ -145,6 +145,7 @@
     alacritty
     bat
     diff-so-fancy
+    fish
     gimp
     git
     libreoffice
@@ -155,7 +156,6 @@
     tmux
     tmuxinator
     vlc
-    zsh
   ];
 
 
@@ -167,7 +167,7 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   programs.neovim = {
     enable = true;

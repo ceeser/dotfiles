@@ -1,8 +1,13 @@
 add_newline = false
 palette = "catppuccin_mocha"
 
+format = """[$directory](fg:lavender)$nix_shell($git_branch$git_state$git_status$git_metrics)$sudo$character"""
 
-format = """[$directory](fg:lavender)($git_branch$git_state$git_status$git_metrics)$character"""
+[directory]
+style = "fg:lavender"
+truncate_to_repo = false
+truncation_length = 1
+fish_style_pwd_dir_length = 1
 
 [git_branch]
 format = "[\\[[$symbol$branch$tag](fg:blue)\\]](fg:sapphire)"
@@ -22,12 +27,12 @@ format = '[+$added](fg:green)/[-$deleted](fg:yellow) '
 success_symbol = '[»](fg:green)'
 error_symbol = '[✖](fg:red)'
 
-
-[directory]
-style = "fg:lavender"
-truncate_to_repo = false
-truncation_length = 1
-fish_style_pwd_dir_length = 1
+[nix_shell]
+disabled = false
+impure_msg = '[impure shell](fg:red)'
+pure_msg = '[pure shell](fg:green)'
+unknown_msg = '[unknown shell](fg:yellow)'
+format = 'via [☃️ $state( \($name\))](fg:blue) '
 
 [python]
 scan_for_pyfiles = false
@@ -38,21 +43,11 @@ disabled = true
 [swift]
 disabled = true
 
-[hostname]
-ssh_only = true
-format = "[$hostname](fg:surface1)"
-style = "bold white"
-
-[username]
-show_always = true
-style_user = "p:peach"
-format = "[$user]($style)"
-
-[time]
+[sudo]
+format = '[as $symbol]($style) '
+style = 'fg:peach'
+symbol = '🧙'
 disabled = false
-format = "[$time]($style)"
-time_format = "%H:%M"
-
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
