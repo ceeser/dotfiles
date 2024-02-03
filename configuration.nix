@@ -13,144 +13,57 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
-  networking.hostName = "tera"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
+  console.useXkbConfig = true; # Enable the GNOME Desktop Environment.
+  
   documentation.nixos.enable = false;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
-  services.xserver.xkbOptions = "ctrl:nocaps";
-  console.useXkbConfig = true;
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab # disk usage analyzer
-    epiphany # web browser
-    simple-scan # document scanner
-    totem # video player
-    yelp # help viewer
-    evince # document viewer
-    geary # email client
-    gnome-calculator
-    gnome-contacts
-    gnome-logs
-    gnome-maps
-    gnome-music
-    gnome-weather
-    gnome-clocks
-    pkgs.gnome-text-editor
-    pkgs.gnome-connections
-    pkgs.gnome-console
-    gnome-calendar
-    #gnome-screenshot
-    #gnome-system-monitor
-];
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.crywolf = {
-    isNormalUser = true;
-    description = "crywolf";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      librewolf
-      thunderbird
-      tor-browser
-      vscodium
+  environment = {
+    gnome.excludePackages = with pkgs.gnome; [
+      baobab # disk usage analyzer
+      epiphany # web browser
+      simple-scan # document scanner
+      totem # video player
+      yelp # help viewer
+      evince # document viewer
+      geary # email client
+      gnome-calculator
+      gnome-contacts
+      gnome-logs
+      gnome-maps
+      gnome-music
+      gnome-weather
+      gnome-clocks
+      pkgs.gnome-text-editor
+      pkgs.gnome-connections
+      pkgs.gnome-console
+      gnome-calendar
+      #gnome-screenshot
+      #gnome-system-monitor
+    ];
+    systemPackages = with pkgs; [ # List packages installed in system profile. To search, run: nix search wget
+      alacritty
+      bat
+      diff-so-fancy
+      du-dust
+      eza
+      fish
+      gimp
+      git
+      libreoffice
+      localsend
+      pandoc
+      starship
+      tailscale
+      tmux
+      tmuxinator
+      vlc
     ];
   };
-
-  users.defaultUserShell = pkgs.fish;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    alacritty
-    bat
-    diff-so-fancy
-    du-dust
-    eza
-    fish
-    gimp
-    git
-    libreoffice
-    localsend
-    pandoc
-    starship
-    tailscale
-    tmux
-    tmuxinator
-    vlc
-  ];
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  programs.fish.enable = true;
-
-  virtualisation.podman.enable = true;
-
-
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
 
   # Fonts
   fonts.packages = with pkgs; [
@@ -158,19 +71,110 @@
     font-awesome
   ];
 
-  # List services that you want to enable:
+  hardware.pulseaudio.enable = false; # Enable sound with pipewire.
+ 
+  i18n.defaultLocale = "en_CA.UTF-8"; # Select internationalisation properties.
 
-   services.flatpak.enable = true;
-   services.tailscale.enable = true;
+  networking = {
+    networkmanager.enable = true; # Enable networking
+    hostName = "tera"; # Define your hostname.
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+    # Configure network proxy if necessary
+    # proxy = {
+      # default = "http://user:password@proxy:port/";
+      # noProxy = "127.0.0.1,localhost,internal.domain";
+    # };
+
+    # Open ports in the firewall.
+    # firewall.allowedTCPPorts = [ ... ];
+    # firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # firewall.enable = false;
+  };
+
+  nixpkgs.config.allowUnfree = true; # Allow unfree packages
+
+  programs = {
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # mtr.enable = true;
+    # gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
+  
+    fish.enable = true;
+    virt-manager.enable = true;
+  };
+  security.rtkit.enable = true;
+
+  services = {
+    xserver = {
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
+      enable = true; # Enable the X11 windowing system.
+      excludePackages = [ pkgs.xterm ];
+      layout = "us";
+      xkbOptions = "ctrl:nocaps"; # Remap capslock to control
+      xkbVariant = "";
+      # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
+    };
+
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+
+      # use the example session manager (no others are packaged yet so this is enabled by default,
+      # no need to redefine it in your config for now)
+      #media-session.enable = true;
+    };
+
+    # Enable the OpenSSH daemon.
+    # openssh.enable = true;
+
+    # List services that you want to enable:
+    flatpak.enable = true;
+    tailscale.enable = true;
+  };
+
+  sound.enable = true;
+
+  # Set your time zone.
+  time.timeZone = "America/Toronto";
+
+
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users = {
+    defaultUserShell = pkgs.fish;
+    users.crywolf = {
+      isNormalUser = true;
+      description = "crywolf";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [
+        firefox
+        librewolf
+        thunderbird
+        tor-browser
+        vscodium
+      ];
+    };
+  };
+
+  virtualisation = {
+    libvirtd.enable = true;
+    podman.enable = true;
+  };
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -179,5 +183,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
