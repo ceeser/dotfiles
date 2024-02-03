@@ -41,6 +41,7 @@ abbr nrt "cd ~/ && sudo nixos-rebuild test -I nixos-config=configuration.nix" # 
 abbr nrollb "sudo nix-env --rollback --profile /nix/var/nix/profiles/system" # rollback to previous gen
 abbr nsg "sudo nix-env --switch-generation --profile /nix/var/nix/profiles/system" # switch to specified gen
 abbr nu "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=configuration.nix" # update to latest packages
+abbr nut "cd ~/ && sudo nixos-rebuild test --upgrade -I nixos-config=configuration.nix" # update to latest packages
 
 # Misc
 abbr su "su -l"
