@@ -125,6 +125,7 @@
     git
     libreoffice
     localsend
+    pandoc
     starship
     tailscale
     tmux
@@ -164,10 +165,12 @@
         set title
         set ttimeoutlen=0
         set wildmenu
+        lua require 'ibl'.setup()
       '';
       packages.myVimPackage = with pkgs.vimPlugins; {
         start = [ 
           catppuccin-nvim
+          indent-blankline-nvim
         ];
       };
     };
