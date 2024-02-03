@@ -1,6 +1,9 @@
 # Imports
 source $HOME/.config/fish/conf.d/abbr.fish
 
+# set options
+set fish_greeting
+
 # Env Vars
 set -gx EDITOR vim
 set -gx OS $(uname)
@@ -19,4 +22,5 @@ set -gx BLOCKSIZE 1k
 set -gx TERM xterm-256color
 set -gx COLUMNS 120
 
+# Init
 starship init fish | source
