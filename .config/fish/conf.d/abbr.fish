@@ -36,7 +36,8 @@ abbr nec "nvim ~/configuration.nix" # edit home config
 abbr ndg "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system" # delete specified generations
 abbr ngc "sudo nix-collect-garbage --delete-old"
 abbr nlg "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system" # list all generations
-abbr nr "cd ~/ && sudo nixos-rebuild switch -I nixos-config=configuration.nix" # rebuild from home config
+abbr nr "cd ~/ && sudo nixos-rebuild switch -I nixos-config=configuration.nix" # rebuild and switch from home config
+abbr nrt "cd ~/ && sudo nixos-rebuild test -I nixos-config=configuration.nix" # rebuild and test from home config
 abbr nrollb "sudo nix-env --rollback --profile /nix/var/nix/profiles/system" # rollback to previous gen
 abbr nsg "sudo nix-env --switch-generation --profile /nix/var/nix/profiles/system" # switch to specified gen
 abbr nu "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=configuration.nix" # update to latest packages
