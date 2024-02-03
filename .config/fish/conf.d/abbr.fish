@@ -25,7 +25,7 @@ abbr tmd "tmux attach -t dev || tmuxinator dev"
 abbr tmk "tmux kill-session -t dev"
 
 # Dotfiles Config
-abbr config "/run/current-system/sw/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
+abbr config "/run/current-system/sw/bin/git --git-dir=$HOME/.dotfilesrepo/ --work-tree=$HOME"
 
 # Git
 abbr gs "git status"
