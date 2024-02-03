@@ -109,33 +109,6 @@
 
   users.defaultUserShell = pkgs.fish;
 
-  environment.shellAliases = {
-    # Convenience
-    c = "clear";
-    l = "ls -lah";
-    vi = "spacevim";
-    vim = "spacevim";
-
-    # Dotfiles Config
-    config = "/run/current-system/sw/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME";
-
-    # Git
-    gs = "git status";
-
-    # Nix commands
-    nec = "spacevim ~/configuration.nix"; # edit home config
-    ndg = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system"; # delete specified generations
-    ngc = "sudo nix-collect-garbage --delete-old";
-    nlg = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system"; # list all generations
-    nr = "cd ~/ && sudo nixos-rebuild switch -I nixos-config=configuration.nix"; # rebuild from home config 
-    nrollb = "sudo nix-env --rollback --profile /nix/var/nix/profiles/system"; # rollback to previous gen
-    nsg = "sudo nix-env --switch-generation --profile /nix/var/nix/profiles/system"; # switch to specified gen
-    nu = "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=configuration.nix";
-
-    # Misc
-    sudo = "sudo "; # fix for recognizing aliases when sudoing
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -145,12 +118,13 @@
     alacritty
     bat
     diff-so-fancy
+    du-dust
+    eza
     fish
     gimp
     git
     libreoffice
     localsend
-    spacevim
     starship
     tailscale
     tmux
@@ -172,6 +146,31 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    configure = {
+      customRC = ''
+        colorscheme catppuccin
+        set clipboard=unnamedplus
+        set completeopt=noinsert,menuone,noselect
+        set cursorline
+        set expandtab
+        set list
+        set number
+        set relativenumber
+        set shiftwidth=2
+        set splitbelow splitright
+        set tabstop=2
+        set title
+        set ttimeoutlen=0
+        set wildmenu
+      '';
+      packages.myVimPackage = with pkgs.vimPlugins; {
+        start = [ 
+          catppuccin-nvim
+        ];
+      };
+    };
   };
 
   virtualisation.podman.enable = true;
@@ -183,7 +182,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    font-awesome_5
+    font-awesome
   ];
 
   # List services that you want to enable:

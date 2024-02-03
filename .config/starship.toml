@@ -1,7 +1,9 @@
 add_newline = false
 palette = "catppuccin_mocha"
 
-format = """[$directory](fg:lavender)$nix_shell($git_branch$git_state$git_status$git_metrics)$sudo$character"""
+#format = """[$directory](fg:lavender)($git_branch$git_state$git_status$git_metrics)$sudo$character"""
+format = """[$directory](fg:lavender)$sudo$character"""
+right_format = """$all"""
 
 [directory]
 style = "fg:lavender"
@@ -33,9 +35,6 @@ impure_msg = '[impure shell](fg:red)'
 pure_msg = '[pure shell](fg:green)'
 unknown_msg = '[unknown shell](fg:yellow)'
 format = 'via [☃️ $state( \($name\))](fg:blue) '
-
-[python]
-scan_for_pyfiles = false
 
 [ruby]
 disabled = true

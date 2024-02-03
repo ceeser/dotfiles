@@ -4,7 +4,8 @@ abbr .. 'cd ../'         # Go back 1 directory level
 abbr ... 'cd ../../'     # Go back 2 directory levels
 abbr c "clear"
 abbr cp "cp -iv"         # Preferred 'cp' implementation
-abbr l "ls -lah"
+abbr l "eza -la --group-directories-first"
+abbr ls "eza -la --group-directories-first"
 abbr mv "mv -iv"         # Preferred 'mv' implementation
 abbr mkdir "mkdir -pv"   # Preferred 'mkdir' implementation
 
@@ -22,16 +23,16 @@ abbr gpr "git pull --rebase"
 abbr gs "git status"
 abbr tmd "tmux attach -t dev || tmuxinator dev"
 abbr tmk "tmux kill-session -t dev"
-abbr vi "vim"
 
 # Dotfiles Config
 abbr config "/run/current-system/sw/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 
 # Git
-abbr gs = "git status"
+abbr gs "git status"
+abbr gco "git checkout"
 
 # Nix commands
-abbr nec "vim ~/configuration.nix" # edit home config
+abbr nec "nvim ~/configuration.nix" # edit home config
 abbr ndg "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system" # delete specified generations
 abbr ngc "sudo nix-collect-garbage --delete-old"
 abbr nlg "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system" # list all generations

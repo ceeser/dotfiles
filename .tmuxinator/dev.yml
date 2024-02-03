@@ -35,13 +35,13 @@ windows:
         # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
         # synchronize: after
       panes:
-        - type ytop > /dev/null && ytop -b -I 2
+        - #type ytop > /dev/null && ytop -b -I 2
   - app:
       layout: 1281,238x128,0,0[238x63,0,0{148x63,0,0,1,89x63,149,0,3},238x64,0,64,4]
       panes:
-        - type cdwf > /dev/null && cdwf; tmux send-keys C-l
-        - type cdwf > /dev/null && cdwf; tmux send-keys C-l
-        - type cdwf > /dev/null && cdwf; tmux send-keys C-l
+        - #type cdwf > /dev/null && cdwf; tmux send-keys C-l
+        - #type cdwf > /dev/null && cdwf; tmux send-keys C-l
+        - #type cdwf > /dev/null && cdwf; tmux send-keys C-l
   - terminal:
       panes:
          - #empty
