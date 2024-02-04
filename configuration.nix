@@ -10,6 +10,7 @@
       # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       .nixosconfigs/neovim.nix
+      .nixosconfigs/no-defaults.nix
     ];
 
   # Bootloader.
@@ -61,10 +62,14 @@
   ];
 
   hardware.pulseaudio.enable = false; # Enable sound with pipewire.
- 
+
   i18n.defaultLocale = "en_CA.UTF-8"; # Select internationalisation properties.
 
   networking = {
+    firewall = {
+      enable = true;
+      trustedInterfaces = [ "tailscaled" ];
+    };
     networkmanager.enable = true; # Enable networking
     hostName = "tera"; # Define your hostname.
 
@@ -80,15 +85,17 @@
     # firewall.allowedTCPPorts = [ ... ];
     # firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
-    # firewall.enable = false;
   };
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  nix = {
+    settings.allowed-users = [ "@wheel" ];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
   programs = {
@@ -99,12 +106,15 @@
     #   enable = true;
     #   enableSSHSupport = true;
     # };
-  
+
     fish.enable = true;
     virt-manager.enable = true;
   };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    sudo.execWheelOnly = true;
+  };
 
   services = {
     xserver = {
@@ -117,6 +127,8 @@
       xkbVariant = "";
       # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
     };
+
+    openssh.enable = false; # Enable the OpenSSH daemon.
 
     # Enable CUPS to print documents.
     printing.enable = true;
@@ -133,9 +145,6 @@
       # no need to redefine it in your config for now)
       #media-session.enable = true;
     };
-
-    # Enable the OpenSSH daemon.
-    # openssh.enable = true;
 
     # List services that you want to enable:
     flatpak.enable = true;
