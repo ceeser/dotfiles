@@ -46,22 +46,11 @@
       #gnome-system-monitor
     ];
     systemPackages = with pkgs; [ # List packages installed in system profile. To search, run: nix search wget
-      alacritty
-      bat
-      diff-so-fancy
-      du-dust
-      eza
       fish
-      gimp
       git
-      libreoffice
-      localsend
-      pandoc
+      librewolf
       starship
       tailscale
-      tmux
-      tmuxinator
-      vlc
     ];
   };
 
@@ -96,6 +85,12 @@
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   programs = {
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
@@ -108,6 +103,7 @@
     fish.enable = true;
     virt-manager.enable = true;
   };
+
   security.rtkit.enable = true;
 
   services = {
@@ -151,22 +147,41 @@
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
-
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.fish;
-    users.crywolf = {
-      isNormalUser = true;
-      description = "crywolf";
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [
-        firefox
-        librewolf
-        thunderbird
-        tor-browser
-        vscodium
-      ];
+    users = {
+      guest = {
+        description = "guest";
+        hashedPassword = "$6$rounds=1000$jpMpD5UmWhlVZyXN$wKOvA4n/6nTQpAxoA3SctqpcsmJ5eQuI0CgOPK3/83Tx27ZM9d4mrKZgoCctXTB5wixLaiv8XQUg0XfNw9Haj1";
+        isNormalUser = true;
+        shell = "/run/current-system/sw/bin/bash --restricted";
+        useDefaultShell = false;
+      };
+      crywolf = {
+        description = "crywolf";
+        extraGroups = [ "networkmanager" "wheel" ];
+        isNormalUser = true;
+        packages = with pkgs; [
+          alacritty
+          bat
+          diff-so-fancy
+          du-dust
+          element-desktop
+          eza
+          firefox
+          gimp
+          libreoffice
+          localsend
+          pandoc
+          thunderbird
+          tmux
+          tmuxinator
+          tor-browser
+          vlc
+          vscodium
+        ];
+      };
     };
   };
 
@@ -174,7 +189,6 @@
     libvirtd.enable = true;
     podman.enable = true;
   };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

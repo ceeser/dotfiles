@@ -24,9 +24,6 @@ abbr gs "git status"
 abbr tmd "tmux attach -t dev || tmuxinator dev"
 abbr tmk "tmux kill-session -t dev"
 
-# Dotfiles Config
-abbr config "/run/current-system/sw/bin/git --git-dir=$HOME/.dotfilesrepo/ --work-tree=$HOME"
-
 # Git
 abbr gs "git status"
 abbr gco "git checkout"
@@ -40,9 +37,11 @@ abbr nr "cd ~/ && sudo nixos-rebuild switch -I nixos-config=configuration.nix" #
 abbr nrt "cd ~/ && sudo nixos-rebuild test -I nixos-config=configuration.nix" # rebuild and test from home config
 abbr nrollb "sudo nix-env --rollback --profile /nix/var/nix/profiles/system" # rollback to previous gen
 abbr nsg "sudo nix-env --switch-generation --profile /nix/var/nix/profiles/system" # switch to specified gen
+abbr nsh "nix-shell --run fish" # run nix-shell with the fish shell
 abbr nu "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=configuration.nix" # update to latest packages
 abbr nut "cd ~/ && sudo nixos-rebuild test --upgrade -I nixos-config=configuration.nix" # update to latest packages
 
 # Misc
+abbr delguest "sudo rm -rf /home/guest"
 abbr su "su -l"
 abbr sudo "sudo " # fix for recognizing aliases when sudoing
