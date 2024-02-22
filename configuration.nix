@@ -9,6 +9,7 @@
     [ 
       # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
+      .nixosconfigs/desktop-env.nix
       .nixosconfigs/neovim.nix
       .nixosconfigs/no-defaults.nix
     ];
@@ -24,28 +25,6 @@
   documentation.nixos.enable = false;
 
   environment = {
-    gnome.excludePackages = with pkgs.gnome; [
-      baobab # disk usage analyzer
-      epiphany # web browser
-      simple-scan # document scanner
-      totem # video player
-      yelp # help viewer
-      evince # document viewer
-      geary # email client
-      gnome-calculator
-      gnome-contacts
-      gnome-logs
-      gnome-maps
-      gnome-music
-      gnome-weather
-      gnome-clocks
-      pkgs.gnome-text-editor
-      pkgs.gnome-connections
-      pkgs.gnome-console
-      gnome-calendar
-      #gnome-screenshot
-      #gnome-system-monitor
-    ];
     systemPackages = with pkgs; [ # List packages installed in system profile. To search, run: nix search wget
       fish
       git
@@ -117,17 +96,6 @@
   };
 
   services = {
-    xserver = {
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
-      enable = true; # Enable the X11 windowing system.
-      excludePackages = [ pkgs.xterm ];
-      layout = "us";
-      xkbOptions = "ctrl:nocaps"; # Remap capslock to control
-      xkbVariant = "";
-      # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
-    };
-
     openssh.enable = false; # Enable the OpenSSH daemon.
 
     # Enable CUPS to print documents.
