@@ -20,8 +20,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  console.useXkbConfig = true; # Enable the GNOME Desktop Environment.
-  
   documentation.nixos.enable = false;
 
   environment = {
