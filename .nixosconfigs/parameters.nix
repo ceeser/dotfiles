@@ -1,0 +1,4 @@
+{
+  machine = "tera";
+  machineType = "workstation";
+}
