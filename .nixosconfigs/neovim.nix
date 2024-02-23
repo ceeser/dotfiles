@@ -12,19 +12,26 @@
     configure = {
       customRC = ''
         colorscheme catppuccin
+
+        set autoindent
         set clipboard=unnamedplus
         set completeopt=noinsert,menuone,noselect
         set cursorline
         set expandtab
         set list
+        set nobackup
+        set nostartofline
+        set noswapfile
         set number
         set relativenumber
         set shiftwidth=2
+        set smartcase
         set splitbelow splitright
         set tabstop=2
         set title
         set ttimeoutlen=0
         set wildmenu
+
         lua require 'ibl'.setup()
       '';
       packages.myVimPackage = with pkgs.vimPlugins; {
