@@ -38,7 +38,7 @@ in {
     enable = true;
     flags = [
       "-I"
-      "nixos-config=/home/crywolf/configuration.nix"
+      "nixos-config=/home/ceeser/.nixosconfigs/configuration.nix"
     ];
     randomizedDelaySec = "45min";
   };
