@@ -30,7 +30,7 @@ in {
   imports =
     [
       (../desktop-env.nix)
-
+      (../tmux.nix)
       # Machine specific config
       (
         import (../machines + "/${parameters.machine}.nix") {
@@ -72,7 +72,6 @@ in {
         localsend
         pandoc
         thunderbird
-        tmux
         tmuxinator
         tor-browser
         vlc
