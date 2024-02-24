@@ -32,6 +32,9 @@ in {
     )
   ];
 
+  boot.kernel.sysctl."net.ipv4.ip_forward" = 1; # ipv4 forwarding
+  boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1; #ipv6 forwarding
+
   system.autoUpgrade = {
     allowReboot = true;
     dates = "03:00";
