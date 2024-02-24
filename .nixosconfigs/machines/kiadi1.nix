@@ -14,6 +14,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   services = lib.recursiveUpdate baseMachineTypeServices {};
+  services.resolved.enable = false;
 
   time.timeZone = "America/Toronto";
 }
