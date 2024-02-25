@@ -37,6 +37,7 @@ in {
           inherit parameters;
         }
       )
+      (./fish.nix)
       (./neovim.nix)
       (./no-defaults.nix)
     ];
@@ -75,18 +76,6 @@ in {
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-  };
-
-  programs = {
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
-    # mtr.enable = true;
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-
-    fish.enable = true;
   };
 
   security = {
