@@ -48,8 +48,7 @@ in {
 
   users.users = {
     ceeser = {
-      description = "just a regular account";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
       initialHashedPassword = "$y$j9T$XaUpu.uuIDnfAYfzPxKqW.$LF6faepJC1x3F2akjhbv0fUkl314I7E3XmVekKL7TBA";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
@@ -60,9 +59,10 @@ in {
       ];
     }; 
   };
-
+  
+  virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
-    backend = "podman";
+    backend = "docker";
     containers = {
       portainer-agent = {
         autoStart = true;
@@ -71,7 +71,10 @@ in {
         ports = [
           "0.0.0.0:9001:9001"
         ];
-        volumes = [ "/run/podman/podman.sock:/var/run/docker.sock:Z" ];
+        volumes = [
+          "/var/run/docker.sock:/var/run/docker.sock"
+          "/var/run/docker/volumes:/var/run/docker/volumes"
+        ];
       };
     };
   };
