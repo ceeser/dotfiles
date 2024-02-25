@@ -19,7 +19,7 @@
 	tool = sublime
 
 [alias]
-  dt = !"git --git-dir=$HOME/.dotfilesrepo --work-tree=$HOME"
+  dotfiles = !"git --git-dir=$CEESER_DOT_FILES_PATH --work-tree=$HOME"
 
   lg = !"git lg1"
   lg1 = !"git lg1-specific --all"

@@ -14,6 +14,9 @@
       set -gx COLUMNS 120
       set -gx EDITOR vim
 
+      set -gx CEESER_DOT_FILES_REPO https://github.com/ceeser/dotfiles
+      set -gx CEESER_DOT_FILES_PATH $HOME/.dotfilesrepo 
+
       set -gx HOMEBREW_NO_ANALYTICS 1
       set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
       set -gx HOMEBREW_CASK_OPTS --require-sha
@@ -59,6 +62,10 @@
       gm = "git merge";
       gpr = "git pull --rebase";
       gs = "git status";
+
+      # git dotfiles
+      gdtinit = "git clone --bare $CEESER_DOT_FILES_REPO $CEESER_DOT_FILES_PATH && git --git-dir=$CEESER_DOT_FILES_PATH config --local status.showUntrackedFiles no";
+      gdt = "git dotfiles";
 
       # Nix commands
       nec = "nvim ~/.nixosconfigs/configuration.nix"; # edit home config
