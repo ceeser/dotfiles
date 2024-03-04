@@ -13,7 +13,6 @@ let
     eza
     fish
     git
-    librewolf
     starship
     tailscale
   ];

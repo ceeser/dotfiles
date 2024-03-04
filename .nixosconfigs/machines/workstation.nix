@@ -5,7 +5,9 @@
 { lib, config, pkgs, basePackages, baseServices, parameters, ... }:
 
 let
-  baseMachineTypePackages = with pkgs; [] ++ basePackages;
+  baseMachineTypePackages = with pkgs; [
+    librewolf
+  ] ++ basePackages;
 
   baseMachineTypeServices = lib.recursiveUpdate baseServices {
     openssh.enable = false;
