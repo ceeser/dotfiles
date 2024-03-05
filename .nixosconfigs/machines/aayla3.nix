@@ -4,9 +4,7 @@
   #imports = [];
   #boot = {};
 
-  environment.systemPackages = with pkgs; [
-    librewolf
-  ] ++ baseMachineTypePackages;
+  environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
 
   networking.hostName = "aayla3"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
