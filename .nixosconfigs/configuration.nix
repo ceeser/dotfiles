@@ -37,6 +37,7 @@ in {
         }
       )
       (./fish.nix)
+      (./git.nix)
       (./neovim.nix)
       (./no-defaults.nix)
     ];
