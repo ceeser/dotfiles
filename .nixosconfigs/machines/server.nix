@@ -8,6 +8,13 @@ let
   baseMachineTypePackages = with pkgs; [] ++ basePackages;
 
   baseMachineTypeServices = lib.recursiveUpdate baseServices {
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        "MAILTO=ceeser"
+        "0 0 * * *      ceeser    out=$( . /etc/profile; gtd pull 2>&1 ) || echo $out"
+      ];
+    };
     openssh = {
       enable = true;
       # require public key authentication for better security
