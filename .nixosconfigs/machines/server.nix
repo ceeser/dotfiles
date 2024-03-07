@@ -8,13 +8,6 @@ let
   baseMachineTypePackages = with pkgs; [] ++ basePackages;
 
   baseMachineTypeServices = lib.recursiveUpdate baseServices {
-    cron = {
-      enable = true;
-      systemCronJobs = [
-        "MAILTO=ceeser"
-        "0 0 * * *      ceeser    out=$( . /etc/profile; gtd pull 2>&1 ) || echo $out"
-      ];
-    };
     openssh = {
       enable = true;
       # require public key authentication for better security
@@ -53,6 +46,26 @@ in {
       "nixos-config=/home/ceeser/.nixosconfigs/configuration.nix"
     ];
     randomizedDelaySec = "45min";
+  };
+
+  systemd.timers."pull-dotfiles-repo" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      # OnBootSec = "12h";
+      # OnUnitActiveSec = "12h";
+      Unit = "pull-dotfiles-repo.service";
+    };
+  };
+
+  systemd.services."pull-dotfiles-repo" = {
+    script = ''
+      gdt pull
+    '';
+    serviceConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+    };
   };
 
   users.users = {
