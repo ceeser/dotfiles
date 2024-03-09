@@ -60,7 +60,7 @@ in {
 
   systemd.services."pull-dotfiles-repo" = {
     script = ''
-      gdt pull
+      git --git-dir=/home/ceeser/.dotfilesrepo --work-tree=/home/ceeser/ pull
     '';
     serviceConfig = {
       OnCalendar = "daily";
