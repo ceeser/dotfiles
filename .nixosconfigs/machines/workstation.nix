@@ -60,8 +60,8 @@ in {
       shell = "/run/current-system/sw/bin/bash --restricted";
       useDefaultShell = false;
     };
-    crywolf = {
-      description = "crywolf";
+    ceeser = {
+      description = "ceeser";
       extraGroups = [ "networkmanager" "wheel" ];
       isNormalUser = true;
       packages = with pkgs; [
