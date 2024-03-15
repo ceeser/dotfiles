@@ -7,6 +7,7 @@
 let
   baseMachineTypePackages = with pkgs; [
     librewolf
+    zenith
   ] ++ basePackages;
 
   baseMachineTypeServices = lib.recursiveUpdate baseServices {
