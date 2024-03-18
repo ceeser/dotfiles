@@ -51,6 +51,8 @@ in {
 
   programs.virt-manager.enable = true;
 
+  security.rtkit.enable = true; # added for pipewire
+
   sound.enable = true;
 
   users.users = {
