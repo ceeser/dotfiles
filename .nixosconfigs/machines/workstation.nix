@@ -28,6 +28,7 @@ let
     printing.enable = true; # Enable CUPS to print documents
     #tlp.enable = true; # Linux advanced power management
     udev.extraRules = ''
+      # automatically connect any thunderbolt devices
       ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
     '';
   }; 
