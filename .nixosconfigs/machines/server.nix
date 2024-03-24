@@ -39,6 +39,7 @@ in {
 
   system.autoUpgrade = {
     allowReboot = true;
+    channel = "https://nixos.org/channels/nixos-23.11-small";
     dates = "03:00";
     enable = true;
     flags = [
