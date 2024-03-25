@@ -16,7 +16,7 @@ let
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
-      pulse.enable = true;
+      #pulse.enable = true;
 
       # use the example session manager (no others are packaged yet so this is enabled by default,
       # no need to redefine it in your config for now)
@@ -28,6 +28,7 @@ let
     printing.enable = true; # Enable CUPS to print documents
     #tlp.enable = true; # Linux advanced power management
     udev.extraRules = ''
+      # automatically connect any thunderbolt devices
       ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
     '';
   }; 

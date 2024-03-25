@@ -37,7 +37,7 @@ windows:
       panes:
         - type zenith > /dev/null && zenith
   - app:
-      layout: 1281,238x128,0,0[238x63,0,0{148x63,0,0,1,89x63,149,0,3},238x64,0,64,4]
+      layout: main-horizontal
       panes:
         - #type cdwf > /dev/null && cdwf; tmux send-keys C-l
         - #type cdwf > /dev/null && cdwf; tmux send-keys C-l

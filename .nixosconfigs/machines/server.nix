@@ -39,6 +39,7 @@ in {
 
   system.autoUpgrade = {
     allowReboot = true;
+    channel = "https://nixos.org/channels/nixos-23.11-small";
     dates = "03:00";
     enable = true;
     flags = [
@@ -60,7 +61,7 @@ in {
 
   systemd.services."pull-dotfiles-repo" = {
     script = ''
-      git --git-dir=/home/ceeser/.dotfilesrepo --work-tree=/home/ceeser/ pull
+      /run/current-system/sw/bin/git --git-dir=/home/ceeser/.dotfilesrepo --work-tree=/home/ceeser/ pull
     '';
     serviceConfig = {
       OnCalendar = "daily";
