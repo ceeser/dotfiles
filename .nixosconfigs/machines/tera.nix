@@ -5,7 +5,6 @@
   #boot = {};
 
   environment.systemPackages = with pkgs; [
-    librewolf
   ] ++ baseMachineTypePackages;
 
   networking.hostName = "tera"; # Define your hostname.
