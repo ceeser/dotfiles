@@ -7,12 +7,17 @@
   environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
 
   networking.hostName = "luminara1"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedUDPPorts = [ 443 ];
 
   services = lib.recursiveUpdate baseMachineTypeServices {
     resolved.enable = false;
+    caddy = {
+      enable = true;
+      virtualHosts."photos.ceeser.com".extraConfig = ''
+        reverse_proxy 100.65.58.90:2342
+      '';
+    };
   };
 
   time.timeZone = "America/Toronto";
