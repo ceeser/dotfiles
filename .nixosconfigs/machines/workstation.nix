@@ -85,6 +85,7 @@ in {
         tor-browser
         vlc
         vscodium
+        zathura
       ];
     }; 
   };
