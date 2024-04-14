@@ -86,7 +86,6 @@ in {
 
         ## development
         diff-so-fancy
-        podman
         vscodium
       ];
     }; 
