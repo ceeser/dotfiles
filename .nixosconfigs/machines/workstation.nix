@@ -38,6 +38,7 @@ in {
     [
       (../desktop-env.nix)
       (../tmux.nix)
+      (../virtualisation.nix)
       # Machine specific config
       (
         import (../machines + "/${parameters.machine}.nix") {
@@ -52,8 +53,6 @@ in {
     ];
 
   hardware.pulseaudio.enable = false;
-
-  programs.virt-manager.enable = true;
 
   security.rtkit.enable = true; # added for pipewire
 
@@ -87,9 +86,11 @@ in {
         ## development
         diff-so-fancy
         vscodium
+        #dive # look into docker image layers
+        #podman-tui # status of containers in the terminal
+        #podman-compose # start group of containers for dev
+        #docker-compose # start group of containers for dev
       ];
     }; 
   };
-
-  virtualisation.libvirtd.enable = true;
 }
