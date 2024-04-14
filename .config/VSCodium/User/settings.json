@@ -31,5 +31,8 @@
     "window.titleBarStyle": "custom",
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.tree.renderIndentGuides": "always",
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "extensions.experimental.affinity": {
+      "asvetliakov.vscode-neovim": 1
+  },
 }
