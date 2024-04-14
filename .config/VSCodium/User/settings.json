@@ -1,9 +1,8 @@
 {
     "breadcrumbs.enabled": true,
-    "eslint.alwaysShowStatus": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.detectIndentation": false,
-    "editor.find.seedSearchStringFromSelection": false,
+    "editor.find.seedSearchStringFromSelection": "selection",
     "editor.guides.bracketPairs":"active",
     "editor.renderControlCharacters": false,
     "editor.rulers": [
@@ -20,16 +19,13 @@
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "javascript.validate.enable": false,
-    "openInGitHub.defaultBranch": "main",
     "search.exclude": {
       "**/.git": true,
       "**/.github": true,
-      "**/.vscode": true
+      "**/.vscode": true,
       "**/.config": true
     },
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "workbench.colorTheme": "Catppuccin Mocha"
+    "telemetry.telemetryLevel": "off",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.tree.renderIndentGuides": "always"
 }
