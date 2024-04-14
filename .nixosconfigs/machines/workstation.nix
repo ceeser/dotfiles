@@ -72,20 +72,22 @@ in {
       extraGroups = [ "networkmanager" "wheel" ];
       isNormalUser = true;
       packages = with pkgs; [
+        ## general apps
         alacritty
-        diff-so-fancy
-        element-desktop
         firefox
         gimp
         libreoffice
         localsend
         pandoc
-        thunderbird
         tmuxinator
         tor-browser
         vlc
-        vscodium
         zathura
+
+        ## development
+        diff-so-fancy
+        podman
+        vscodium
       ];
     }; 
   };

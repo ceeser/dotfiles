@@ -9,6 +9,7 @@
       80,
       120,
     ],
+    "editor.semanticHighlighting.enabled": true,
     "editor.tabSize": 2,
     "files.exclude": {
       "**/.github": true,
@@ -26,6 +27,9 @@
       "**/.config": true
     },
     "telemetry.telemetryLevel": "off",
+    "terminal.integrated.minimumContrastRatio": 1,
+    "window.titleBarStyle": "custom",
     "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.tree.renderIndentGuides": "always"
+    "workbench.tree.renderIndentGuides": "always",
+    "explorer.confirmDelete": false
 }
