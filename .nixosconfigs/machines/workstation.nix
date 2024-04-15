@@ -38,7 +38,7 @@ in {
     [
       (../desktop-env.nix)
       (../tmux.nix)
-      (../virtualisation.nix)
+
       # Machine specific config
       (
         import (../machines + "/${parameters.machine}.nix") {
