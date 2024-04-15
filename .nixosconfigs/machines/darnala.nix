@@ -1,8 +1,12 @@
 { lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
 
 {
-  #imports = [];
   #boot = {};
+
+  imports = [
+    (../virtualisation.nix)
+    # (../containers.nix)
+  ];
 
   environment.systemPackages = with pkgs; [
   ] ++ baseMachineTypePackages;
