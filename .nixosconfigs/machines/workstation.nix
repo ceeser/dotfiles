@@ -24,7 +24,7 @@ let
     };
 
     # List services that you want to enable:
-    flatpak.enable = true;
+    flatpak.enable = false;
     printing.enable = true; # Enable CUPS to print documents
     #tlp.enable = true; # Linux advanced power management
     udev.extraRules = ''
@@ -73,6 +73,7 @@ in {
       packages = with pkgs; [
         ## general apps
         alacritty
+        bitwarden
         firefox
         gimp
         libreoffice
