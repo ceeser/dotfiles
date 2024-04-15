@@ -25,6 +25,7 @@ let
 
     # List services that you want to enable:
     flatpak.enable = false;
+    fwupd.enable = true;
     printing.enable = true; # Enable CUPS to print documents
     #tlp.enable = true; # Linux advanced power management
     udev.extraRules = ''
