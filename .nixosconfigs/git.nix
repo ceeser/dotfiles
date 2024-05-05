@@ -45,7 +45,7 @@
       core = {
         excludesfile = "/Users/ceeser/.gitignore_global";
         editor = "vim";
-        pager = "diff-so-fancy | less --tas=2 -RFX";
+        pager = "diff-so-fancy | less --tabs=2 -RFX";
       }; 
 
       difftool = {
