@@ -11,7 +11,7 @@
     vimAlias = true;
     configure = {
       customRC = ''
-        colorscheme catppuccin
+        colorscheme catppuccin-mocha
 
         set autoindent
         set clipboard=unnamedplus

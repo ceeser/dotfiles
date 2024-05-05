@@ -61,7 +61,7 @@
       set -g mouse off
 
       # Set the default terminal mode to 256color mode
-      set -g default-terminal "screen-256color"
+      set -g default-terminal "xterm-256color"
 
       # Colors
       fg='#CBCCC6'
