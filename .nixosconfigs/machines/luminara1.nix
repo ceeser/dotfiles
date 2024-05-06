@@ -15,7 +15,7 @@
     caddy = {
       enable = true;
       virtualHosts."photos.ceeser.com".extraConfig = ''
-        reverse_proxy 100.65.58.90:2342
+        reverse_proxy 100.94.100.96:2342
       '';
     };
   };
