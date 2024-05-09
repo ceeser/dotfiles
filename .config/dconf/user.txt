@@ -1,0 +1,277 @@
+[org/freedesktop/tracker/miner/files]
+index-recursive-directories=@as []
+index-single-directories=['&DOWNLOAD']
+
+[org/gnome/Console]
+last-window-size=(652, 480)
+
+[org/gnome/Snapshot]
+is-maximized=false
+window-height=640
+window-width=800
+
+[org/gnome/baobab/ui]
+is-maximized=false
+window-size=(960, 600)
+
+[org/gnome/control-center]
+last-panel='power'
+window-state=(980, 1128, false)
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/ceeser/.local/share/backgrounds/2024-05-08-03-24-11-804c88c3f2c616e4455b566c62050dd37d73b7fc.jpeg'
+picture-uri-dark='file:///home/ceeser/.local/share/backgrounds/2024-05-08-03-24-11-804c88c3f2c616e4455b566c62050dd37d73b7fc.jpeg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'us')]
+xkb-options=['terminate:ctrl_alt_bksp']
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+enable-hot-corners=false
+show-battery-percentage=true
+
+[org/gnome/desktop/notifications]
+application-children=['org-gnome-characters', 'org-gnome-epiphany', 'org-gnome-nautilus', 'firefox', 'org-jitsi-jitsi-meet', 'librewolf', 'steam', 'codium']
+
+[org/gnome/desktop/notifications/application/codium]
+application-id='codium.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/librewolf]
+application-id='librewolf.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-characters]
+application-id='org.gnome.Characters.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-epiphany]
+application-id='org.gnome.Epiphany.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-fileroller]
+enable=false
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-jitsi-jitsi-meet]
+application-id='org.jitsi.jitsi-meet.desktop'
+
+[org/gnome/desktop/notifications/application/steam]
+application-id='steam.desktop'
+
+[org/gnome/desktop/peripherals/mouse]
+natural-scroll=true
+speed=-0.5
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+old-files-age=uint32 30
+recent-files-max-age=-1
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/ceeser/.local/share/backgrounds/2024-05-08-03-24-11-804c88c3f2c616e4455b566c62050dd37d73b7fc.jpeg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/search-providers]
+disable-external=true
+disabled=['org.gnome.Nautilus.desktop']
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/session]
+idle-delay=uint32 300
+
+[org/gnome/desktop/sound]
+event-sounds=false
+theme-name='__custom'
+
+[org/gnome/desktop/wm/keybindings]
+close=['<Alt>F4']
+cycle-panels=@as []
+cycle-panels-backward=@as []
+maximize=['<Alt><Super>f']
+minimize=@as []
+move-to-monitor-left=['<Control><Alt><Super>Left']
+move-to-monitor-right=['<Control><Alt><Super>Right']
+move-to-monitor-up=@as []
+move-to-workspace-1=@as []
+move-to-workspace-last=@as []
+move-to-workspace-left=['<Shift><Super>Left']
+move-to-workspace-right=['<Shift><Super>Right']
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-panels=@as []
+switch-panels-backward=@as []
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-last=@as []
+switch-to-workspace-left=['<Super>Left']
+switch-to-workspace-right=['<Super>Right']
+toggle-maximized=@as []
+
+[org/gnome/epiphany]
+ask-for-default=false
+
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/gnome-system-monitor]
+current-tab='processes'
+maximized=false
+network-total-in-bits=false
+show-dependencies=false
+show-whose-processes='user'
+window-state=(1920, 1600, 26, 23)
+
+[org/gnome/gnome-system-monitor/disktreenew]
+col-6-visible=true
+col-6-width=0
+
+[org/gnome/mutter]
+dynamic-workspaces=true
+workspaces-only-on-primary=true
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=['<Alt><Super>Left']
+toggle-tiled-right=['<Alt><Super>Right']
+
+[org/gnome/nautilus/compression]
+default-compression-format='encrypted_zip'
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(1280, 996)
+
+[org/gnome/portal/filechooser/gnome-display-panel]
+last-folder-path='/home/ceeser/Downloads/backgrounds/framework backgrounds'
+
+[org/gnome/portal/filechooser/org.gnome.Settings]
+last-folder-path='/home/ceeser/Downloads/backgrounds/framework backgrounds'
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-schedule-automatic=true
+night-light-temperature=uint32 2167
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+help=@as []
+logout=@as []
+magnifier=@as []
+magnifier-zoom-in=@as []
+magnifier-zoom-out=@as []
+screenreader=@as []
+screensaver=['<Super>l']
+search=['<Super>space']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='alacritty'
+name='Terminal'
+
+[org/gnome/settings-daemon/plugins/power]
+idle-dim=true
+power-button-action='nothing'
+power-saver-profile-on-low-battery=false
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-type='nothing'
+
+[org/gnome/shell]
+favorite-apps=@as []
+last-selected-power-profile='performance'
+remember-mount-password=true
+welcome-dialog-last-shown-version='45.3'
+
+[org/gnome/shell/keybindings]
+screenshot=['<Shift><Super>3']
+show-screenshot-ui=['<Shift><Super>4']
+switch-to-application-1=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
+
+[org/gnome/shell/world-clocks]
+locations=@av []
+
+[org/gnome/software]
+check-timestamp=int64 1713089979
+first-run=false
+flatpak-purge-timestamp=int64 1713140319
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=140
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+view-type='list'
+window-size=(1446, 949)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=157
+sort-column='name'
+sort-directories-first=false
+sort-order='descending'
+type-format='category'
+window-position=(26, 23)
+window-size=(1231, 902)
+
+[org/virt-manager/virt-manager]
+manager-window-height=550
+manager-window-width=550
+
+[org/virt-manager/virt-manager/connections]
+autoconnect=['qemu:///system']
+uris=['qemu:///system']
+
+[org/virt-manager/virt-manager/conns/qemu:system]
+window-size=(800, 600)
+
+[org/virt-manager/virt-manager/vmlist-fields]
+disk-usage=false
+network-traffic=false
