@@ -9,6 +9,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    restic
   ] ++ baseMachineTypePackages;
 
   networking.hostName = "darnala"; # Define your hostname.
@@ -16,9 +17,30 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
-  programs.steam.enable = true;
-
-  services = lib.recursiveUpdate baseMachineTypeServices {};
+  services = lib.recursiveUpdate baseMachineTypeServices {
+    flatpak.enable = true;
+    restic.backups = {
+      ceeserdocuments = {
+        initialize = true;
+        passwordFile = "/home/ceeser/.restic/.passwords/.ceeser";
+        paths = [
+          "/home/ceeser/Documents"
+        ];
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 15"
+        ];
+        repository = "/home/ceeser/data/backups/ceeser/documents";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+        };
+        user = "ceeser";
+      };
+    };
+  };
 
   time.timeZone = "America/Toronto";
 }

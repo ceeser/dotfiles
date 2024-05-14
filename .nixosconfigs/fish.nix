@@ -16,6 +16,7 @@
 
       set -gx CEESER_DOT_FILES_REPO https://github.com/ceeser/dotfiles
       set -gx CEESER_DOT_FILES_PATH $HOME/.dotfilesrepo 
+      set -gx CEESER_RESTIC_PASSWORDS_PATH $HOME/.restic/.passwords
 
       set -gx HOMEBREW_NO_ANALYTICS 1
       set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
@@ -79,6 +80,10 @@
       nsh = "nix-shell --run fish"; # run nix-shell with the fish shell
       nu = "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=.nixosconfigs/configuration.nix"; # update to latest packages
       nut = "cd ~/ && sudo nixos-rebuild test --upgrade -I nixos-config=.nixosconfigs/configuration.nix"; # update to latest packages
+
+      # Restic backups
+      ## ceeser
+      rc = "restic -r $HOME/data/backups/ceeser/documents -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
     };
   };
 }
