@@ -40,6 +40,7 @@
         user = "ceeser";
       };
     };
+    power-profiles-daemon.enable = true;
   };
 
   time.timeZone = "America/Toronto";
