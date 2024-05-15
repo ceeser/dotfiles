@@ -6,7 +6,6 @@
 
 let
   baseMachineTypePackages = with pkgs; [
-    librewolf
     zenith
   ] ++ basePackages;
 
@@ -71,19 +70,11 @@ in {
         ## general apps
         alacritty
         bitwarden
-        firefox
-        gimp
-        libreoffice
-        localsend
         pandoc
         tmuxinator
-        tor-browser
-        vlc
-        zathura
 
         ## development
         diff-so-fancy
-        vscodium
         #dive # look into docker image layers
         #podman-tui # status of containers in the terminal
         #podman-compose # start group of containers for dev
