@@ -19,6 +19,8 @@ let
 
 in {
   imports = [
+    (../pull-dotfiles-repo.nix)
+
     # Machine specific config
     (
       import (../machines + "/${parameters.machine}.nix") {
@@ -47,26 +49,6 @@ in {
       "nixos-config=/home/ceeser/.nixosconfigs/configuration.nix"
     ];
     randomizedDelaySec = "45min";
-  };
-
-  systemd.timers."pull-dotfiles-repo" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "daily";
-      # OnBootSec = "12h";
-      # OnUnitActiveSec = "12h";
-      Unit = "pull-dotfiles-repo.service";
-    };
-  };
-
-  systemd.services."pull-dotfiles-repo" = {
-    script = ''
-      /run/current-system/sw/bin/git --git-dir=/home/ceeser/.dotfilesrepo --work-tree=/home/ceeser/ pull
-    '';
-    serviceConfig = {
-      OnCalendar = "daily";
-      Persistent = true;
-    };
   };
 
   users.users = {
