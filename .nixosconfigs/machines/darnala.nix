@@ -18,7 +18,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   services = lib.recursiveUpdate baseMachineTypeServices {
-    flatpak.enable = true;
     restic.backups = {
       ceeserdocuments = {
         initialize = true;
