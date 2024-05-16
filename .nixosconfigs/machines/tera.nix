@@ -13,6 +13,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   services = lib.recursiveUpdate baseMachineTypeServices {
+    power-profiles-daemon.enable = false;
     tlp.enable = true;
   };
 
