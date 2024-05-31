@@ -68,7 +68,7 @@ in {
       packages = with pkgs; [
         ## general apps
         alacritty
-        bitwarden
+        bitwarden-desktop
         pandoc
         tmuxinator
 
