@@ -69,6 +69,7 @@ in {
   virtualisation.oci-containers = {
     backend = "docker";
     containers = {
+      # agent for the portainer container management platform
       portainer-agent = {
         autoStart = true;
         extraOptions = [ "--privileged" ];
@@ -79,6 +80,16 @@ in {
         volumes = [
           "/var/run/docker.sock:/var/run/docker.sock"
           "/var/run/docker/volumes:/var/run/docker/volumes"
+        ];
+      };
+
+      # automatic updater for other containers
+      watchtower = {
+        autoStart = true;
+        extraOptions = [ "--privileged" ];
+        image = "containrrr/watchtower";
+        volumes = [
+          "/var/run/docker.sock:/var/run/docker.sock"
         ];
       };
     };

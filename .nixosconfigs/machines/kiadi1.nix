@@ -12,9 +12,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
-  services = lib.recursiveUpdate baseMachineTypeServices {
-    resolved.enable = false;
-  };
+  services = lib.recursiveUpdate baseMachineTypeServices {};
 
   time.timeZone = "America/Toronto";
 }

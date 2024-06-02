@@ -1,8 +1,9 @@
 { lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
 
 {
-  #imports = [];
-  #boot = {};
+  imports = [
+    (../blocky.nix)
+  ];
 
   environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
 
@@ -11,7 +12,6 @@
   networking.firewall.allowedUDPPorts = [ 443 ];
 
   services = lib.recursiveUpdate baseMachineTypeServices {
-    resolved.enable = false;
     caddy = {
       enable = true;
       virtualHosts."photos.ceeser.com".extraConfig = ''

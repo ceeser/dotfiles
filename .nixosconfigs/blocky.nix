@@ -52,4 +52,7 @@
       };
     };
   };
+  
+  # disable resolved, so that blocky can service port 53
+  services.resolved.enable = false;
 }
