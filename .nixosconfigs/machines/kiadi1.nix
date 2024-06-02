@@ -1,8 +1,9 @@
 { lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
 
 {
-  #imports = [];
-  #boot = {};
+  imports = [
+    (../blocky.nix)
+  ];
 
   environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
 
