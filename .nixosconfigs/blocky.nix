@@ -15,12 +15,16 @@
         upstream = "https://one.one.one.one/dns-query";
         ips = [ "1.1.1.1" "1.0.0.1" ];
       };
+
       #Enable Blocking of certain domains.
       blocking = {
+        allowlists = {
+          all = ["*.gmail.com"];
+        };
         denylists = {
           all = [
             "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-            "https://raw.githubusercontent.com/nickspaargaren/no-google/master/pihole-google.txt"
+            #"https://raw.githubusercontent.com/nickspaargaren/no-google/master/pihole-google.txt"
             "http://sysctl.org/cameleon/hosts"
             "https://someonewhocares.org/hosts/zero/hosts"
             "https://v.firebog.net/hosts/Easyprivacy.txt"
