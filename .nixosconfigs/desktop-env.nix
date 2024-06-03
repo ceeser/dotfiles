@@ -38,9 +38,10 @@
       displayManager.gdm.enable = true;
       enable = true; # Enable the X11 windowing system.
       excludePackages = [ pkgs.xterm ];
-      layout = "us";
-      xkbOptions = "ctrl:nocaps"; # Remap capslock to control
-      xkbVariant = "";
+      xkb = {
+        options = "ctrl:nocaps"; # Remap capslock to control
+        layout = "us";
+      };
       # libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
     };
   };
