@@ -23,8 +23,19 @@ let
     };
     syncthing.settings = {
       devices = {
-        "darnala" = { id = "DVPFUWJ-CATWISM-VWPQTXI-7Z64GED-JCLBWYJ-NTXLAOB-LVLHFET-V3T64AN"; };
-        "tera" = { id = "PWUB6TF-22JA5L5-TQIEUWT-6PFBSWW-XWLJ5EX-GZXMRNT-MEBYRS3-BLBWTA5"; };
+        "darnala" = {
+          id = "DVPFUWJ-CATWISM-VWPQTXI-7Z64GED-JCLBWYJ-NTXLAOB-LVLHFET-V3T64AN";
+          addresses = [
+            "tcp://darnala.bun-buri.ts.net"
+          ];
+        };
+        "tera" = {
+          id = "PWUB6TF-22JA5L5-TQIEUWT-6PFBSWW-XWLJ5EX-GZXMRNT-MEBYRS3-BLBWTA5";
+          addresses = [
+            "tcp://tera.bun-buri.ts.net"
+          ];
+
+        };
       };
       folders = {
         "Downloads" = {
