@@ -21,6 +21,19 @@ let
       # no need to redefine it in your config for now)
       #media-session.enable = true;
     };
+    syncthing.settings = {
+      devices = {
+        "darnala" = { id = "DVPFUWJ-CATWISM-VWPQTXI-7Z64GED-JCLBWYJ-NTXLAOB-LVLHFET-V3T64AN"; };
+        "tera" = { id = "PWUB6TF-22JA5L5-TQIEUWT-6PFBSWW-XWLJ5EX-GZXMRNT-MEBYRS3-BLBWTA5"; };
+      };
+      folders = {
+        "Downloads" = {
+          path = "/home/ceeser/Downloads";
+          devices = [ "darnala" "tera" ];
+        };
+      };
+    };
+
 
     # List services that you want to enable:
     flatpak.enable = true;

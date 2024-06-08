@@ -19,6 +19,8 @@
       user = "ceeser";
       dataDir = "/home/ceeser";    # Default folder for new synced folders
       configDir = "/home/ceeser/.config/syncthing";   # Folder for Syncthing's settings and keys
+      overrideDevices = true;     # overrides any devices added or deleted through the WebUI
+      overrideFolders = true;     # overrides any folders added or deleted through the WebUI
     };
     tlp.enable = true;
   };
