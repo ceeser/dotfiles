@@ -36,7 +36,7 @@ in {
 
       # Machine specific config
       (
-        import (../machines + "/${parameters.machine}.nix") {
+        import (./workstations + "/${parameters.machine}.nix") {
           inherit lib;
           inherit config;
           inherit pkgs;
