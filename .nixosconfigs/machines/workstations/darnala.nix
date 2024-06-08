@@ -44,6 +44,12 @@
         user = "ceeser";
       };
     };
+    syncthing = {
+      enable = true;
+      user = "ceeser";
+      dataDir = "/home/ceeser";    # Default folder for new synced folders
+      configDir = "/home/ceeser/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
     udev.packages = with pkgs; [
       uhk-udev-rules
       via

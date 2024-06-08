@@ -14,6 +14,12 @@
 
   services = lib.recursiveUpdate baseMachineTypeServices {
     power-profiles-daemon.enable = false;
+    syncthing = {
+      enable = true;
+      user = "ceeser";
+      dataDir = "/home/ceeser";    # Default folder for new synced folders
+      configDir = "/home/ceeser/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
     tlp.enable = true;
   };
 
