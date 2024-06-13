@@ -146,8 +146,8 @@ keybinds clear-defaults=true {
         bind "k" "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
         bind "l" "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "m" { SwitchToMode "Move"; }
-        bind "o" { FocusNextPane; SwitchToMode "Normal"; }
-        bind "p" { TogglePaneFrames; SwitchToMode "Normal"; }
+        bind "o" { SwitchToMode "Session"; }
+        bind "p" { SwitchToMode "Pane"; }
         bind "r" { SwitchToMode "Resize"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
