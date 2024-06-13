@@ -1,5 +1,5 @@
 layout {
-    tab_template name="tab-compact-bar" {
+    default_tab_template {
         pane {
             children
         }
@@ -7,7 +7,7 @@ layout {
             plugin location="zellij:tab-bar"
         }
     }
-    tab-compact-bar name="Dev" focus=true {
+    tab name="Dev" focus=true {
         pane split_direction="horizontal" {
             pane
             pane split_direction="vertical" {
@@ -16,7 +16,7 @@ layout {
             }
         }
     }
-    tab-compact-bar name="Terminal" {
+    tab name="Terminal" {
         pane
     }
 } 
