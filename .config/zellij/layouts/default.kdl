@@ -1,0 +1,22 @@
+layout {
+    tab_template name="tab-compact-bar" {
+        pane {
+            children
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab-compact-bar name="Dev" focus=true {
+        pane split_direction="horizontal" {
+            pane
+            pane split_direction="vertical" {
+                pane
+                pane
+            }
+        }
+    }
+    tab-compact-bar name="Terminal" {
+        pane
+    }
+} 

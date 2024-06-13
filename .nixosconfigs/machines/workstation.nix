@@ -56,7 +56,7 @@ in {
   imports =
     [
       (../desktop-env.nix)
-      (../tmux.nix)
+      #(../tmux.nix)
 
       # Machine specific config
       (
@@ -94,7 +94,8 @@ in {
         alacritty
         bitwarden-desktop
         pandoc
-        tmuxinator
+        #tmuxinator
+        zellij
 
         ## development
         diff-so-fancy
