@@ -70,6 +70,10 @@
       gdtinit = "git clone --bare $CEESER_DOT_FILES_REPO $CEESER_DOT_FILES_PATH && git --git-dir=$CEESER_DOT_FILES_PATH config --local status.showUntrackedFiles no";
       gdt = "git dotfiles";
 
+      # lazygit
+      lzg = "lazygit";
+      lzgdt = "lazygit --git-dir $HOME/.dotfilesrepo --work-tree $HOME";
+
       # Nix commands
       nec = "nvim ~/.nixosconfigs/configuration.nix"; # edit home config
       ndg = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system"; # delete specified generations
