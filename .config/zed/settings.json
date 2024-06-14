@@ -7,12 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Catppuccin Mocha",
-  "vim_mode": true,
+  "auto_update": false,
+  "buffer_font_size": 14,
+  "features": {
+    // Which inline completion provider to use.
+    "inline_completion_provider": "none"
+  },
+  "show_copilot_suggestions": false,
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+  },
+  "tab_size": 2,
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
+  "theme": "Catppuccin Mocha",
+  "vim_mode": true,
   "ui_font_size": 14,
-  "buffer_font_size": 14
 }
