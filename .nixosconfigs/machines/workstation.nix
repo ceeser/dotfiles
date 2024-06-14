@@ -56,7 +56,6 @@ in {
   imports =
     [
       (../desktop-env.nix)
-      #(../tmux.nix)
 
       # Machine specific config
       (
@@ -94,12 +93,12 @@ in {
         alacritty
         bitwarden-desktop
         pandoc
-        #tmuxinator
         zellij
 
         ## development
         diff-so-fancy
         lazygit
+        zed-editor
         #dive # look into docker image layers
         #podman-tui # status of containers in the terminal
         #podman-compose # start group of containers for dev
