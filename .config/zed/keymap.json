@@ -1,7 +1,24 @@
 [
   {
-    "context": "Editor",
+    "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
+      // window related commands (ctrl-w X)
+      "ctrl-a h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-a l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-a k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-a j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-a shift-h": ["workspace::SwapPaneInDirection", "Left"],
+      "ctrl-a shift-l": ["workspace::SwapPaneInDirection", "Right"],
+      "ctrl-a shift-k": ["workspace::SwapPaneInDirection", "Up"],
+      "ctrl-a shift-j": ["workspace::SwapPaneInDirection", "Down"],
+      "ctrl-a v": "pane::SplitLeft",
+      "ctrl-a s": "pane::SplitUp",
+      "ctrl-a q": "pane::CloseAllItems",
+      "ctrl-a ctrl-q": "pane::CloseAllItems",
+      "ctrl-a o": "workspace::CloseInactiveTabsAndPanes",
+      "ctrl-a ctrl-o": "workspace::CloseInactiveTabsAndPanes",
+      "ctrl-a c": ["workspace::NewFileInDirection", "Right"],
+      "ctrl-a x": "pane::CloseActiveItem",
       "ctrl-f4": "pane::CloseActiveItem",
     }
   }
