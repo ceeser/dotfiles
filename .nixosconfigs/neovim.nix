@@ -31,6 +31,12 @@
         set title
         set ttimeoutlen=0
         set wildmenu
+        setlocal spell
+        setlocal spelllang=en_us
+        setlocal fo+=aw
+        nnoremap <leader>x ZZ
+
+
 
         lua require 'ibl'.setup()
       '';
