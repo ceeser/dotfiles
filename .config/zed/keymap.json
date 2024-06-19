@@ -20,6 +20,7 @@
       "ctrl-a c": ["workspace::NewFileInDirection", "Right"],
       "ctrl-a x": "pane::CloseActiveItem",
       "ctrl-f4": "pane::CloseActiveItem",
+      "ctrl-a p": "project_panel::ToggleFocus",
     }
-  }
+  },
 ]
