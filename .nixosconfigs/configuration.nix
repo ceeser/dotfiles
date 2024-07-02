@@ -11,7 +11,6 @@ let
     bat
     du-dust
     eza
-    starship
   ];
 
   baseServices = {};
@@ -31,6 +30,7 @@ in {
           inherit parameters;
         }
       )
+      (./apps/starship.nix)
       (./apps/fish.nix)
       (./apps/git.nix)
       (./apps/neovim.nix)
