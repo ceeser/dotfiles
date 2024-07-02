@@ -11,6 +11,7 @@ let
     bat
     du-dust
     eza
+    starship
   ];
 
   baseServices = {};
@@ -19,7 +20,6 @@ in {
   imports =
     [
       (/etc/nixos/hardware-configuration.nix)
-      (./programs/starship.nix)
       # Machine Type specific config
       (
         import (./machines + "/${parameters.machineType}.nix") {
