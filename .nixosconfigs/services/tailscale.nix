@@ -1,4 +1,4 @@
-# Config for blocky
+# Config for tailscale
 
 { config, pkgs, ... }:
 

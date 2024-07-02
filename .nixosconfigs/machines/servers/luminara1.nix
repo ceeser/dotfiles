@@ -2,7 +2,7 @@
 
 {
   imports = [
-    (../../apps/blocky.nix)
+    (../../services/blocky.nix)
   ];
 
   environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;

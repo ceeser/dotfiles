@@ -19,6 +19,7 @@ in {
   imports =
     [
       (/etc/nixos/hardware-configuration.nix)
+      (./programs/starship.nix)
       # Machine Type specific config
       (
         import (./machines + "/${parameters.machineType}.nix") {
@@ -30,11 +31,10 @@ in {
           inherit parameters;
         }
       )
-      (./apps/starship.nix)
-      (./apps/fish.nix)
-      (./apps/git.nix)
-      (./apps/neovim.nix)
-      (./apps/tailscale.nix)
+      (./programs/fish.nix)
+      (./programs/git.nix)
+      (./programs/neovim.nix)
+      (./services/tailscale.nix)
     ];
 
   
