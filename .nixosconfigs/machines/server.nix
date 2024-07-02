@@ -19,7 +19,7 @@ let
 
 in {
   imports = [
-    (../pull-dotfiles-repo.nix)
+    (../services/pull-dotfiles-repo.nix)
 
     # Machine specific config
     (

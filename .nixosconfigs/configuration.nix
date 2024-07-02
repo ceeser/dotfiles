@@ -11,15 +11,10 @@ let
     bat
     du-dust
     eza
-    fish
-    git
     starship
-    tailscale
   ];
 
-  baseServices = {
-    tailscale.enable = true;
-  };
+  baseServices = {};
 
 in {
   imports =
@@ -36,10 +31,10 @@ in {
           inherit parameters;
         }
       )
-      (./fish.nix)
-      (./git.nix)
-      (./neovim.nix)
-      (./no-defaults.nix)
+      (./apps/fish.nix)
+      (./apps/git.nix)
+      (./apps/neovim.nix)
+      (./apps/tailscale.nix)
     ];
 
   
@@ -49,8 +44,9 @@ in {
     efi.canTouchEfiVariables = true;
   };
 
-  documentation.nixos.enable = false;
+  documentation.nixos.enable = false; # turn off documentation
 
+  environment.defaultPackages = lib.mkForce []; # no default packages
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";

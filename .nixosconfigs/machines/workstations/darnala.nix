@@ -5,8 +5,8 @@
 
   imports = [
     <nixos-hardware/framework/16-inch/7040-amd>
-    (../../virtualisation.nix)
-    # (../containers.nix)
+    (../../services/virtualisation.nix)
+    # (../services/containers.nix)
   ];
 
   environment.systemPackages = with pkgs; [

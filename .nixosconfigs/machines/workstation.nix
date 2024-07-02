@@ -55,7 +55,7 @@ let
 in {
   imports =
     [
-      (../desktop-gnome.nix)
+      (../apps/desktop-gnome.nix)
 
       # Machine specific config
       (
