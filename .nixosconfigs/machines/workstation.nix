@@ -5,6 +5,15 @@
 { lib, config, pkgs, basePackages, baseServices, parameters, ... }:
 
 let
+  zed-fhs = pkgs.buildFHSUserEnv {
+    name = "zed";
+    targetPkgs = pkgs:
+      with pkgs; [
+        zed-editor
+      ];
+    runScript = "zed";
+  };
+
   baseMachineTypePackages = with pkgs; [
     zenith
   ] ++ basePackages;
@@ -98,7 +107,7 @@ in {
         ## development
         diff-so-fancy
         lazygit
-        zed-editor
+        zed-fhs
         #dive # look into docker image layers
         #podman-tui # status of containers in the terminal
         #podman-compose # start group of containers for dev

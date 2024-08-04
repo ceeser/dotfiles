@@ -16,7 +16,7 @@
   "show_copilot_suggestions": false,
   "tab_bar": {
     "show": true,
-    "show_nav_history_buttons": false,
+    "show_nav_history_buttons": false
   },
   "tab_size": 2,
   "telemetry": {
@@ -25,5 +25,5 @@
   },
   "theme": "Catppuccin Mocha",
   "vim_mode": true,
-  "ui_font_size": 14,
+  "ui_font_size": 14
 }
