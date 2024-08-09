@@ -42,6 +42,7 @@ in {
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
+    generic-extlinux-compatible.configurationLimit = 10;
   };
 
   documentation.nixos.enable = false; # turn off documentation
