@@ -99,6 +99,7 @@ in {
       isNormalUser = true;
       packages = with pkgs; [
         ## general apps
+        aerc
         alacritty
         bitwarden-desktop
         pandoc
