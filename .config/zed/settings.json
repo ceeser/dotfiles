@@ -8,12 +8,15 @@
 // from the command palette or from `Zed` application menu.
 {
   "auto_update": false,
+  "cursor_blink": false,
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 14,
   "features": {
     // Which inline completion provider to use.
     "inline_completion_provider": "none"
   },
+  "hour_format": "hour24",
+  "relative_line_numbers": true,
   "show_copilot_suggestions": false,
   "tab_bar": {
     "show": true,
