@@ -29,5 +29,6 @@
   },
   "theme": "Catppuccin Mocha",
   "vim_mode": true,
+  "wrap_guides": [120, 160],
   "ui_font_size": 14
 }
