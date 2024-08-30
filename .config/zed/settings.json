@@ -8,6 +8,11 @@
 // from the command palette or from `Zed` application menu.
 {
   "auto_update": false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 2000
+    }
+  },
   "cursor_blink": false,
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 14,

@@ -5,11 +5,13 @@
 { lib, config, pkgs, basePackages, baseServices, parameters, ... }:
 
 let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+
   zed-fhs = pkgs.buildFHSUserEnv {
     name = "zed";
     targetPkgs = pkgs:
       with pkgs; [
-        zed-editor
+        unstable.zed-editor
       ];
     runScript = "zed";
   };
