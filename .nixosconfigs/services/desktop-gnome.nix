@@ -8,7 +8,7 @@
   console.useXkbConfig = true; # Enable the GNOME Desktop Environment.
 
   environment = {
-    gnome.excludePackages = with pkgs.gnome; [
+    gnome.excludePackages = with pkgs; [
       baobab # disk usage analyzer
       epiphany # web browser
       simple-scan # document scanner
@@ -23,9 +23,9 @@
       gnome-music
       gnome-weather
       gnome-clocks
-      pkgs.gnome-text-editor
-      pkgs.gnome-connections
-      pkgs.gnome-console
+      gnome-text-editor
+      gnome-connections
+      gnome-console
       gnome-calendar
       #gnome-screenshot
       #gnome-system-monitor

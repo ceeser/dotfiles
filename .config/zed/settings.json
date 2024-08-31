@@ -28,6 +28,9 @@
     "show_nav_history_buttons": false
   },
   "tab_size": 2,
+  "tabs": {
+    "git_status": true
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
