@@ -61,7 +61,7 @@ let
     # List services that you want to enable:
     flatpak.enable = true;
     fwupd.enable = true;
-    printing.enable = true; # Enable CUPS to print documents
+    printing.enable = false; # Enable CUPS to print documents
   }; 
 
 in {
