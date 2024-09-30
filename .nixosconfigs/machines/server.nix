@@ -41,8 +41,8 @@ in {
 
   system.autoUpgrade = {
     allowReboot = true;
-    channel = "https://nixos.org/channels/nixos-unstable-small";
-    dates = "03:00";
+    channel = "https://nixos.org/channels/nixos-unstable";
+    dates = "Sat *-*-* 03:00:00"; # every saturday at 3 am
     enable = true;
     flags = [
       "-I"
