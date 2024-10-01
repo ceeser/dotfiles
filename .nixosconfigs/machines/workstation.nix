@@ -6,6 +6,15 @@
 
 let
   baseMachineTypePackages = with pkgs; [
+    ## development
+    ## rust
+    cargo
+    clippy
+    rust-analyzer
+    rustc
+    rustfmt
+
+    ## misc
     zenith
   ] ++ basePackages;
 
@@ -100,19 +109,6 @@ in {
         diff-so-fancy
         lazygit
         zed-editor
-
-        ### rust
-        cargo
-        cargo-audit
-        cargo-expand
-        cargo-tarpaulin
-        cargo-watch
-        clippy
-        openssl
-        pkg-config
-        rust-analyzer
-        rustc
-        rustfmt
 
         #dive # look into docker image layers
         #podman-tui # status of containers in the terminal
