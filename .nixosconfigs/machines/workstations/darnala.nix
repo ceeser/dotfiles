@@ -16,6 +16,7 @@
   ] ++ baseMachineTypePackages;
 
   hardware.keyboard.uhk.enable = true;
+  hardware.keyboard.qmk.enable = true;
 
   networking.hostName = "darnala"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
