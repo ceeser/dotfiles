@@ -11,12 +11,13 @@
 
       # Env Vars
       set -gx BLOCKSIZE 1k
-      set -gx COLUMNS 120
-      set -gx EDITOR vim
 
       set -gx CEESER_DOT_FILES_REPO https://github.com/ceeser/dotfiles
       set -gx CEESER_DOT_FILES_PATH $HOME/.dotfilesrepo 
       set -gx CEESER_RESTIC_PASSWORDS_PATH $HOME/.restic/.passwords
+      set -gx COLUMNS 120
+
+      set -gx EDITOR vim
 
       set -gx HOMEBREW_NO_ANALYTICS 1
       set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
@@ -29,6 +30,8 @@
       set -gx LC_CTYPE en_US.UTF-8
 
       set -gx OS $(uname)
+
+      set -gx RUST_BACKTRACE full
 
       set -gx TERM xterm-256color
 

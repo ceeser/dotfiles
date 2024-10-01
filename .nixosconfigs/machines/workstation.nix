@@ -5,18 +5,6 @@
 { lib, config, pkgs, basePackages, baseServices, parameters, ... }:
 
 let
-  #unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-
-  zed-fhs = pkgs.buildFHSUserEnv {
-    name = "zed";
-    targetPkgs = pkgs:
-      with pkgs; [
-        #unstable.zed-editor
-        zed-editor
-      ];
-    runScript = "zed";
-  };
-
   baseMachineTypePackages = with pkgs; [
     zenith
   ] ++ basePackages;
@@ -111,7 +99,21 @@ in {
         ## development
         diff-so-fancy
         lazygit
-        zed-fhs
+        zed-editor
+
+        ### rust
+        cargo
+        cargo-audit
+        cargo-expand
+        cargo-tarpaulin
+        cargo-watch
+        clippy
+        openssl
+        pkg-config
+        rust-analyzer
+        rustc
+        rustfmt
+
         #dive # look into docker image layers
         #podman-tui # status of containers in the terminal
         #podman-compose # start group of containers for dev
