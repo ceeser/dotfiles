@@ -103,6 +103,7 @@ in {
         alacritty
         bitwarden-desktop
         pandoc
+        rates
         zellij
 
         ## development
