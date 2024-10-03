@@ -79,11 +79,18 @@ in {
       )
     ];
 
+  hardware.bluetooth.settings = {
+    General = {
+      ControllerMode = "bredr";
+    };
+    Policy = {
+      AutoEnable = "true";
+    };
+  };
+
   hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true; # added for pipewire
-
-  #sound.enable = true;
 
   users.users = {
     guest = {
