@@ -12,9 +12,9 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   services = lib.recursiveUpdate baseMachineTypeServices {
+    tailscale.permitCertUid = "caddy";
     caddy = {
-      enable = false;
-      #settings.logging.logs."default".level = "DEBUG";
+      enable = true;
       virtualHosts."aayla3.bun-buri.ts.net".extraConfig = ''
         handle_path /portainer/* {
           rewrite * {path}
@@ -24,8 +24,8 @@
           header_up X-Scheme https
           header_up X-Script-Name /calibre
         }
-        reverse_proxy /paperless* localhost:8000
-        reverse_proxy /vaultwarden* localhost:8084
+        reverse_proxy /paperless* localhost:8084
+        reverse_proxy /vaultwarden* localhost:8085
       '';
     };
   };
