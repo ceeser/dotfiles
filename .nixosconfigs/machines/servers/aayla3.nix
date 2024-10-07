@@ -11,7 +11,24 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
-  services = lib.recursiveUpdate baseMachineTypeServices {};
+  services = lib.recursiveUpdate baseMachineTypeServices {
+    caddy = {
+      enable = false;
+      #settings.logging.logs."default".level = "DEBUG";
+      virtualHosts."aayla3.bun-buri.ts.net".extraConfig = ''
+        handle_path /portainer/* {
+          rewrite * {path}
+          reverse_proxy localhost:9000
+        }
+        reverse_proxy /calibre* localhost:8083 {
+          header_up X-Scheme https
+          header_up X-Script-Name /calibre
+        }
+        reverse_proxy /paperless* localhost:8000
+        reverse_proxy /vaultwarden* localhost:8084
+      '';
+    };
+  };
 
   time.timeZone = "America/Toronto";
 

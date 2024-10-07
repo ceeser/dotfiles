@@ -10,7 +10,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    darktable
     restic
+    shotwell
     uhk-agent
     via
   ] ++ baseMachineTypePackages;
