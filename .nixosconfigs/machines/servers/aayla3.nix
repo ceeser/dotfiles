@@ -28,6 +28,17 @@
         reverse_proxy /vaultwarden* localhost:8085
       '';
     };
+    vaultwarden = {
+      enable = true;
+      dbBackend = "sqlite";
+      config = {
+        DOMAIN = "https://aayla3.bun-buri.ts.net/vaultwarden";
+        ROCKET_ADDRESS = "0.0.0.0";
+        ROCKET_PORT = "8085";
+        ROCKET_LOG = "critical";
+        SIGNUPS_ALLOWED = false;
+      };
+    };
   };
 
   time.timeZone = "America/Toronto";
