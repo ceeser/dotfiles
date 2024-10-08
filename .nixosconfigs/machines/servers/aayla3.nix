@@ -28,6 +28,16 @@
         reverse_proxy /vaultwarden* localhost:8085
       '';
     };
+    calibre-web = {
+      enable = true;
+      listen.port = 8083;
+      openFirewall = false;
+      options = {
+        calibreLibrary = "/var/lib/calibre-web/books";
+        enableBookUploading = true;
+        enableBookConversion = true;
+      };
+    };
     vaultwarden = {
       enable = true;
       dbBackend = "sqlite";
