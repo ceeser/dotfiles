@@ -6,7 +6,7 @@
   services.glance = {
     enable = true;
     settings = {
-      base-url = "/home";
+      #base-url = "/home";
       server.host = "0.0.0.0";
       server.port = 38295;
       pages = [
