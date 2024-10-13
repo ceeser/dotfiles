@@ -3,6 +3,7 @@
 {
   imports = [
     (../../services/blocky.nix)
+    (../../services/glance-dash.nix)
   ];
 
   environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
@@ -16,6 +17,9 @@
       enable = true;
       virtualHosts."photos.ceeser.com".extraConfig = ''
         reverse_proxy aayla3.bun-buri.ts.net:2342
+      '';
+      virtualHosts."home.ceeser.com".extraConfig = ''
+        reverse_proxy localhost:38295
       '';
     };
   };
