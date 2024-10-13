@@ -14,7 +14,7 @@
         logo-text = "C";
       };
       theme = {
-        light = "false";
+        light = false;
         background-color = "hsl(240, 21%, 15%)";
         contrast-multiplier = 1.2;
         primary-color = "hsl(217 92% 83%)";
