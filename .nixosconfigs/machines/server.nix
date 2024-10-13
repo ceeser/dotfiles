@@ -22,7 +22,6 @@ let
 in {
   imports = [
     (../services/pull-dotfiles-repo.nix)
-    (../services/portainer-agent.nix)
 
     # Machine specific config
     (
@@ -56,7 +55,7 @@ in {
 
   users.users = {
     ceeser = {
-      extraGroups = [ "networkmanager" "wheel" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" ];
       initialHashedPassword = "$y$j9T$XaUpu.uuIDnfAYfzPxKqW.$LF6faepJC1x3F2akjhbv0fUkl314I7E3XmVekKL7TBA";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
