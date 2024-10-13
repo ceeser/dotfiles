@@ -22,6 +22,7 @@ let
 in {
   imports = [
     (../services/pull-dotfiles-repo.nix)
+    (../services/portainer-agent.nix)
 
     # Machine specific config
     (
@@ -62,31 +63,6 @@ in {
         "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBADbQB9eZMIYo0l+CGxMnqNuWjCVqUhEKFOpWpJG0OqNkiqvozTcSYOu8MggCjDOFRzxn4rnN3Tyzb/gtXZREBTCFAF8ZBymZ4ZJYfFZn0C5vqI2szGrHRbhcu/YMo6aJwxbkQFZ2leXkyCKYCXuFYTtNCu1MxBw3iDn2MlGjK2FH0m3dA== ceeser"
       ];
     }; 
-  };
-  
-  virtualisation.docker.enable = true;
-  virtualisation.oci-containers.backend = "docker";
-
-  virtualisation.oci-containers.containers.portainer-agent = {
-    autoStart = true;
-    extraOptions = [ "--privileged" ];
-    image = "portainer/agent";
-    ports = [
-      "0.0.0.0:9001:9001"
-    ];
-    volumes = [
-      "/var/run/docker.sock:/var/run/docker.sock"
-      "/var/run/docker/volumes:/var/run/docker/volumes"
-    ];
-  };
-
-  virtualisation.oci-containers.containers.watchtower = {
-    autoStart = true;
-    extraOptions = [ "--privileged" ];
-    image = "containrrr/watchtower";
-    volumes = [
-      "/var/run/docker.sock:/var/run/docker.sock"
-    ];
   };
 
   xdg.icons.enable  = false;

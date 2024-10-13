@@ -1,4 +1,4 @@
-# Config for neovim
+# Config for desktop hypervisor
 
 { config, pkgs, ... }:
 
