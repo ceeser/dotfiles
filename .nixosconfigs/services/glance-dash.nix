@@ -27,7 +27,6 @@
             {
               size = "small";
               widgets = [
-                { type = "calendar"; }
                 {
                   type = "bookmarks";
                   groups = [
@@ -67,6 +66,17 @@
                     }
                   ];
                 }
+                {
+                  type = "markets";
+                  markets = [
+                    { name = "S&P 500"; symbol = "SPY"; }
+                    { name = "Apple"; symbol = "AAPL"; }
+                    { name = "Google"; symbol = "GOOGL"; }
+                    { name = "Nvidia"; symbol = "NVDA"; }
+                    { name = "AMD"; symbol = "AMD"; }
+                    { name = "Meta"; symbol = "META"; }
+                  ];
+                }
               ];
             }
             {
@@ -87,15 +97,15 @@
             {
               size = "small";
               widgets = [
+                { type = "calendar"; }
                 {
-                  type = "markets";
-                  markets = [
-                    { name = "S&P 500"; symbol = "SPY"; }
-                    { name = "Apple"; symbol = "AAPL"; }
-                    { name = "Google"; symbol = "GOOGL"; }
-                    { name = "Nvidia"; symbol = "NVDA"; }
-                    { name = "AMD"; symbol = "AMD"; }
-                    { name = "Meta"; symbol = "META"; }
+                  type = "clock";
+                  hour-format = "24h";
+                  timezones = [
+                    { label = "San Francisco"; timezone = "America/Los_Angeles"; }
+                    { label = "New York"; timezone = "America/New_York"; }
+                    { label = "London"; timezone = "Europe/London"; }
+                    { label = "Melbourne"; timezone = "Australia/Melbourne"; }
                   ];
                 }
               ];
