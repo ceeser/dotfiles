@@ -56,7 +56,7 @@
                     { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
                   ];
                 }
-                { type = "hacker-news"; collapse-after = 6; }
+                { type = "hacker-news"; }
               ];
             }
             {
