@@ -20,7 +20,6 @@
       '';
       virtualHosts."luminara1.bun-buri.ts.net".extraConfig = ''
         handle_path /home/* {
-          rewrite * {path}
           reverse_proxy localhost:38295
         }
       '';
