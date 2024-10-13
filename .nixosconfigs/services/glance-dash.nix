@@ -30,14 +30,37 @@
                   type = "bookmarks";
                   groups = [
                     {
-                      title = "Homelab";
-                      color = "hsl(10 70% 50%)";
                       links = [
                         { title = "Books"; url = "https://aayla3.bun-buri.ts.net/calibre/";}
                         { title = "Documents"; url = "https://aayla3.bun-buri.ts.net/paperless/accounts/login/?next=/paperless/";}
                         { title = "Passwords"; url = "https://aayla3.bun-buri.ts.net/vaultwarden/#/login";}
                         { title = "Photos"; url = "https://photos.ceeser.com/";}
                         { title = "Sync"; url = "http://127.0.0.1:8384/#";}
+                      ];
+                    }
+                    {
+                      title = "Finance";
+                      color = "hsl(10 70% 50%)";
+                      links = [
+                        { title = "Carta"; url = "https://app.carta.com/accounts/login";}
+                        { title = "Chase"; url = "https://secure.chase.com/web/auth/dashboard#/dashboard/index/index";}
+                        { title = "EQ Bank"; url = "https://secure.eqbank.ca/login";}
+                        { title = "Kraken"; url = "https://www.kraken.com/sign-in";}
+                        { title = "N26"; url = "https://app.n26.com/login";}
+                        { title = "Neo"; url = "https://member.neofinancial.com/login";}
+                        { title = "Privacy"; url = "https://privacy.com/home";}
+                        { title = "Robinhood"; url = "https://robinhood.com/us/en/";}
+                        { title = "Splitwise"; url = "https://www.splitwise.com/";}
+                        { title = "TD"; url = "https://www.td.com/ca/en/personal-banking/";}
+                        { title = "WealthSimple"; url = "https://www.wealthsimple.com/en-ca/";}
+                        { title = "Wise"; url = "https://wise.com/";}
+                      ];
+                    }
+                    {
+                      title = "Tech";
+                      color = "hsl(200 50% 50%)";
+                      links = [
+                        { title = "Oracle Cloud"; url = "https://cloud.oracle.com";}
                       ];
                     }
                   ];
