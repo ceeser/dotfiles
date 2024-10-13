@@ -79,7 +79,7 @@
                     { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
                   ];
                 }
-                { type = "hacker-news"; }
+                { type = "hacker-news"; collapse-after = 30; }
               ];
             }
             {
@@ -89,6 +89,11 @@
                   type = "markets";
                   markets = [
                     { name = "S&P 500"; symbol = "SPY"; }
+                    { name = "Apple"; symbol = "AAPL"; }
+                    { name = "Google"; symbol = "GOOGL"; }
+                    { name = "Nvidia"; symbol = "NVDA"; }
+                    { name = "AMD"; symbol = "AMD"; }
+                    { name = "Meta"; symbol = "META"; }
                   ];
                 }
               ];
