@@ -23,7 +23,7 @@
           header_up X-Scheme https
           header_up X-Script-Name /calibre
         }
-        reverse_proxy /paperless* localhost:8084
+        reverse_proxy /paperless* localhost:38454
         reverse_proxy /vaultwarden* localhost:8085
       '';
     };
@@ -52,6 +52,21 @@
           };
         }
       ];
+    };
+    paperless = {
+      enable = true;
+      address = "0.0.0.0";
+      port = 38454;
+      settings = {
+        PAPERLESS_URL = "https://aayla3.bun-buri.ts.net";
+        PAPERLESS_FORCE_SCRIPT_NAME = "/paperless";
+        PAPERLESS_STATIC_URL = "/paperless/static/";
+        PAPERLESS_OCR_USER_ARGS = {
+          invalidate_digital_signatures = true;
+          optimize = 1;
+          pdfa_image_compression = "lossless";
+        };
+      };
     };
     photoprism = {
       enable = true;
