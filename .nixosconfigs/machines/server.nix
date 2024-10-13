@@ -5,7 +5,9 @@
 { lib, config, pkgs, basePackages, baseServices, parameters, ... }:
 
 let
-  baseMachineTypePackages = with pkgs; [] ++ basePackages;
+  baseMachineTypePackages = with pkgs; [
+    diff-so-fancy
+  ] ++ basePackages;
 
   baseMachineTypeServices = lib.recursiveUpdate baseServices {
     openssh = {
@@ -58,9 +60,6 @@ in {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBADbQB9eZMIYo0l+CGxMnqNuWjCVqUhEKFOpWpJG0OqNkiqvozTcSYOu8MggCjDOFRzxn4rnN3Tyzb/gtXZREBTCFAF8ZBymZ4ZJYfFZn0C5vqI2szGrHRbhcu/YMo6aJwxbkQFZ2leXkyCKYCXuFYTtNCu1MxBw3iDn2MlGjK2FH0m3dA== ceeser"
-      ];
-      packages = with pkgs; [
-        diff-so-fancy
       ];
     }; 
   };
