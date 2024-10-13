@@ -6,9 +6,11 @@
   services.glance = {
     enable = true;
     settings = {
-      base-url = "/home";
-      server.host = "0.0.0.0";
-      server.port = 38295;
+      server = {
+        base-url = "/home";
+        host = "0.0.0.0";
+        port = 38295;
+      };
       branding = {
         hide-footer = true;
         logo-text = "C";

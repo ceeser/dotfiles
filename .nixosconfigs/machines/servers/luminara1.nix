@@ -18,8 +18,11 @@
       virtualHosts."photos.ceeser.com".extraConfig = ''
         reverse_proxy aayla3.bun-buri.ts.net:2342
       '';
-      virtualHosts."home.ceeser.com".extraConfig = ''
-        reverse_proxy localhost:38295
+      virtualHosts."luminara1.bun-buri.ts.net".extraConfig = ''
+        handle_path /home/* {
+          rewrite * {path}
+          reverse_proxy localhost:38295
+        }
       '';
     };
   };

@@ -12,7 +12,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   services = lib.recursiveUpdate baseMachineTypeServices {
-    tailscale.permitCertUid = "caddy";
     caddy = {
       enable = true;
       virtualHosts."aayla3.bun-buri.ts.net".extraConfig = ''
