@@ -43,17 +43,10 @@
       };
 
       core = {
-        excludesfile = "/Users/ceeser/.gitignore_global";
+        excludesfile = "$HOME/.gitignore";
         editor = "vim";
         pager = "diff-so-fancy | less --tabs=2 -RFX";
       }; 
-
-      difftool = {
-        "sourcetree" = {
-           cmd = "opendiff \"$LOCAL\" \"$REMOTE\""; 
-           path = "";
-        };
-      };
 
       filter = {
         lfs = {
@@ -70,21 +63,6 @@
 
       interactive = {
         diffFilter = "diff-so-fancy --patch";
-      };
-
-      merge = {
-        tool = "sublime";
-      };
-
-      mergetool = {
-        "sourcetree" = {
-           cmd = "Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\""; 
-           trustExitCode = "true";
-        };
-        "sublime" = {
-          cmd = "sublime -w $MERGED";
-          trustExitCode = "false";
-        };
       };
 
       push = {
