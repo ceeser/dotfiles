@@ -38,6 +38,58 @@
         enableBookConversion = true;
       };
     };
+    mysql = {
+      enable = false;
+      package = pkgs.mariadb;
+      initialDatabases = [
+        { name = "photoprism"; }
+      ];
+      ensureDatabases = [ "photoprism" ];
+      ensureUsers = [
+        {
+          name = "photoprism";
+          ensurePermissions = {
+            "photoprism.*" = "ALL PRIVILEGES";
+          };
+        }
+      ];
+    };
+    photoprism = {
+      enable = false;
+      address = "0.0.0.0";
+      port = 8086;
+      originalsPath = "/var/lib/private/photoprism/originals";
+      settings = {
+        PHOTOPRISM_AUTH_MODE = "password";                    # authentication mode (public, password)
+        PHOTOPRISM_ADMIN_USER =  "ceeser";
+        PHOTOPRISM_ADMIN_PASSWORD = "password";
+        PHOTOPRISM_DATABASE_DRIVER = "mysql";
+        PHOTOPRISM_DATABASE_NAME = "photoprism";
+        PHOTOPRISM_DATABASE_SERVER = "/run/mysqld/mysqld.sock";
+        PHOTOPRISM_DATABASE_USER = "photoprism";
+        #PHOTOPRISM_SITE_URL = "https://photos.ceeser.com/";   # server URL in the format "http(s)://domain.name(:port)/(path)"
+        PHOTOPRISM_SITE_URL = "https://aayla3.bun-buri.ts.net/photos";   # server URL in the format "http(s)://domain.name(:port)/(path)"
+        PHOTOPRISM_ORIGINALS_LIMIT = "5000";                    # file size limit for originals in MB (increase for high-res video)
+        PHOTOPRISM_HTTP_COMPRESSION = "gzip";                 # improves transfer speed and bandwidth utilization (none or gzip)
+        PHOTOPRISM_LOG_LEVEL = "error";                       # log level: trace, debug, info, warning, error, fatal, or panic
+        PHOTOPRISM_READONLY = "true";                         # do not modify originals directory (reduced functionality)
+        PHOTOPRISM_EXPERIMENTAL = "false";                    # enables experimental features
+        PHOTOPRISM_DISABLE_CHOWN = "true";                    # disables updating storage permissions via chmod and chown on startup
+        PHOTOPRISM_DISABLE_WEBDAV = "false";                  # disables built-in WebDAV server
+        PHOTOPRISM_DISABLE_SETTINGS = "false";                # disables settings UI and API
+        PHOTOPRISM_DISABLE_TENSORFLOW = "true";               # disables all features depending on TensorFlow
+        PHOTOPRISM_DISABLE_FACES = "true";                    # disables face detection and recognition (requires TensorFlow)
+        PHOTOPRISM_DISABLE_CLASSIFICATION = "true";           # disables image classification (requires TensorFlow)
+        PHOTOPRISM_DISABLE_VECTORS = "false";                 # disables vector graphics support
+        PHOTOPRISM_DISABLE_RAW = "false";                     # disables indexing and conversion of RAW images
+        PHOTOPRISM_RAW_PRESETS = "false";                     # enables applying user presets when converting RAW images (reduces performance)
+        PHOTOPRISM_JPEG_QUALITY = "85";                         # a higher value increases the quality and file size of JPEG images and thumbnails (25-100)
+        PHOTOPRISM_DETECT_NSFW = "false";                     # automatically flags photos as private that MAY be offensive (requires TensorFlow)
+        PHOTOPRISM_UPLOAD_NSFW = "true";                      # allows uploads that MAY be offensive (no effect without TensorFlow)
+        PHOTOPRISM_SITE_CAPTION = "Photos";
+        PHOTOPRISM_HTTP_CACHE_PUBLIC = "true";
+      };
+    };
     vaultwarden = {
       enable = true;
       dbBackend = "sqlite";
