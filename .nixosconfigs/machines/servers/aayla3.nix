@@ -55,20 +55,19 @@
       ];
     };
     photoprism = {
-      enable = false;
+      enable = true;
       address = "0.0.0.0";
-      port = 8086;
+      port = 2342;
       originalsPath = "/var/lib/private/photoprism/originals";
       settings = {
         PHOTOPRISM_AUTH_MODE = "password";                    # authentication mode (public, password)
         PHOTOPRISM_ADMIN_USER =  "ceeser";
         PHOTOPRISM_ADMIN_PASSWORD = "password";
-        PHOTOPRISM_DATABASE_DRIVER = "mysql";
-        PHOTOPRISM_DATABASE_NAME = "photoprism";
-        PHOTOPRISM_DATABASE_SERVER = "/run/mysqld/mysqld.sock";
-        PHOTOPRISM_DATABASE_USER = "photoprism";
-        #PHOTOPRISM_SITE_URL = "https://photos.ceeser.com/";   # server URL in the format "http(s)://domain.name(:port)/(path)"
-        PHOTOPRISM_SITE_URL = "https://aayla3.bun-buri.ts.net/photos";   # server URL in the format "http(s)://domain.name(:port)/(path)"
+        #PHOTOPRISM_DATABASE_DRIVER = "mysql";
+        #PHOTOPRISM_DATABASE_NAME = "photoprism";
+        #PHOTOPRISM_DATABASE_SERVER = "/run/mysqld/mysqld.sock";
+        #PHOTOPRISM_DATABASE_USER = "photoprism";
+        PHOTOPRISM_SITE_URL = "https://photos.ceeser.com/";   # server URL in the format "http(s)://domain.name(:port)/(path)"
         PHOTOPRISM_ORIGINALS_LIMIT = "5000";                    # file size limit for originals in MB (increase for high-res video)
         PHOTOPRISM_HTTP_COMPRESSION = "gzip";                 # improves transfer speed and bandwidth utilization (none or gzip)
         PHOTOPRISM_LOG_LEVEL = "error";                       # log level: trace, debug, info, warning, error, fatal, or panic
