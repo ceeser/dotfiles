@@ -15,7 +15,8 @@
 
   systemd.services."pull-dotfiles-repo" = {
     script = ''
-      /run/current-system/sw/bin/git --git-dir=/home/ceeser/.dotfilesrepo --work-tree=/home/ceeser/ pull
+      test "$(/run/current-system/sw/bin/git --git-dir=/home/ceeser/.dotfilesrepo --work-tree=/home/ceeser/ branch --show-current)" = "main"
+      /run/current-system/sw/bin/git --git-dir=/home/ceeser/.dotfilesrepo --work-tree=/home/ceeser/ pull --ff-only
     '';
     serviceConfig = {
       OnCalendar = "daily";
