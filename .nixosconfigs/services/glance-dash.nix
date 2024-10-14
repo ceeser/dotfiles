@@ -31,17 +31,19 @@
               size = "small";
               widgets = [
                 {
+                  type = "monitor";
+                  title = "Services";
+                  sites = [
+                    { title = "Books"; url = "https://aayla3.bun-buri.ts.net/calibre/";}
+                    { title = "Documents"; url = "https://aayla3.bun-buri.ts.net/paperless/accounts/login/?next=/paperless/";}
+                    { title = "Passwords"; url = "https://aayla3.bun-buri.ts.net/vaultwarden/#/login";}
+                    { title = "Photos"; url = "https://photos.ceeser.com/";}
+                    { title = "Sync"; url = "http://127.0.0.1:8384/#";}
+                  ];
+                }
+                {
                   type = "bookmarks";
                   groups = [
-                    {
-                      links = [
-                        { title = "Books"; url = "https://aayla3.bun-buri.ts.net/calibre/";}
-                        { title = "Documents"; url = "https://aayla3.bun-buri.ts.net/paperless/accounts/login/?next=/paperless/";}
-                        { title = "Passwords"; url = "https://aayla3.bun-buri.ts.net/vaultwarden/#/login";}
-                        { title = "Photos"; url = "https://photos.ceeser.com/";}
-                        { title = "Sync"; url = "http://127.0.0.1:8384/#";}
-                      ];
-                    }
                     {
                       title = "Finance";
                       color = "hsl(10 70% 50%)";
@@ -85,6 +87,12 @@
             {
               size = "full";
               widgets = [
+                {
+                  type = "search";
+                  search-engine = "duckduckgo";
+                  autofocus = true;
+                  new-tab = true;
+                }
                 {
                   type = "rss";
                   style = "horizontal-cards";
