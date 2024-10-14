@@ -99,6 +99,7 @@
                   limit = 20;
                   feeds = [
                     { title = "The Grumpy Economist"; url = "https://www.grumpy-economist.com/feed"; }
+                    { title = "System76 Blog"; url = "https://blog.system76.com/rss"; }
                     { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
                   ];
                 }
