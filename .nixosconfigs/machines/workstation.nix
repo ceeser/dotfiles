@@ -65,6 +65,7 @@ in {
   imports =
     [
       (../services/desktop-gnome.nix)
+      (../programs/lazygit.nix)
 
       # Machine specific config
       (
@@ -115,7 +116,6 @@ in {
 
         ## development
         diff-so-fancy
-        lazygit
         zed-editor
 
         #dive # look into docker image layers
