@@ -35,6 +35,8 @@
 
       set -gx TERM xterm-256color
 
+      set -gx NIXOS_CONFIG /home/ceeser/.nixosconfigs/configuration.nix
+
       # Init
       starship init fish | source
     '';

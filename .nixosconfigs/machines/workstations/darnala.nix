@@ -13,7 +13,7 @@
     darktable
     restic
     shotwell
-    uhk-agent
+    #uhk-agent
     via
   ] ++ baseMachineTypePackages;
 
@@ -56,7 +56,7 @@
       overrideFolders = true;     # overrides any folders added or deleted through the WebUI
     };
     udev.packages = with pkgs; [
-      uhk-udev-rules
+      #uhk-udev-rules
       via
     ];
   };
