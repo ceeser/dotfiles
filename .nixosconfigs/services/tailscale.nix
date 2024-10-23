@@ -7,4 +7,6 @@
     enable = true;
     permitCertUid = "caddy";
   };
+
+  networking.firewall.trustedInterfaces = [ "tailscaled" ];
 }

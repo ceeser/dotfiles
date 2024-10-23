@@ -71,10 +71,7 @@ in {
   i18n.defaultLocale = "en_CA.UTF-8"; # Select internationalisation properties.
 
   networking = {
-    firewall = {
-      enable = true;
-      trustedInterfaces = [ "tailscaled" ];
-    };
+    firewall.enable = true;
     networkmanager.enable = true; # Enable networking
   };
 
