@@ -17,7 +17,7 @@
     via
   ] ++ baseMachineTypePackages;
 
-  hardware.keyboard.uhk.enable = true;
+  hardware.keyboard.uhk.enable = false;
   hardware.keyboard.qmk.enable = true;
 
   networking.hostName = "darnala"; # Define your hostname.
