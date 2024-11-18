@@ -14,7 +14,9 @@ let
     starship
   ];
 
-  baseServices = {};
+  baseServices = {
+    bpftune.enable = true;
+  };
 
 in {
   imports =
