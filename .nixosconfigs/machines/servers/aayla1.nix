@@ -3,7 +3,7 @@
 {
   boot.loader.grub = {
      efiSupport = true;
-     #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+     efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
      device = "nodev";
   };
 
