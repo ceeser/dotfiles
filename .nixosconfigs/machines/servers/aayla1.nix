@@ -1,6 +1,12 @@
 { lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
 
 {
+  boot.loader.grub = {
+     efiSupport = true;
+     #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+     device = "nodev";
+  };
+
   environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
   networking.hostName = "aayla1"; # Define your hostname.
 
