@@ -58,7 +58,7 @@
           "--keep-monthly 12"
           "--keep-yearly 15"
         ];
-        repository = "rest:http://aayla1.bun-buri.ts.net:8000";
+        repository = "rest:http://aayla1.bun-buri.ts.net:8000/ceeserdocuments";
         timerConfig = {
           OnCalendar = "daily";
           Persistent = true;
