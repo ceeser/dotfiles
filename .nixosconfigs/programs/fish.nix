@@ -95,6 +95,7 @@
       # Restic backups
       ## ceeser
       rc = "restic -r $HOME/data/backups/ceeser/documents -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
+      rcr = "restic -r rest:http://aayla1.bun-buri.ts.net:8000 -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
     };
   };
 }

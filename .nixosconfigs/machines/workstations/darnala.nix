@@ -46,6 +46,25 @@
         };
         user = "ceeser";
       };
+      ceeserdocumentsremote = {
+        initialize = true;
+        passwordFile = "/home/ceeser/.restic/.passwords/.ceeser";
+        paths = [
+          "/home/ceeser/Documents"
+        ];
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 15"
+        ];
+        repository = "rest:http://aayla1.bun-buri.ts.net:8000";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+        };
+        user = "ceeser";
+      };
     };
     syncthing = {
       enable = true;
