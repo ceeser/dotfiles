@@ -11,7 +11,10 @@
   networking.hostName = "aayla1"; # Define your hostname.
 
   services = lib.recursiveUpdate baseMachineTypeServices {
-    restic.server.enable = true;
+    restic.server = {
+      enable = true;
+      extraFlags = [ "--no-auth" ];
+    };
   };
 
   time.timeZone = "America/Toronto";
