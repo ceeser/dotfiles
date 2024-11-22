@@ -109,6 +109,62 @@
         PHOTOPRISM_UPLOAD_NSFW = "true";                      # allows uploads that MAY be offensive (no effect without TensorFlow)
       };
     };
+     restic.backups = {
+      calibreweb = {
+        initialize = true;
+        passwordFile = "/home/ceeser/.restic/.passwords/.calibreweb";
+        paths = [
+          "/var/lib/calibre-web"
+        ];
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 15"
+        ];
+        repository = "rest:http://aayla1.bun-buri.ts.net:8000/calibreweb";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+        };
+      };
+      paperless = {
+        initialize = true;
+        passwordFile = "/home/ceeser/.restic/.passwords/.paperless";
+        paths = [
+          "/var/lib/paperless"
+        ];
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 15"
+        ];
+        repository = "rest:http://aayla1.bun-buri.ts.net:8000/paperless";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+        };
+      };
+      photoprism = {
+        initialize = true;
+        passwordFile = "/home/ceeser/.restic/.passwords/.photoprism";
+        paths = [
+          "/var/lib/private/photoprism"
+        ];
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 15"
+        ];
+        repository = "rest:http://aayla1.bun-buri.ts.net:8000/photoprism";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+        };
+      };
+    };
     vaultwarden = {
       enable = true;
       dbBackend = "sqlite";
