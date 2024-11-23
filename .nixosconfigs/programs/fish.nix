@@ -15,6 +15,7 @@
       set -gx CEESER_DOT_FILES_REPO https://github.com/ceeser/dotfiles
       set -gx CEESER_DOT_FILES_PATH $HOME/.dotfilesrepo 
       set -gx CEESER_RESTIC_PASSWORDS_PATH $HOME/.restic/.passwords
+      set -gx RESTIC_REMOTE_URL rest:http://aayla1.bun-buri.ts.net:8000
       set -gx COLUMNS 120
 
       set -gx EDITOR vim
@@ -95,7 +96,10 @@
       # Restic backups
       ## ceeser
       rc = "restic -r $HOME/data/backups/ceeser/documents -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
-      rcr = "restic -r rest:http://aayla1.bun-buri.ts.net:8000/ceeserdocuments -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
+      rcr = "restic -r $RESTIC_REMOTE_URL/ceeserdocuments -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
+      rcalibreweb = "restic -r $RESTIC_REMOTE_URL/calibreweb -p $CEESER_RESTIC_PASSWORDS_PATH/.calibreweb";
+      rpaperless = "restic -r $RESTIC_REMOTE_URL/paperless -p $CEESER_RESTIC_PASSWORDS_PATH/.paperless";
+      rphotoprism = "restic -r $RESTIC_REMOTE_URL/photoprism -p $CEESER_RESTIC_PASSWORDS_PATH/.photoprism";
     };
   };
 }
