@@ -17,6 +17,7 @@ let
       settings.KbdInteractiveAuthentication = false;
       settings.PermitRootLogin = "no";
     };
+    pipewire.enable = false;
   }; 
 
 in {
@@ -36,10 +37,19 @@ in {
     )
   ];
 
+  boot.blacklistedKernelModules = [
+    "bluetooth"
+    "btusb"
+    "snd_pcsp"
+  ];
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1; # ipv4 forwarding
   boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1; #ipv6 forwarding
 
   environment.defaultPackages = [];
+
+  hardware.bluetooth.enable = false;
+  hardware.bluetooth.powerOnBoot = false;
+  hardware.pulseaudio.enable = false;
 
   system.autoUpgrade = {
     allowReboot = true;
