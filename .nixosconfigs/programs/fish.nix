@@ -47,7 +47,7 @@
       #.. = "cd ../"         # Go back 1 directory level
       #... = "cd ../../"     # Go back 2 directory levels
       c = "clear";
-      cp = "cp -iv";        # Preferred 'cp' implementation
+      cp = "cp -ivR";        # Preferred 'cp' implementation
       l = "eza -la --group-directories-first";
       ls = "eza -la --group-directories-first";
       mv = "mv -iv";        # Preferred 'mv' implementation

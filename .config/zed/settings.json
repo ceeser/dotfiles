@@ -13,14 +13,43 @@
       "milliseconds": 2000
     }
   },
-  "cursor_blink": false,
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 14,
+  "cursor_blink": false,
   "features": {
     // Which inline completion provider to use.
     "inline_completion_provider": "none"
   },
+  "format_on_save": "on",
   "hour_format": "hour24",
+  "inlayHints": {
+    "maxLength": null,
+    "lifetimeElisionHints": {
+      "useParameterNames": true,
+      "enable": "skip_trivial"
+    },
+    "closureReturnTypeHints": {
+      "enable": "always"
+    }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "binary": {
+        "path": "/run/current-system/sw/bin/rust-analyzer",
+      },
+      "initialization_options": {
+        // To check the `lib` target only.
+        "cargo": {
+          "allTargets": false
+        },
+        // Use `-p` instead of `--workspace` for cargo check
+        "check": {
+          "command": "clippy",
+          "workspace": false
+        }
+      }
+    }
+  },
   "relative_line_numbers": true,
   "show_copilot_suggestions": false,
   "tab_bar": {
