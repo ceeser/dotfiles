@@ -21,6 +21,7 @@
     "inline_completion_provider": "none"
   },
   "format_on_save": "on",
+  "formatter": "language_server",
   "hour_format": "hour24",
   "inlayHints": {
     "maxLength": null,
