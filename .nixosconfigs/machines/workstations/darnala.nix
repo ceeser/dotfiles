@@ -6,23 +6,17 @@
   imports = [
     <nixos-hardware/framework/16-inch/7040-amd>
     (../../services/virtualisation.nix)
-    # (../services/containers.nix)
   ];
 
   environment.systemPackages = with pkgs; [
     darktable
     restic
-    #uhk-agent
-    via
   ] ++ baseMachineTypePackages;
 
   hardware.keyboard.uhk.enable = false;
-  hardware.keyboard.qmk.enable = true;
+  hardware.keyboard.qmk.enable = false;
 
-  networking.hostName = "darnala"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.hostName = "darnala";
 
   services = lib.recursiveUpdate baseMachineTypeServices {
     restic.backups = {
@@ -73,10 +67,6 @@
       overrideDevices = true;     # overrides any devices added or deleted through the WebUI
       overrideFolders = true;     # overrides any folders added or deleted through the WebUI
     };
-    udev.packages = with pkgs; [
-      #uhk-udev-rules
-      via
-    ];
   };
 
   time.timeZone = "America/Toronto";
