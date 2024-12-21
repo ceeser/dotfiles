@@ -83,7 +83,7 @@
       # Nix commands
       nec = "nvim ~/.nixosconfigs/configuration.nix"; # edit home config
       ndg = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system"; # delete specified generations
-      ngc = "sudo nix-collect-garbage --delete-old";
+      ngc = "sudo nix-collect-garbage";
       nlg = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system"; # list all generations
       nr = "cd ~/ && sudo nixos-rebuild switch -I nixos-config=.nixosconfigs/configuration.nix"; # rebuild and switch from home config
       nrt = "cd ~/ && sudo nixos-rebuild test -I nixos-config=.nixosconfigs/configuration.nix"; # rebuild and test from home config
