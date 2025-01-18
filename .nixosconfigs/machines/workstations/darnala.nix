@@ -9,7 +9,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    darktable
+    ansel
     handbrake
     restic
   ] ++ baseMachineTypePackages;
