@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     ansel
     handbrake
+    ollama
     restic
   ] ++ baseMachineTypePackages;
 

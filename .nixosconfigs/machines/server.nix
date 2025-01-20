@@ -18,6 +18,7 @@ let
       settings.PermitRootLogin = "no";
     };
     pipewire.enable = false;
+    pulseaudio.enable = false;
   }; 
 
 in {
@@ -49,7 +50,6 @@ in {
 
   hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
-  hardware.pulseaudio.enable = false;
 
   system.autoUpgrade = {
     allowReboot = true;

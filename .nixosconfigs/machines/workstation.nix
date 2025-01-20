@@ -7,15 +7,30 @@
 let
   baseMachineTypePackages = with pkgs; [
     ## development
-    ## rust
-    cargo
-    clippy
-    rust-analyzer
-    rustc
-    rustfmt
+    diff-so-fancy
+    zed-editor
+      ### rust
+      cargo
+      clippy
+      rust-analyzer
+      rustc
+      rustfmt
 
-    ## misc
+    ## general apps
+    aerc
+    alacritty
+    bitwarden-desktop
+    pandoc
+    rates
+    zellij
+
+    ## tools
     zenith
+
+    #dive # look into docker image layers
+    #podman-tui # status of containers in the terminal
+    #podman-compose # start group of containers for dev
+    #docker-compose # start group of containers for dev
   ] ++ basePackages;
 
   baseMachineTypeServices = lib.recursiveUpdate baseServices {
@@ -59,6 +74,7 @@ let
     flatpak.enable = true;
     fwupd.enable = true;
     printing.enable = false; # Enable CUPS to print documents
+    pulseaudio.enable = false;
   }; 
 
 in {
@@ -89,7 +105,6 @@ in {
     };
   };
 
-  hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true; # added for pipewire
 
@@ -105,24 +120,6 @@ in {
       description = "ceeser";
       extraGroups = [ "networkmanager" "wheel" ];
       isNormalUser = true;
-      packages = with pkgs; [
-        ## general apps
-        aerc
-        alacritty
-        bitwarden-desktop
-        pandoc
-        rates
-        zellij
-
-        ## development
-        diff-so-fancy
-        zed-editor
-
-        #dive # look into docker image layers
-        #podman-tui # status of containers in the terminal
-        #podman-compose # start group of containers for dev
-        #docker-compose # start group of containers for dev
-      ];
     }; 
   };
 }
