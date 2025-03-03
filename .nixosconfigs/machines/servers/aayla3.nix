@@ -89,6 +89,7 @@
         PHOTOPRISM_DISABLE_BACKUPS = "false";
         PHOTOPRISM_DISABLE_CHOWN = "true";                    # disables updating storage permissions via chmod and chown on startup
         PHOTOPRISM_DISABLE_CLASSIFICATION = "true";           # disables image classification (requires TensorFlow)
+        PHOTOPRISM_DISABLE_EXIFTOOL = "true";
         PHOTOPRISM_DISABLE_FACES = "true";                    # disables face detection and recognition (requires TensorFlow)
         PHOTOPRISM_DISABLE_PLACES = "true";
         PHOTOPRISM_DISABLE_RAW = "false";                     # disables indexing and conversion of RAW images
