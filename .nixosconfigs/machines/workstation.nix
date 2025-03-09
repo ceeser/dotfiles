@@ -23,6 +23,7 @@ let
     pandoc
     rates
     tor-browser
+    vlc
     zellij
 
     ## tools
@@ -93,7 +94,6 @@ in {
           inherit pkgs;
           inherit baseMachineTypePackages;
           inherit baseMachineTypeServices;
-          # inherit parameters;
         }
       )
     ];
