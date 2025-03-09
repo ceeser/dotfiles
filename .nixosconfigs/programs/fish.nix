@@ -57,9 +57,6 @@
       cat = "bat";
       dockerremovevolumesdangling = "docker volume rm $(docker volume ls -f dangling=true -q)";
       dockerpruneall = "docker container prune -f && docker system prune -f && docker volume rm $(docker volume ls -f dangling=true -q)";
-      #tmd = "tmux attach -t dev || tmuxinator dev";
-      #tmk = "tmux kill-session -t dev";
-      tmd = "zellij attach ceeser -c";
       ze = "zellij attach ceeser -c";
 
       # Git
