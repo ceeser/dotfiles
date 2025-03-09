@@ -22,6 +22,7 @@ let
     bitwarden-desktop
     pandoc
     rates
+    tor-browser
     zellij
 
     ## tools
@@ -82,6 +83,7 @@ in {
     [
       (../services/desktop-gnome.nix)
       (../programs/lazygit.nix)
+      (../programs/localsend.nix)
 
       # Machine specific config
       (
