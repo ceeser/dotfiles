@@ -59,8 +59,8 @@
       dockerpruneall = "docker container prune -f && docker system prune -f && docker volume rm $(docker volume ls -f dangling=true -q)";
       #tmd = "tmux attach -t dev || tmuxinator dev";
       #tmk = "tmux kill-session -t dev";
-      tmd = "zellij";
-      ze = "zellij";
+      tmd = "zellij attach ceeser -c";
+      ze = "zellij attach ceeser -c";
 
       # Git
       gco = "git checkout";
