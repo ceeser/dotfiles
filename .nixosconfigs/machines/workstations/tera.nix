@@ -1,7 +1,9 @@
 { lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
 
 {
-  #imports = [];
+  imports = [
+    <nixos-hardware/dell/xps/13-9370>
+  ];
   #boot = {};
 
   environment.systemPackages = with pkgs; [
