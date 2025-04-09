@@ -82,13 +82,13 @@
       ndg = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system"; # delete specified generations
       ngc = "sudo nix-collect-garbage";
       nlg = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system"; # list all generations
-      nr = "cd ~/ && sudo nixos-rebuild switch -I nixos-config=.nixosconfigs/configuration.nix"; # rebuild and switch from home config
-      nrt = "cd ~/ && sudo nixos-rebuild test -I nixos-config=.nixosconfigs/configuration.nix"; # rebuild and test from home config
+      nr = "cd ~/ && sudo nix-channel --update && sudo nixos-rebuild switch -I nixos-config=.nixosconfigs/configuration.nix"; # rebuild and switch from home config
+      nrt = "cd ~/ && sudo nix-channel --update && sudo nixos-rebuild test -I nixos-config=.nixosconfigs/configuration.nix"; # rebuild and test from home config
       nrollb = "sudo nix-env --rollback --profile /nix/var/nix/profiles/system"; # rollback to previous gen
       nsg = "sudo nix-env --switch-generation --profile /nix/var/nix/profiles/system"; # switch to specified gen
       nsh = "nix-shell --run fish"; # run nix-shell with the fish shell
-      nu = "cd ~/ && sudo nixos-rebuild switch --upgrade -I nixos-config=.nixosconfigs/configuration.nix"; # update to latest packages
-      nut = "cd ~/ && sudo nixos-rebuild test --upgrade -I nixos-config=.nixosconfigs/configuration.nix"; # update to latest packages
+      nu = "cd ~/ && sudo nix-channel --update && sudo nixos-rebuild switch --upgrade -I nixos-config=.nixosconfigs/configuration.nix"; # update to latest packages
+      nut = "cd ~/ && sudo nix-channel --update && sudo nixos-rebuild test --upgrade -I nixos-config=.nixosconfigs/configuration.nix"; # update to latest packages
 
       # Restic backups
       ## ceeser
