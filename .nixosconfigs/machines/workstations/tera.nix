@@ -45,6 +45,9 @@
        STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
       };
     };
+    xserver.xkb = {
+      options = "altwin:swap_alt_win";
+    };
   };
 
   time.timeZone = "America/Toronto";

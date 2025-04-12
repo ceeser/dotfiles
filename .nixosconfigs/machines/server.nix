@@ -23,6 +23,10 @@ let
 
 in {
   imports = [
+    <nixpkgs/nixos/modules/profiles/hardened.nix>
+    <nixpkgs/nixos/modules/profiles/headless.nix>
+    <nixpkgs/nixos/modules/profiles/minimal.nix>
+
     (../services/pull-dotfiles-repo.nix)
 
     # Machine specific config
@@ -33,7 +37,6 @@ in {
         inherit pkgs;
         inherit baseMachineTypePackages;
         inherit baseMachineTypeServices;
-        # inherit parameters;
       }
     )
   ];
@@ -43,10 +46,9 @@ in {
     "btusb"
     "snd_pcsp"
   ];
+
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1; # ipv4 forwarding
   boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1; #ipv6 forwarding
-
-  environment.defaultPackages = [];
 
   hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
@@ -73,8 +75,4 @@ in {
       ];
     }; 
   };
-
-  xdg.icons.enable  = false;
-  xdg.mime.enable   = false;
-  xdg.sounds.enable = false;
 }
