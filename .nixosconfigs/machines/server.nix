@@ -23,7 +23,6 @@ let
 
 in {
   imports = [
-    <nixpkgs/nixos/modules/profiles/hardened.nix>
     <nixpkgs/nixos/modules/profiles/headless.nix>
     <nixpkgs/nixos/modules/profiles/minimal.nix>
 
