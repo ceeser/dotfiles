@@ -186,13 +186,7 @@
 
         PrimaryPassword = false;
         PromptForDownloadLocation = false;
-
-        SanitizeOnShutdown = {
-          FormData = true;
-          History = true;
-          Cache = true;
-          Locked = true;
-        };
+        SanitizeOnShutdown = true;
         SearchBar = "unified"; # alternative: "separate"
         SearchEngines = {
           Add = [
