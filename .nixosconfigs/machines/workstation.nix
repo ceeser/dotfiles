@@ -83,6 +83,7 @@ in {
   imports =
     [
       (../services/desktop-gnome.nix)
+      (../programs/firefox.nix)
       (../programs/lazygit.nix)
       (../programs/localsend.nix)
 
