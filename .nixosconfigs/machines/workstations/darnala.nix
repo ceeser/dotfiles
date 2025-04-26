@@ -12,6 +12,7 @@
     #ansel
     #handbrake
     #ollama
+    gimp3
     restic
   ] ++ baseMachineTypePackages;
 

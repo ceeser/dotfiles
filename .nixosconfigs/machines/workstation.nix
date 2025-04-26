@@ -20,12 +20,14 @@ let
     aerc
     alacritty
     bitwarden-desktop
+    evince
     pandoc
     rates
     tor-browser
     ungoogled-chromium
     vlc
     zellij
+    qalculate-gtk
 
     ## tools
     zenith
