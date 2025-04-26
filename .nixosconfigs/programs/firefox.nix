@@ -201,7 +201,7 @@
         };
         SearchSuggestEnabled = false;
         ShowHomeButton = false;
-        SSLVersionMin = "tls1.3";
+        SSLVersionMin = "tls1.2";
         UserMessaging = {
           ExtensionRecommendations = false;
           FeatureRecommendations = false;

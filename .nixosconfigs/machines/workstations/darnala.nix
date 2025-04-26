@@ -9,9 +9,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    ansel
-    handbrake
-    ollama
+    #ansel
+    #handbrake
+    #ollama
     restic
   ] ++ baseMachineTypePackages;
 

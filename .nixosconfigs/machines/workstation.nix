@@ -23,6 +23,7 @@ let
     pandoc
     rates
     tor-browser
+    ungoogled-chromium
     vlc
     zellij
 
@@ -84,6 +85,7 @@ in {
     [
       (../services/desktop-gnome.nix)
       (../programs/firefox.nix)
+      (../programs/chromium.nix)
       (../programs/lazygit.nix)
       (../programs/localsend.nix)
 
