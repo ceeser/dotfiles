@@ -140,7 +140,13 @@
       };
 
       extensions = [
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+        "ddkjiahejlhfcafbddmgiahcphecmpfh"  # ublock origin lite
+        "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"  # privacy badger
+        "jaoafjdoijdconemdmodhbfpianehlon"  # skip redirect
+        "ldpochfccmkkmhdbclfhpagapcfdljkj"  # decentraleyes
+        "mlomiejdfkolichcflejclcbmpeaniij"  # ghostery
+        "lckanjgmijmafbedllaakclkaicjfmnk"  # clear urls
+        "bkdgflcldnnnapblkhphbgpggdiikppg"  # Duck duck go privacy essentials
       ];
     };
   };
