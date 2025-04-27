@@ -16,7 +16,7 @@
         BackgroundModeEnabled = false;
         BlockExternalExtensions = true;
         BlockThirdPartyCookies = true;
-        BrowserLabsEnabled = true;
+        BrowserLabsEnabled = false;
         BrowserSignin = 0;
 
         CalendarIntegrationEnabled = false;
@@ -41,7 +41,6 @@
         DefaultDirectSocketsSetting = 2;
         DefaultGeolocationSetting = 2;
         DefaultLocalFontsSetting = 2;
-        DefaultMediaStreamSetting = 3;
         DefaultNotificationsSetting = 2;
         DefaultPluginsSetting = 2;
         DefaultPopupsSetting = 2;
