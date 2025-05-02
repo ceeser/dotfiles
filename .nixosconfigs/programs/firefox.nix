@@ -17,6 +17,7 @@
     firefox = {
       enable = true;
       languagePacks = [ "en-US" ];
+      package = pkgs.firefox-esr;
 
       /* ---- POLICIES ---- */
       # Check about:policies#documentation for options.
@@ -42,7 +43,7 @@
         DisableSetDesktopBackground = true;
         DisableTelemetry = true;
         DisplayBookmarksToolbar = "never"; # alternatives: "always" or "newtab"
-        DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
+        DisplayMenuBar = "never"; # alternatives: "always", "never" or "default-on"
 
         DNSOverHTTPS = {
           Enabled = false;
@@ -65,9 +66,46 @@
         # "force_installed" and "normal_installed".
         ExtensionSettings = {
           "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
-          # Bitwarden password manager
-          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+
+          # Ublock Origin
+          "uBlock0@raymondhill.net" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            installation_mode = "force_installed";
+          };
+
+          # Clear Urls
+          #"{74145f27-f039-47ce-a470-a662b129930a}" = {
+          #  install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
+          #  installation_mode = "force_installed";
+          #};
+
+          # Decentraleyes
+          "jid1-BoFifL9Vbdl2zQ@jetpack" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
+            installation_mode = "force_installed";
+          };
+
+          # Duck Duck Go Privacy Essentials
+          "jid1-ZAdIEUB7XOzOJw@jetpack" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-privacy-essentials/latest.xpi";
+            installation_mode = "force_installed";
+          };
+
+          # Ghostery
+          "firefox@ghostery.com" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ghostery/latest.xpi";
+            installation_mode = "force_installed";
+          };
+
+          # Privacy Badger
+          "jid1-MnnxcxisBPnSXQ@jetpack" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+            installation_mode = "force_installed";
+          };
+
+          # Skip Redirect
+          "skipredirect@sblask" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
             installation_mode = "force_installed";
           };
         };
@@ -92,21 +130,32 @@
           Locked = true;
         };
 
+        HardwareAcceleration = true;
+
         Homepage = {
           URL = "https://luminara1.bun-buri.ts.net/home/";
           StartPage = "homepage-locked";
           Locked = true;
         };
-        HttpsOnlyMode = "force_enabled";
+        HttpsOnlyMode = "allowed";
 
+        ManualAppUpdateOnly = true;
+
+        NetworkPrediction = false;
         NewTabPage = false;
         NoDefaultBookmarks = true;
 
         OfferToSaveLogins = false;
+        OfferToSaveLoginsDefault = false;
         OverrideFirstRunPage = "";
         OverridePostUpdatePage = "";
 
         PasswordManagerEnabled = false;
+
+        PDFjs = {
+          Enabled = false;
+          EnablePermissions = false;
+        };
 
         Permissions = {
           Camera = {
@@ -185,8 +234,17 @@
         };
 
         PrimaryPassword = false;
+        PrivateBrowsingModeAvailability = 1;
         PromptForDownloadLocation = false;
-        SanitizeOnShutdown = true;
+        SanitizeOnShutdown = {
+          Cache = true;
+          Cookies = true;
+          FormData = true;
+          History = true;
+          Sessions = true;
+          SiteSettings = true;
+          Locked = true;
+        };
         SearchBar = "unified"; # alternative: "separate"
         SearchEngines = {
           Add = [
@@ -197,10 +255,16 @@
           ];
           Default = "DuckDuckGoCeeser";
           PreventInstalls = true;
-          #Remove = [ "" ];
+          Remove = [ 
+            "DuckDuckGo"
+            "Bing"
+            "Google"
+            "Wikipedia (en)"
+          ];
         };
         SearchSuggestEnabled = false;
         ShowHomeButton = false;
+        SkipTermsOfUse = true;
         SSLVersionMin = "tls1.2";
         UserMessaging = {
           ExtensionRecommendations = false;
