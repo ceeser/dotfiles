@@ -37,7 +37,7 @@
         DefaultBrowserSettingEnabled = false;
         DefaultClipboardSetting = 2;
         DefaultControlledFrameSetting = 2;
-        DefaultCookiesSetting = 2;
+        DefaultCookiesSetting = 4;
         DefaultDirectSocketsSetting = 2;
         DefaultGeolocationSetting = 2;
         DefaultLocalFontsSetting = 2;
@@ -78,8 +78,7 @@
 
         HomepageLocation = "https://luminara1.bun-buri.ts.net/home/";
 
-        IncognitoEnabled = true;
-        IncognitoModeAvailability = true;
+        IncognitoModeAvailability = 0;
 
         LogUploadEnabled = false;
 
