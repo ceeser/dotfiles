@@ -24,8 +24,6 @@
         denylists = {
           all = [
             "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-            #"https://raw.githubusercontent.com/nickspaargaren/no-google/master/pihole-google.txt"
-            "http://sysctl.org/cameleon/hosts"
             "https://someonewhocares.org/hosts/zero/hosts"
             "https://v.firebog.net/hosts/Easyprivacy.txt"
             "https://v.firebog.net/hosts/Prigent-Ads.txt"
@@ -47,6 +45,9 @@
             "https://jasonhill.co.uk/pfsense/ytadblock.txt"
             "https://www.encrypt-the-planet.com/downloads/hosts"
             "https://perflyst.github.io/PiHoleBlocklist/SmartTV.txt"
+            # blocky formatted lists
+            "https://raw.githubusercontent.com/Turtlecute34/toolz/master/src/d3host.txt"
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/ultimate.txt"
           ];
         };
         #Configure what block categories are used
