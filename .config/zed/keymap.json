@@ -17,7 +17,7 @@
       "ctrl-a ctrl-q": "pane::CloseAllItems",
       "ctrl-a o": "workspace::CloseInactiveTabsAndPanes",
       "ctrl-a ctrl-o": "workspace::CloseInactiveTabsAndPanes",
-      "ctrl-a c": "workspace::NewFileSplitVertical",
+      "ctrl-a c": "pane::SplitRight",
       "ctrl-a x": "pane::CloseActiveItem",
       "ctrl-f4": "pane::CloseActiveItem",
       "ctrl-a p": "project_panel::ToggleFocus"
