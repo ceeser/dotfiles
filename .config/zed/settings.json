@@ -7,25 +7,25 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
+  "agent": {
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "google",
+      "model": "gemini-2.0-flash"
     },
     "version": "2"
   },
   "auto_update": false,
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 2000
-    }
-  },
+  // "autosave": {
+  //   "after_delay": {
+  //     "milliseconds": 2000
+  //   }
+  // },
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 14,
   "cursor_blink": false,
   "features": {
     // Which inline completion provider to use.
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
   "format_on_save": "on",
   "formatter": "language_server",
@@ -74,6 +74,9 @@
   },
   "theme": "Catppuccin Mocha",
   "vim_mode": true,
-  "wrap_guides": [120, 160],
+  "wrap_guides": [
+    120,
+    160
+  ],
   "ui_font_size": 14
 }
