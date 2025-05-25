@@ -25,6 +25,7 @@
         }
         reverse_proxy /paperless* localhost:38454
         reverse_proxy /vaultwarden* localhost:8085
+        reverse_proxy /readeck* localhost:12123
       '';
     };
     calibre-web = {
@@ -110,7 +111,20 @@
         PHOTOPRISM_UPLOAD_NSFW = "true";                      # allows uploads that MAY be offensive (no effect without TensorFlow)
       };
     };
-     restic.backups = {
+    readeck = {
+      enable = true;
+      settings = {
+        main = {
+          secret_key = "BFDE22A93F3721E80365590DD8D13562DB59D373F37A0861ED5FD3FA7D2CC540";
+        };
+        server = {
+          host = "0.0.0.0";
+          port = 12123;
+          base_url = "https://aayla3.bun-buri.ts.net/readeck/";
+        };
+      };
+    };
+    restic.backups = {
       calibreweb = {
         initialize = true;
         passwordFile = "/home/ceeser/.restic/.passwords/.calibreweb";
