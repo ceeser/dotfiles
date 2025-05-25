@@ -34,6 +34,7 @@
                   type = "monitor";
                   title = "Services";
                   sites = [
+                    { title = "Bookmarks"; url = "https://aayla3.bun-buri.ts.net/readeck/";}
                     { title = "Books"; url = "https://aayla3.bun-buri.ts.net/calibre/";}
                     { title = "Documents"; url = "https://aayla3.bun-buri.ts.net/paperless/accounts/login/?next=/paperless/";}
                     { title = "Passwords"; url = "https://aayla3.bun-buri.ts.net/vaultwarden/#/login";}
