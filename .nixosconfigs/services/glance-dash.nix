@@ -67,6 +67,7 @@
                       title = "Tech";
                       color = "hsl(200 50% 50%)";
                       links = [
+                        { title = "Cloudflare"; url = "https://www.cloudflare.com";}
                         { title = "Oracle Cloud"; url = "https://cloud.oracle.com";}
                       ];
                     }
