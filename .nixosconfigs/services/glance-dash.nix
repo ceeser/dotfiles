@@ -110,8 +110,8 @@
                 {
                   type = "group";
                   widgets = [
-                    { type = "hacker-news"; limit = 30; }
-                    { type = "lobsters"; limit = 30; }
+                    { type = "hacker-news"; limit = 30; collapse-after = -1; }
+                    { type = "lobsters"; limit = 30; collapse-after = -1; }
                   ];
                 }
               ];
