@@ -54,7 +54,6 @@
                         { title = "EQ Bank"; url = "https://secure.eqbank.ca/login";}
                         { title = "Kraken"; url = "https://www.kraken.com/sign-in";}
                         { title = "N26"; url = "https://app.n26.com/login";}
-                        { title = "Neo"; url = "https://member.neofinancial.com/login";}
                         { title = "Privacy"; url = "https://privacy.com/home";}
                         { title = "Robinhood"; url = "https://robinhood.com/us/en/";}
                         { title = "Splitwise"; url = "https://www.splitwise.com/";}
