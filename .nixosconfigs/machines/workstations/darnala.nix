@@ -22,6 +22,7 @@
   networking.hostName = "darnala";
 
   services = lib.recursiveUpdate baseMachineTypeServices {
+    fprintd.enable = true;
     restic.backups = {
       ceeserdocuments = {
         initialize = true;
