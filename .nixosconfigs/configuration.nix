@@ -9,7 +9,7 @@ let
 
   basePackages = with pkgs; [
     bat
-    du-dust
+    dust
     eza
     starship
   ];
