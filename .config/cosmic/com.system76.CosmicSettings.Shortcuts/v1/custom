@@ -3,9 +3,8 @@
         modifiers: [
             Super,
         ],
-        key: "Return",
-        description: Some("Terminal"),
-    ): Spawn("alacritty"),
+        key: "slash",
+    ): Disable,
     (
         modifiers: [
             Super,
@@ -16,5 +15,12 @@
             Super,
         ],
         key: "space",
-    ): Disable,
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("Terminal"),
+    ): Spawn("alacritty"),
 }
