@@ -90,6 +90,7 @@ in {
       #(../services/desktop-cosmic.nix)
       (../programs/firefox.nix)
       (../programs/chromium.nix)
+      (../programs/dconf.nix)
       (../programs/lazygit.nix)
       (../programs/localsend.nix)
 
