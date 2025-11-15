@@ -1,11 +1,11 @@
-# Config for neovim
+# Config for gnome desktop
 
 { config, pkgs, ... }:
 
 {
   imports = [];
 
-  console.useXkbConfig = true; # Enable the GNOME Desktop Environment.
+  console.useXkbConfig = true;
 
   environment = {
     gnome.excludePackages = with pkgs; [
