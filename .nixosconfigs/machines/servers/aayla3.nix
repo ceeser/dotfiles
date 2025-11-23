@@ -1,17 +1,17 @@
-{ lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
+{ lib, config, pkgs, ... }:
 
 {
   #imports = [];
   #boot = {};
 
-  environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
+  # environment.systemPackages = with pkgs; [];
 
   networking.hostName = "aayla3"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
-  services = lib.recursiveUpdate baseMachineTypeServices {
+  services = {
     caddy = {
       enable = true;
       virtualHosts."aayla3.bun-buri.ts.net".extraConfig = ''

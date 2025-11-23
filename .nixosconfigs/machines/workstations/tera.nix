@@ -1,13 +1,13 @@
-{ lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
     <nixos-hardware/dell/xps/13-9370>
   ];
+
   #boot = {};
 
-  environment.systemPackages = with pkgs; [
-  ] ++ baseMachineTypePackages;
+  #environment.systemPackages = with pkgs; [];
 
   networking.hostName = "tera"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -16,7 +16,7 @@
 
   powerManagement.powertop.enable = true;
 
-  services = lib.recursiveUpdate baseMachineTypeServices {
+  services = {
     power-profiles-daemon.enable = false;
     syncthing = {
       enable = true;

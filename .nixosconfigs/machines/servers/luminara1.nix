@@ -1,4 +1,4 @@
-{ lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
@@ -6,13 +6,13 @@
     (../../services/glance-dash.nix)
   ];
 
-  environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
+  # environment.systemPackages = with pkgs; [];
 
   networking.hostName = "luminara1"; # Define your hostname.
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   networking.firewall.allowedUDPPorts = [ 443 ];
 
-  services = lib.recursiveUpdate baseMachineTypeServices {
+  services = {
     caddy = {
       enable = true;
       virtualHosts."photos.ceeser.com".extraConfig = ''

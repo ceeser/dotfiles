@@ -1,10 +1,10 @@
-{ lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
+{ lib, config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
+  # environment.systemPackages = with pkgs; [];
   networking.hostName = "aayla1"; # Define your hostname.
 
-  services = lib.recursiveUpdate baseMachineTypeServices {
+  services = {
     restic.server = {
       enable = true;
       extraFlags = [ "--no-auth" ];

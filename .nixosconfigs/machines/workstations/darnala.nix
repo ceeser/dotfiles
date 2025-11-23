@@ -1,4 +1,4 @@
-{ lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
+{ lib, config, pkgs, ... }:
 
 {
   #boot = {};
@@ -14,14 +14,14 @@
     #ollama
     gimp3
     restic
-  ] ++ baseMachineTypePackages;
+  ];
 
   hardware.keyboard.uhk.enable = false;
   hardware.keyboard.qmk.enable = false;
 
   networking.hostName = "darnala";
 
-  services = lib.recursiveUpdate baseMachineTypeServices {
+  services = {
     fprintd.enable = true;
     restic.backups = {
       ceeserdocuments = {

@@ -5,40 +5,22 @@
 { lib, config, pkgs, ... }:
 
 let
-  parameters = import ./parameters.nix;
-
-  basePackages = with pkgs; [
-    bat
-    dust
-    eza
-    starship
-  ];
-
-  baseServices = {
-    bpftune.enable = true;
-  };
+  ceeserMachineParams = import ./parameters.nix;
 
 in {
   imports =
     [
       (/etc/nixos/hardware-configuration.nix)
-      # Machine Type specific config
-      (
-        import (./machines + "/${parameters.machineType}.nix") {
-          inherit lib;
-          inherit config;
-          inherit pkgs;
-          inherit basePackages;
-          inherit baseServices;
-          inherit parameters;
-        }
-      )
+
+      # base programs and services
       (./programs/fish.nix)
       (./programs/git.nix)
       (./programs/neovim.nix)
       (./services/tailscale.nix)
-    ];
 
+      # Machine Type specific config
+      (./machines + "/${ceeserMachineParams.machineType}.nix")
+    ];
   
   # Bootloader.
   boot.loader = {
@@ -49,6 +31,12 @@ in {
 
   documentation.nixos.enable = false; # turn off documentation
 
+  environment.systemPackages = with pkgs; [
+    bat
+    dust
+    eza
+    starship
+  ];
   environment.defaultPackages = lib.mkForce []; # no default packages
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
@@ -91,6 +79,10 @@ in {
   security = {
     rtkit.enable = true;
     sudo.execWheelOnly = true;
+  };
+
+  services = {
+    bpftune.enable = true;
   };
 
   users.defaultUserShell = pkgs.fish;

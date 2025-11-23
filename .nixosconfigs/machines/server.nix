@@ -2,24 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, basePackages, baseServices, parameters, ... }:
+{ lib, config, pkgs, ... }:
 
-let
-  baseMachineTypePackages = with pkgs; [
-    diff-so-fancy
-  ] ++ basePackages;
-
-  baseMachineTypeServices = lib.recursiveUpdate baseServices {
-    openssh = {
-      enable = true;
-      # require public key authentication for better security
-      settings.PasswordAuthentication = false;
-      settings.KbdInteractiveAuthentication = false;
-      settings.PermitRootLogin = "no";
-    };
-    pipewire.enable = false;
-    pulseaudio.enable = false;
-  }; 
+let ceeserMachineParams = import ../parameters.nix;
 
 in {
   imports = [
@@ -29,16 +14,13 @@ in {
     (../services/pull-dotfiles-repo.nix)
 
     # Machine specific config
-    (
-      import (./servers + "/${parameters.machine}.nix") {
-        inherit lib;
-        inherit config;
-        inherit pkgs;
-        inherit baseMachineTypePackages;
-        inherit baseMachineTypeServices;
-      }
-    )
+    (./servers + "/${ceeserMachineParams.machine}.nix")
   ];
+
+  environment.systemPackages = with pkgs; [
+    diff-so-fancy
+  ];
+
 
   boot.blacklistedKernelModules = [
     "bluetooth"
@@ -62,6 +44,18 @@ in {
       "nixos-config=/home/ceeser/.nixosconfigs/configuration.nix"
     ];
     randomizedDelaySec = "45min";
+  };
+
+  services = {
+    openssh = {
+      enable = true;
+      # require public key authentication for better security
+      settings.PasswordAuthentication = false;
+      settings.KbdInteractiveAuthentication = false;
+      settings.PermitRootLogin = "no";
+    };
+    pipewire.enable = false;
+    pulseaudio.enable = false;
   };
 
   users.users = {

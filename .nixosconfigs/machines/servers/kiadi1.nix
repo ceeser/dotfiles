@@ -1,18 +1,18 @@
-{ lib, config, pkgs, baseMachineTypePackages, baseMachineTypeServices }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
     (../../services/blocky.nix)
   ];
 
-  environment.systemPackages = with pkgs; [] ++ baseMachineTypePackages;
+  # environment.systemPackages = with pkgs; [];
 
   networking.hostName = "kiadi1"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
-  services = lib.recursiveUpdate baseMachineTypeServices {};
+  # services = {};
 
   time.timeZone = "America/Toronto";
 

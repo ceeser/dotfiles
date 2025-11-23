@@ -2,10 +2,27 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, basePackages, baseServices, parameters, ... }:
+{ lib, config, pkgs, ... }:
 
-let
-  baseMachineTypePackages = with pkgs; [
+let 
+  ceeserMachineParams = import ../parameters.nix;
+
+in {
+  imports = [
+
+    (../services/desktop-gnome.nix)
+    #(../services/desktop-cosmic.nix)
+    (../programs/firefox.nix)
+    (../programs/chromium.nix)
+    (../programs/dconf.nix)
+    (../programs/lazygit.nix)
+    (../programs/localsend.nix)
+
+    # Machine specific config
+    (./workstations + "/${ceeserMachineParams.machine}.nix")
+  ];
+
+  environment.systemPackages = with pkgs; [
     ## development
     diff-so-fancy
     zed-editor
@@ -37,9 +54,22 @@ let
     #podman-tui # status of containers in the terminal
     #podman-compose # start group of containers for dev
     #docker-compose # start group of containers for dev
-  ] ++ basePackages;
+  ];
 
-  baseMachineTypeServices = lib.recursiveUpdate baseServices {
+
+  hardware.bluetooth.settings = {
+    General = {
+      ControllerMode = "bredr";
+    };
+    Policy = {
+      AutoEnable = "true";
+    };
+  };
+
+
+  security.rtkit.enable = true; # added for pipewire
+
+  services = {
     openssh.enable = false;
     pipewire = {
       enable = true;
@@ -81,42 +111,7 @@ let
     fwupd.enable = true;
     printing.enable = false; # Enable CUPS to print documents
     pulseaudio.enable = false;
-  }; 
-
-in {
-  imports =
-    [
-      (../services/desktop-gnome.nix)
-      #(../services/desktop-cosmic.nix)
-      (../programs/firefox.nix)
-      (../programs/chromium.nix)
-      (../programs/dconf.nix)
-      (../programs/lazygit.nix)
-      (../programs/localsend.nix)
-
-      # Machine specific config
-      (
-        import (./workstations + "/${parameters.machine}.nix") {
-          inherit lib;
-          inherit config;
-          inherit pkgs;
-          inherit baseMachineTypePackages;
-          inherit baseMachineTypeServices;
-        }
-      )
-    ];
-
-  hardware.bluetooth.settings = {
-    General = {
-      ControllerMode = "bredr";
-    };
-    Policy = {
-      AutoEnable = "true";
-    };
   };
-
-
-  security.rtkit.enable = true; # added for pipewire
 
   users.users = {
     guest = {
