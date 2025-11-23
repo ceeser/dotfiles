@@ -22,6 +22,8 @@ in {
     (./workstations + "/${ceeserMachineParams.machine}.nix")
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   environment.systemPackages = with pkgs; [
     ## development
     diff-so-fancy

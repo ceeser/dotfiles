@@ -21,7 +21,6 @@ in {
     diff-so-fancy
   ];
 
-
   boot.blacklistedKernelModules = [
     "bluetooth"
     "btusb"
@@ -33,6 +32,18 @@ in {
 
   hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
+
+  services = {
+    openssh = {
+      enable = true;
+      # require public key authentication for better security
+      settings.PasswordAuthentication = false;
+      settings.KbdInteractiveAuthentication = false;
+      settings.PermitRootLogin = "no";
+    };
+    pipewire.enable = false;
+    pulseaudio.enable = false;
+  };
 
   system.autoUpgrade = {
     allowReboot = true;
@@ -46,17 +57,12 @@ in {
     randomizedDelaySec = "45min";
   };
 
-  services = {
-    openssh = {
-      enable = true;
-      # require public key authentication for better security
-      settings.PasswordAuthentication = false;
-      settings.KbdInteractiveAuthentication = false;
-      settings.PermitRootLogin = "no";
-    };
-    pipewire.enable = false;
-    pulseaudio.enable = false;
-  };
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
 
   users.users = {
     ceeser = {
