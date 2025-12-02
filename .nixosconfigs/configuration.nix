@@ -71,8 +71,14 @@ in {
     settings.allowed-users = [ "@wheel" ];
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "Sat *-*-* 04:00:00";
       options = "--delete-older-than 30d";
+      randomizedDelaySec = "30min";
+    };
+    optimise = {
+      automatic = true;
+      dates = "Sat *-*-* 05:00:00";
+      randomizedDelaySec = "30min";
     };
   };
 

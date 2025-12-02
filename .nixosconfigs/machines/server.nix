@@ -54,7 +54,7 @@ in {
       "-I"
       "nixos-config=/home/ceeser/.nixosconfigs/configuration.nix"
     ];
-    randomizedDelaySec = "45min";
+    randomizedDelaySec = "30min";
   };
 
   systemd.sleep.extraConfig = ''
