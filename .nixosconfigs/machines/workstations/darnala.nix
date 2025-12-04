@@ -12,12 +12,14 @@
     #ansel
     #handbrake
     #ollama
+    framework-tool-tui
     gimp3
     restic
+    via
   ];
 
   hardware.keyboard.uhk.enable = false;
-  hardware.keyboard.qmk.enable = false;
+  hardware.keyboard.qmk.enable = true;
 
   networking.hostName = "darnala";
 
