@@ -10,8 +10,8 @@ let
 in {
   imports = [
 
-    (../services/desktop-gnome.nix)
-    #(../services/desktop-cosmic.nix)
+    #(../services/desktop-gnome.nix)
+    (../services/desktop-cosmic.nix)
     (../programs/firefox.nix)
     (../programs/chromium.nix)
     (../programs/dconf.nix)
