@@ -18,7 +18,7 @@ print_events = false
 render_timer = false
 
 [font]
-size = 9.0
+size = 10.0
 
 [font.glyph_offset]
 x = 0
