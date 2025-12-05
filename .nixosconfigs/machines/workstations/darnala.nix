@@ -1,7 +1,11 @@
 { lib, config, pkgs, ... }:
 
 {
-  #boot = {};
+  boot = {
+    kernelParams = [
+      "module_blacklist=ucsi_acpi" # force the kernel to fall back to ucsi_ccg or typec drivers, to help fix PDO negotiation errors on AMD systems
+    ];
+  };
 
   imports = [
     <nixos-hardware/framework/16-inch/7040-amd>
@@ -25,6 +29,7 @@
 
   services = {
     fprintd.enable = true;
+    hardware.bolt.enable = true;
     restic.backups = {
       ceeserdocuments = {
         initialize = true;
