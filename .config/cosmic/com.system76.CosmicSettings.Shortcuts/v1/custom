@@ -2,8 +2,31 @@
     (
         modifiers: [
             Super,
+            Shift,
+        ],
+        key: "Escape",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
         ],
         key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "Up",
     ): Disable,
     (
         modifiers: [
@@ -15,18 +38,7 @@
     (
         modifiers: [
             Super,
-        ],
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "b",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Alt,
+            Ctrl,
             Shift,
         ],
         key: "Right",
@@ -34,43 +46,16 @@
     (
         modifiers: [
             Super,
+            Ctrl,
             Shift,
         ],
-        key: "Right",
+        key: "Down",
     ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Escape",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Return",
-        description: Some("Terminal"),
-    ): Spawn("alacritty"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "space",
-    ): System(Launcher),
     (
         modifiers: [
             Super,
         ],
         key: "slash",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Alt,
-            Shift,
-        ],
-        key: "Up",
     ): Disable,
     (
         modifiers: [
@@ -84,14 +69,53 @@
             Ctrl,
             Shift,
         ],
-        key: "Right",
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "Down",
     ): Disable,
     (
         modifiers: [
             Super,
             Shift,
         ],
-        key: "Left",
+        key: "space",
+    ): System(AppLibrary),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("Terminal"),
+    ): Spawn("alacritty"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "space",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Right",
     ): Disable,
     (
         modifiers: [
@@ -102,26 +126,17 @@
     (
         modifiers: [
             Super,
-            Alt,
-            Shift,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
             Shift,
         ],
         key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "Right",
     ): Disable,
     (
         modifiers: [
@@ -134,23 +149,8 @@
     (
         modifiers: [
             Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
             Shift,
         ],
         key: "Up",
     ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "space",
-    ): System(AppLibrary),
 }

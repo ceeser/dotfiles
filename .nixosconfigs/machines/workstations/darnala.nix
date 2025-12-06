@@ -19,17 +19,19 @@
     framework-tool-tui
     gimp3
     restic
-    via
   ];
 
   hardware.keyboard.uhk.enable = false;
-  hardware.keyboard.qmk.enable = true;
+  hardware.keyboard.qmk.enable = false;
 
   networking.hostName = "darnala";
 
   services = {
     fprintd.enable = true;
     hardware.bolt.enable = true;
+    logind.settings.Login = {
+      HandleLidSwitchExternalPower = "ignore"; # don't sleep so that waking via external keyboard works
+    };
     restic.backups = {
       ceeserdocuments = {
         initialize = true;
