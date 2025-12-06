@@ -9,8 +9,6 @@ let
 
 in {
   imports = [
-
-    #(../services/desktop-gnome.nix)
     (../services/desktop-cosmic.nix)
     (../programs/firefox.nix)
     (../programs/chromium.nix)
@@ -37,7 +35,6 @@ in {
 
     ## general apps
     aerc
-    alacritty
     bitwarden-desktop
     evince
     pandoc
