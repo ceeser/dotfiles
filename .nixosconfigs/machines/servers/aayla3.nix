@@ -36,11 +36,6 @@
 
         # Readeack
         reverse_proxy /readeck* localhost:12123
-
-        # Handle default responses for unmatched paths
-        handle {
-          respond 400
-        }
       '';
     };
     calibre-web = {
