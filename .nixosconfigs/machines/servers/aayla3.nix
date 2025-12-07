@@ -165,6 +165,24 @@
           Persistent = true;
         };
       };
+      forgejo = {
+        initialize = true;
+        passwordFile = "/home/ceeser/.restic/.passwords/.forgejo";
+        paths = [
+          "/var/lib/forgejo"
+        ];
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 15"
+        ];
+        repository = "rest:http://aayla1.bun-buri.ts.net:8000/forgejo";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+        };
+      };
       paperless = {
         initialize = true;
         passwordFile = "/home/ceeser/.restic/.passwords/.paperless";
@@ -196,6 +214,25 @@
           "--keep-yearly 15"
         ];
         repository = "rest:http://aayla1.bun-buri.ts.net:8000/photoprism";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+          RandomizedDelaySec = "2h";
+        };
+      };
+      readeck= {
+        initialize = true;
+        passwordFile = "/home/ceeser/.restic/.passwords/.readeck";
+        paths = [
+          "/var/lib/private/readeck"
+        ];
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 15"
+        ];
+        repository = "rest:http://aayla1.bun-buri.ts.net:8000/readeck";
         timerConfig = {
           OnCalendar = "daily";
           Persistent = true;

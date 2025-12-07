@@ -97,8 +97,10 @@
       rc = "restic -r $HOME/data/backups/ceeser/documents -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
       rcr = "restic -r $RESTIC_REMOTE_URL/ceeserdocuments -p $CEESER_RESTIC_PASSWORDS_PATH/.ceeser";
       rcalibreweb = "restic -r $RESTIC_REMOTE_URL/calibreweb -p $CEESER_RESTIC_PASSWORDS_PATH/.calibreweb";
+      rforgejo = "restic -r $RESTIC_REMOTE_URL/forgejo -p $CEESER_RESTIC_PASSWORDS_PATH/.forgejo";
       rpaperless = "restic -r $RESTIC_REMOTE_URL/paperless -p $CEESER_RESTIC_PASSWORDS_PATH/.paperless";
       rphotoprism = "restic -r $RESTIC_REMOTE_URL/photoprism -p $CEESER_RESTIC_PASSWORDS_PATH/.photoprism";
+      rreadeck = "restic -r $RESTIC_REMOTE_URL/readeck -p $CEESER_RESTIC_PASSWORDS_PATH/.readeck";
     };
   };
 }
