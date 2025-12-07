@@ -1,13 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-  #imports = [];
-  #boot = {};
-
-  # environment.systemPackages = with pkgs; [];
-
   networking.hostName = "aayla3"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
@@ -15,17 +9,38 @@
     caddy = {
       enable = true;
       virtualHosts."aayla3.bun-buri.ts.net".extraConfig = ''
-        handle_path /portainer/* {
-          rewrite * {path}
-          reverse_proxy localhost:9000
+
+        # Forgejo
+        handle_path /code/* {
+          reverse_proxy localhost:9090 {
+            header_up Connection {http.request.header.Connection}
+            header_up Upgrade {http.request.header.Upgrade}
+            header_up Host {host}
+            header_up X-Real-IP {http.request.remote.addr}
+            header_up X-Forwarded-For {http.request.header.X-Forwarded-For}
+            header_up X-Forwarded-Proto {http.request.scheme}
+          }
         }
+
+        # Calibre
         reverse_proxy /calibre* localhost:8083 {
           header_up X-Scheme https
           header_up X-Script-Name /calibre
         }
+
+        # Paperless
         reverse_proxy /paperless* localhost:38454
+
+        # Vaultwarden
         reverse_proxy /vaultwarden* localhost:8085
+
+        # Readeack
         reverse_proxy /readeck* localhost:12123
+
+        # Handle default responses for unmatched paths
+        handle {
+          respond 400
+        }
       '';
     };
     calibre-web = {
@@ -36,6 +51,18 @@
         calibreLibrary = "/var/lib/calibre-web/books";
         enableBookUploading = true;
         enableBookConversion = true;
+      };
+    };
+    forgejo = {
+      dump.enable = true;
+      enable = true;
+      settings = {
+        log.LEVEL = "Warn";
+        server = {
+          DISABLE_REGISTRATION = true;
+          HTTP_PORT = 9090;
+          ROOT_URL = "https://aayla3.bun-buri.ts.net/code";
+        };
       };
     };
     mysql = {
