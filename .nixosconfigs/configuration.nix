@@ -14,7 +14,6 @@ in {
       (./programs)
       (./services)
 
-      # machine profiles
       (./machines/profiles)
 
       # Machine Type specific config
