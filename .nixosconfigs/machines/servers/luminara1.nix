@@ -1,12 +1,9 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [
-    (../../services/blocky.nix)
-    (../../services/glance-dash.nix)
-  ];
-
-  # environment.systemPackages = with pkgs; [];
+  ceeser.services.blocky.enable = true;
+  ceeser.services.glance.enable = true;
+  ceeser.machines.server.enable = true;
 
   networking.hostName = "luminara1"; # Define your hostname.
   networking.firewall.allowedTCPPorts = [ 80 443 ];

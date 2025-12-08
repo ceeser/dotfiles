@@ -1,9 +1,9 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+  ceeser.machines.server.enable = true;
+
   networking.hostName = "aayla3"; # Define your hostname.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
 
   services = {
     caddy = {

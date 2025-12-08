@@ -1,18 +1,13 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
     <nixos-hardware/dell/xps/13-9370>
   ];
 
-  #boot = {};
-
-  #environment.systemPackages = with pkgs; [];
+  ceeser.machines.workstation.enable = true;
 
   networking.hostName = "tera"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
 
   powerManagement.powertop.enable = true;
 

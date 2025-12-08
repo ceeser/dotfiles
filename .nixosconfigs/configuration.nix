@@ -6,28 +6,32 @@
 
 let
   ceeserMachineParams = import ./parameters.nix;
-
 in {
   imports =
     [
       (/etc/nixos/hardware-configuration.nix)
 
-      # base programs and services
-      (./programs/fish.nix)
-      (./programs/git.nix)
-      (./programs/neovim.nix)
-      (./services/tailscale.nix)
+      (./programs)
+      (./services)
+
+      # machine profiles
+      (./machines/profiles)
 
       # Machine Type specific config
-      (./machines + "/${ceeserMachineParams.machineType}.nix")
+      (./machines/workstations + "/${ceeserMachineParams.machine}.nix")
     ];
-  
+
   # Bootloader.
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
     generic-extlinux-compatible.configurationLimit = 10;
   };
+
+  ceeser.programs.fish.enable = true;
+  ceeser.programs.git.enable = true;
+  ceeser.programs.neovim.enable = true;
+  ceeser.services.tailscale.enable = true;
 
   documentation.nixos.enable = false; # turn off documentation
 
@@ -46,7 +50,7 @@ in {
 
     # Not officially in the specification
     XDG_BIN_HOME    = "$HOME/.local/bin";
-    PATH = [ 
+    PATH = [
       "${XDG_BIN_HOME}"
     ];
   };
@@ -90,6 +94,4 @@ in {
   services = {
     bpftune.enable = true;
   };
-
-  users.defaultUserShell = pkgs.fish;
 }

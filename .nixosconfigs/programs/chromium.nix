@@ -1,12 +1,20 @@
 # Config for chromium
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  programs = {
-    chromium = {
+  options.ceeser.programs.chromium = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = ''
+        Installs and configures the chromium browser
+      '';
+    };
+  };
+  config = lib.mkIf config.ceeser.programs.chromium.enable {
+    programs.chromium = {
       enable = true;
-
       extraOpts = {
         AccessibilityShortcutsEnabled = false;
         AlwaysOpenPdfExternally = true;
@@ -30,7 +38,6 @@
           "site_settings"
           "hosted_app_data"
         ];
-
         CloudProfileReportingEnabled = false;
         CloudReportingEnabled = false;
 
@@ -56,9 +63,7 @@
         DefaultWindowManagementSetting = 2;
         DefaultWindowPlacementSetting = 2;
         DeskAPIThirdPartyAccessEnabled = false;
-
         DeveloperToolsAvailability = 1;
-
         DeviceActivityHeartbeatEnabled = false;
         DeviceExtensionsSystemLogEnabled = false;
         DeviceFlexHwDataForProductImprovementEnabled = false;
@@ -66,16 +71,13 @@
         DeviceReportNetworkEvents = false;
         DeviceReportRuntimeCounters = false;
         DeviceReportXDREvents = false;
-
         DownloadDirectory = "~/Downloads";
-
         DriveDisabled = true;
 
         EnableDeviceGranularReporting = false;
-        
+
         HeartbeatEnabled = false;
         HeartbeatFrequency = false;
-
         HomepageLocation = "https://luminara1.bun-buri.ts.net/home/";
 
         IncognitoModeAvailability = 0;
@@ -83,7 +85,6 @@
         LogUploadEnabled = false;
 
         PasswordManagerEnabled = false;
-
         PrivacySandboxAdMeasurementEnabled = false;
         PrivacySandboxAdTopicsEnabled = false;
         PrivacySandboxPromptEnabled = false;
@@ -125,7 +126,6 @@
         ReportUploadFrequency = false;
         ReportWebsiteActivityAllowlist = false;
         ReportWebsiteTelemetry = false;
-
         RestoreOnStartup = 1;
 
         ScreenCaptureAllowed = false;
@@ -136,7 +136,6 @@
 
         TabFreezingEnabled = true;
       };
-
       extensions = [
       #  "ddkjiahejlhfcafbddmgiahcphecmpfh"  # ublock origin lite
       #  "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"  # privacy badger

@@ -1,6 +1,6 @@
 # Config for firefox
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
   let
     lock-false = {
@@ -13,8 +13,19 @@
     };
   in
 {
-  programs = {
-    firefox = {
+
+  options.ceeser.programs.firefox = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = ''
+        Installs and configures the firefox browser
+      '';
+    };
+  };
+
+  config = lib.mkIf config.ceeser.programs.firefox.enable {
+    programs.firefox = {
       enable = true;
       languagePacks = [ "en-US" ];
       package = pkgs.firefox-esr;
@@ -151,12 +162,10 @@
         OverridePostUpdatePage = "";
 
         PasswordManagerEnabled = false;
-
         PDFjs = {
           Enabled = false;
           EnablePermissions = false;
         };
-
         Permissions = {
           Camera = {
             Allow = [ "https://meet.jit.si/" ];
@@ -183,7 +192,6 @@
             Locked = true;
           };
         };
-
         PopupBlocking = {
           Default = true;
           Locked = true;
@@ -191,7 +199,7 @@
 
         /* ---- PREFERENCES ---- */
         # Check about:config for options.
-        Preferences = { 
+        Preferences = {
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;
@@ -232,7 +240,6 @@
           "toolkit.telemetry.unifiedIsOptIn" = lock-false;
           "toolkit.telemetry.updatePing.enabled" = lock-false;
         };
-
         PrimaryPassword = false;
         PrivateBrowsingModeAvailability = 1;
         PromptForDownloadLocation = false;
@@ -255,7 +262,7 @@
           ];
           Default = "DuckDuckGoCeeser";
           PreventInstalls = true;
-          Remove = [ 
+          Remove = [
             "DuckDuckGo"
             "Bing"
             "Google"

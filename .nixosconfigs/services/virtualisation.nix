@@ -1,10 +1,20 @@
 # Config for desktop hypervisor
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  imports = [];
+  options.ceeser.services.virtualisation = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = ''
+        Installs and configures a hypervisor
+      '';
+    };
+  };
 
-  programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
+  config = lib.mkIf config.ceeser.services.virtualisation.enable {
+    programs.virt-manager.enable = true;
+    virtualisation.libvirtd.enable = true;
+  };
 }

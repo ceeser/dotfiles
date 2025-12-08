@@ -1,24 +1,27 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+  imports = [
+    <nixos-hardware/framework/16-inch/7040-amd>
+  ];
+
   boot = {
     kernelParams = [
       "module_blacklist=ucsi_acpi" # force the kernel to fall back to ucsi_ccg or typec drivers, to help fix PDO negotiation errors on AMD systems
     ];
   };
 
-  imports = [
-    <nixos-hardware/framework/16-inch/7040-amd>
-    (../../services/virtualisation.nix)
-  ];
+  ceeser.machines.workstation.enable = true;
+  ceeser.services.virtualisation.enable = true;
 
   environment.systemPackages = with pkgs; [
-    #ansel
-    #handbrake
-    #ollama
     framework-tool-tui
     gimp3
     restic
+
+    #ansel
+    #handbrake
+    #ollama
   ];
 
   hardware.keyboard.uhk.enable = false;

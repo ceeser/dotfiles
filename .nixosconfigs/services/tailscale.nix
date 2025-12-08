@@ -1,12 +1,25 @@
+
 # Config for tailscale
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  services.tailscale = {
-    enable = true;
-    permitCertUid = "caddy";
+  options.ceeser.services.tailscale = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = ''
+        Installs and configures tailscale
+      '';
+    };
   };
 
-  networking.firewall.trustedInterfaces = [ "tailscaled" ];
+  config = lib.mkIf config.ceeser.services.tailscale.enable {
+    services.tailscale = {
+      enable = true;
+      permitCertUid = "caddy";
+    };
+
+    networking.firewall.trustedInterfaces = [ "tailscaled" ];
+  };
 }

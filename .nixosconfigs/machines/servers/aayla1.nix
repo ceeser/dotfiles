@@ -1,7 +1,8 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  # environment.systemPackages = with pkgs; [];
+  ceeser.machines.server.enable = true;
+
   networking.hostName = "aayla1"; # Define your hostname.
 
   services = {

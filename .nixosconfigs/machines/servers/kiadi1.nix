@@ -1,11 +1,8 @@
-{ lib, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [
-    (../../services/blocky.nix)
-  ];
-
-  # environment.systemPackages = with pkgs; [];
+  ceeser.services.blocky.enable = true;
+  ceeser.machines.server.enable = true;
 
   networking.hostName = "kiadi1"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
