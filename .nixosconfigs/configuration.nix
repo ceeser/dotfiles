@@ -18,7 +18,7 @@ in {
       (./machines/profiles)
 
       # Machine Type specific config
-      (./machines/workstations + "/${ceeserMachineParams.machine}.nix")
+      (./machines + "/${ceeserMachineParams.machineType}s" + "/${ceeserMachineParams.machine}.nix")
     ];
 
   # Bootloader.
