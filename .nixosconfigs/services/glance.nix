@@ -106,22 +106,33 @@
                     new-tab = true;
                   }
                   {
-                    type = "rss";
-                    style = "horizontal-cards";
-                    limit = 20;
-                    feeds = [
-                      { title = "Martin Kleppmann"; url = "https://feeds.feedburner.com/martinkl"; }
-                      { title = "The Grumpy Economist"; url = "https://www.grumpy-economist.com/feed"; }
-                      { title = "Wealthsimple Product News"; url = "https://product-news.wealthsimple.com/feed"; }
-                      { title = "System76 Blog"; url = "https://blog.system76.com/rss"; }
-                      { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
-                    ];
-                  }
-                  {
                     type = "group";
                     widgets = [
                       { type = "hacker-news"; limit = 30; collapse-after = -1; }
                       { type = "lobsters"; limit = 30; collapse-after = -1; }
+                      {
+                        type = "rss";
+                        title = "Hackaday";
+                        style = "vertical-list";
+                        limit = 30;
+                        feeds = [
+                          { title = "Hackaday"; url = "https://hackaday.com/blog/feed/"; }
+                          { title = "Martin Kleppmann"; url = "https://feeds.feedburner.com/martinkl"; }
+                          { title = "The Grumpy Economist"; url = "https://www.grumpy-economist.com/feed"; }
+                          { title = "Wealthsimple Product News"; url = "https://product-news.wealthsimple.com/feed"; }
+                          { title = "System76 Blog"; url = "https://blog.system76.com/rss"; }
+                          { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
+                        ];
+                      }
+                      {
+                        type = "rss";
+                        title = "Other";
+                        style = "vertical-list";
+                        limit = 30;
+                        feeds = [
+                          { title = "Simon Willison"; url = "https://simonwillison.net/atom/everything/"; }
+                        ];
+                      }
                     ];
                   }
                 ];
