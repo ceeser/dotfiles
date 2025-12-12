@@ -115,6 +115,7 @@
                         title = "Hackaday";
                         style = "vertical-list";
                         limit = 30;
+                        collapse-after = -1;
                         feeds = [
                           { title = "Hackaday"; url = "https://hackaday.com/blog/feed/"; }
                           { title = "Martin Kleppmann"; url = "https://feeds.feedburner.com/martinkl"; }
@@ -129,6 +130,7 @@
                         title = "Other";
                         style = "vertical-list";
                         limit = 30;
+                        collapse-after = -1;
                         feeds = [
                           { title = "Simon Willison"; url = "https://simonwillison.net/atom/everything/"; }
                         ];
