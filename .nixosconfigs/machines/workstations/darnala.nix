@@ -15,6 +15,7 @@
   ceeser.services.virtualisation.enable = true;
 
   environment.systemPackages = with pkgs; [
+    digikam
     framework-tool-tui
     gimp3
     restic
