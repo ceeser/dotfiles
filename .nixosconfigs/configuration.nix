@@ -38,6 +38,7 @@ in {
     bat
     dust
     eza
+    lazyjournal
     starship
   ];
   environment.defaultPackages = lib.mkForce []; # no default packages
