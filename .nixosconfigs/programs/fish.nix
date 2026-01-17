@@ -17,7 +17,7 @@
       enable = true;
       interactiveShellInit = ''
         # set options
-        set -g fish_key_bindings fish_vi_key_bindings
+        # set -g fish_key_bindings fish_vi_key_bindings  # auto suggest break when enabling vi key bindings
         set fish_greeting
 
         # Env Vars
