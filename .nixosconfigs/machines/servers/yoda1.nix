@@ -1,13 +1,17 @@
 { config, pkgs, ... }:
 
 {
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.useOSProber = true;
+
   ceeser.machines.server.enable = false;
   ceeser.services.blocky.enable = false;
   ceeser.services.tailscale.enabled = false;
 
   networking.hostName = "yoda1"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   # services = {};
