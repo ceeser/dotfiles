@@ -8,10 +8,9 @@
 
   ceeser.machines.server.enable = false;
   ceeser.services.blocky.enable = false;
-  ceeser.services.tailscale.enable = lib.mkForce false;
 
   networking.hostName = "yoda1"; # Define your hostname.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   # services = {};
