@@ -13,6 +13,7 @@
 
   ceeser.machines.workstation.enable = true;
   ceeser.services.virtualisation.enable = true;
+  ceeser.services.containers.enable = false;
 
   environment.systemPackages = with pkgs; [
     digikam
@@ -22,7 +23,6 @@
 
     #ansel
     #handbrake
-    #ollama
   ];
 
   hardware.keyboard.uhk.enable = false;

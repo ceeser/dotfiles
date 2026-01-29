@@ -14,6 +14,16 @@
   };
 
   config = lib.mkIf config.ceeser.services.containers.enable {
+
+    # Useful other development tools
+    environment.systemPackages = with pkgs; [
+      devpod
+      #dive # look into docker image layers
+      #docker-compose # start group of containers for dev
+      podman-tui # status of containers in the terminal
+      #podman-compose # start group of containers for dev
+    ];
+
     virtualisation.containers.enable = true;
     virtualisation.podman = {
       enable = true;
@@ -32,7 +42,10 @@
       # See https://www.mankier.com/5/containers-policy.json#Examples for transport examples to selectively allow
       transports = {
         docker = { #  Allow installing images from a specific repository namespace
+          "nixos" = [ { type = "insecureAcceptAnything"; } ];
           "docker/dockerfile" = [ { type = "insecureAcceptAnything"; } ];
+          "mcr.microsoft.com" = [ { type = "insecureAcceptAnything"; } ];
+          "docker.io" = [ { type = "insecureAcceptAnything"; } ];
         };
 
         dir = {

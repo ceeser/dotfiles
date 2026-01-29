@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { lib, config, pkgs, ... }:
 
 {
@@ -50,11 +46,6 @@
       ## tools
       zenith
       bluetui
-
-      #dive # look into docker image layers
-      #podman-tui # status of containers in the terminal
-      #podman-compose # start group of containers for dev
-      #docker-compose # start group of containers for dev
     ];
 
     hardware.bluetooth.settings = {
@@ -66,9 +57,7 @@
       };
     };
 
-    programs.localsend = {
-      enable = true;
-    };
+    programs.localsend.enable = true;
 
     security.rtkit.enable = true; # added for pipewire
     services = {
@@ -126,7 +115,7 @@
       };
       ceeser = {
         description = "ceeser";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "podman" "wheel" ];
         isNormalUser = true;
       };
     };
