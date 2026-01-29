@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  boot.loader.systemd-boot.enable = false;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
