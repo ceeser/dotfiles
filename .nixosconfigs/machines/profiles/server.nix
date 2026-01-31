@@ -36,7 +36,7 @@
     hardware.bluetooth.enable = false;
     hardware.bluetooth.powerOnBoot = false;
 
-    networking.wireless.enable = false;
+    networking.wireless.enable = lib.mkForce false;
 
     services = {
       openssh = {
