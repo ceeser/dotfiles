@@ -112,12 +112,16 @@
                       { type = "lobsters"; limit = 30; collapse-after = -1; }
                       {
                         type = "rss";
-                        title = "Hackaday";
+                        title = "devs";
                         style = "vertical-list";
                         limit = 30;
                         collapse-after = -1;
                         feeds = [
-                          { title = "Hackaday"; url = "https://hackaday.com/blog/feed/"; }
+                          { title = "Simon Willison"; url = "https://simonwillison.net/atom/everything/"; }
+                          { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
+                          { title = "Martin Kleppmann"; url = "https://feeds.feedburner.com/martinkl"; }
+                          { title = "Geoffrey Huntley"; url = "https://ghuntley.com/rss"; }
+
                         ];
                       }
                       {
@@ -127,12 +131,9 @@
                         limit = 30;
                         collapse-after = -1;
                         feeds = [
-                          { title = "Simon Willison"; url = "https://simonwillison.net/atom/everything/"; }
-                          { title = "Martin Kleppmann"; url = "https://feeds.feedburner.com/martinkl"; }
                           { title = "The Grumpy Economist"; url = "https://www.grumpy-economist.com/feed"; }
                           { title = "Wealthsimple Product News"; url = "https://product-news.wealthsimple.com/feed"; }
                           { title = "System76 Blog"; url = "https://blog.system76.com/rss"; }
-                          { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
                         ];
                       }
                     ];
