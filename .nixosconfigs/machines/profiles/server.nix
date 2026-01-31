@@ -36,6 +36,8 @@
     hardware.bluetooth.enable = false;
     hardware.bluetooth.powerOnBoot = false;
 
+    networking.wireless.enable = false;
+
     services = {
       openssh = {
         enable = true;
@@ -47,7 +49,6 @@
       pipewire.enable = false;
       pulseaudio.enable = false;
     };
-
     system.autoUpgrade = {
       allowReboot = true;
       channel = "https://nixos.org/channels/nixos-unstable";
@@ -59,7 +60,6 @@
       ];
       randomizedDelaySec = "30min";
     };
-
     systemd.sleep.extraConfig = ''
       AllowSuspend=no
       AllowHibernation=no

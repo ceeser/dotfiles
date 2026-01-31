@@ -1,10 +1,12 @@
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   ceeser.machines.server.enable = true;
 
   networking.hostName = "aayla2"; # Define your hostname.
+
+  system.autoUpgrade.allowReboot = lib.mkForce false;
 
   time.timeZone = "America/Toronto";
 
