@@ -118,9 +118,10 @@
                         collapse-after = -1;
                         feeds = [
                           { title = "Simon Willison"; url = "https://simonwillison.net/atom/everything/"; }
+                          { title = "Steve Yegge"; url = "https://steve-yegge.medium.com/feed"; }
+                          { title = "Geoffrey Huntley"; url = "https://ghuntley.com/rss"; }
                           { title = "Julia Evans"; url = "https://jvns.ca/atom.xml"; }
                           { title = "Martin Kleppmann"; url = "https://feeds.feedburner.com/martinkl"; }
-                          { title = "Geoffrey Huntley"; url = "https://ghuntley.com/rss"; }
 
                         ];
                       }

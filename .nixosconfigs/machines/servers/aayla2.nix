@@ -1,9 +1,23 @@
-
 { lib, config, pkgs, ... }:
 
 {
   ceeser.machines.server.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    ## development
+      ### rust
+      cargo
+      clippy
+      rust-analyzer
+      rustc
+      rustfmt
+
+    ## general apps
+    zellij
+
+    ## tools
+    zenith
+  ];
   networking.hostName = "aayla2"; # Define your hostname.
 
   system.autoUpgrade.allowReboot = lib.mkForce false;
