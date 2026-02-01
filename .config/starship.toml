@@ -7,7 +7,7 @@ right_format = """$all"""
 
 [hostname]
 ssh_only = true
-format = '[$username](yellow) on [$hostname](red bold) '
+format = '[$ssh_symbol$hostname](red bold) '
 disabled = false
 
 [directory]
