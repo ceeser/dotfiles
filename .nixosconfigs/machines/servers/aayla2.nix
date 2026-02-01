@@ -6,19 +6,18 @@
   environment.systemPackages = with pkgs; [
     ## development
       ### rust
-      rustup
+      cargo
+      cargo-audit
+      cargo-expand
+      cargo-tarpaulin
+      cargo-watch
+      clippy
       gcc
-      # cargo
-      # cargo-audit
-      # cargo-expand
-      # cargo-tarpaulin
-      # cargo-watch
-      # clippy
-      # openssl
-      # pkg-config
-      # rust-analyzer
-      # rustc
-      # rustfmt
+      openssl
+      pkg-config
+      rust-analyzer
+      rustc
+      rustfmt
 
     ## general apps
     zellij
