@@ -2,8 +2,13 @@ add_newline = false
 palette = "catppuccin_mocha"
 
 #format = """[$directory](fg:lavender)($git_branch$git_state$git_status$git_metrics)$sudo$character"""
-format = """[$directory](fg:lavender)$sudo$character"""
+format = """$hostname$directory$sudo$character"""
 right_format = """$all"""
+
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](teal) on [$hostname](yellow bold) '
+disabled = false
 
 [directory]
 style = "fg:lavender"
