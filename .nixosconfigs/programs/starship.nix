@@ -16,7 +16,9 @@
   config = lib.mkIf config.ceeser.programs.starship.enable {
     programs.starship = {
       enable = true;
-      settings = pkgs.lib.importTOML ../../.config/starship.toml;
+      # for some reason, using settings doesn't work, even without importTOML
+      # let's use .config/starship.toml for now
+      #settings = pkgs.lib.importTOML ../../.config/starship.toml;
     };
   };
 }

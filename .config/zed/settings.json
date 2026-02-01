@@ -7,12 +7,24 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "ssh_connections": [
+    {
+      "host": "aayla2",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/projects"
+          ]
+        }
+      ]
+    }
+  ],
   "agent": {
     "default_model": {
       "provider": "google",
       "model": "gemini-2.0-flash"
     },
-    "version": "2"
   },
   "auto_update": false,
   // "autosave": {
@@ -58,7 +70,7 @@
       }
     }
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "show_copilot_suggestions": false,
   "tab_bar": {
     "show": true,

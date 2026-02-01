@@ -20,7 +20,7 @@
   ];
   networking.hostName = "aayla2"; # Define your hostname.
 
-  system.autoUpgrade.allowReboot = lib.mkForce false;
+  system.autoUpgrade.allowReboot = lib.mkForce false; # disable auto reboot to prevent interrupting processes
 
   time.timeZone = "America/Toronto";
 
