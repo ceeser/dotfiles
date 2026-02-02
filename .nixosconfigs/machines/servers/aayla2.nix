@@ -5,6 +5,8 @@
 
   environment.systemPackages = with pkgs; [
     ## development
+    lazygit
+
       ### rust
       cargo
       cargo-audit

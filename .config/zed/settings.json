@@ -9,12 +9,12 @@
 {
   "ssh_connections": [
     {
-      "host": "aayla2",
+      "host": "agentsmith@aayla2",
       "args": [],
       "projects": [
         {
           "paths": [
-            "/projects"
+            "~/projects"
           ]
         }
       ]
