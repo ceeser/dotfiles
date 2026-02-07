@@ -31,6 +31,7 @@
 
     environment.systemPackages = with pkgs; [
       diff-so-fancy
+      zellij
     ];
 
     hardware.bluetooth.enable = false;

@@ -5,9 +5,9 @@
 
   environment.systemPackages = with pkgs; [
     ## development
-    lazygit
+      lazygit
 
-      ### rust
+    ### rust
       cargo
       cargo-audit
       cargo-expand
@@ -21,11 +21,8 @@
       rustc
       rustfmt
 
-    ## general apps
-    zellij
-
     ## tools
-    zenith
+      zenith
   ];
   networking.hostName = "aayla2"; # Define your hostname.
 
