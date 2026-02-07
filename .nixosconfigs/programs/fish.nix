@@ -45,6 +45,8 @@
 
         set -gx RUST_BACKTRACE full
 
+        set -gx SSH_AUTH_SOCK $HOME/.bitwarden-ssh-agent.sock
+
         set -gx TERM xterm-256color
 
         set -gx NIXOS_CONFIG /home/ceeser/.nixosconfigs/configuration.nix

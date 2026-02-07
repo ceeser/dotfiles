@@ -34,7 +34,7 @@
       aerc
       bitwarden-desktop
       evince
-      gnome-system-monitor
+      mission-center
       pandoc
       rates
       tor-browser
