@@ -71,6 +71,8 @@
         dockerremovevolumesdangling = "docker volume rm $(docker volume ls -f dangling=true -q)";
         dockerpruneall = "docker container prune -f && docker system prune -f && docker volume rm $(docker volume ls -f dangling=true -q)";
         ze = "zellij attach ceeser -c";
+        z = "zeditor";
+
 
         # Git
         gco = "git checkout";
