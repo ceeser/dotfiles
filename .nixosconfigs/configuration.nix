@@ -29,7 +29,7 @@ in {
 
   ceeser.programs.fish.enable = true;
   ceeser.programs.git.enable = true;
-  ceeser.programs.neovim.enable = true;
+  ceeser.programs.neovim.enable = false;
   ceeser.services.tailscale.enable = true;
 
   documentation.nixos.enable = false; # turn off documentation
@@ -38,6 +38,7 @@ in {
     bat
     dust
     eza
+    helix
     lazyjournal
     starship
   ];

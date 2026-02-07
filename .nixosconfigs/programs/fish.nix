@@ -29,7 +29,7 @@
         set -gx RESTIC_REMOTE_URL rest:http://aayla1.bun-buri.ts.net:8000
         set -gx COLUMNS 120
 
-        set -gx EDITOR vim
+        set -gx EDITOR hx
 
         set -gx HOMEBREW_NO_ANALYTICS 1
         set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
@@ -73,7 +73,6 @@
         ze = "zellij attach ceeser -c";
         z = "zeditor";
 
-
         # Git
         gco = "git checkout";
         glg = "git lg";
@@ -83,6 +82,10 @@
         gm = "git merge";
         gpr = "git pull --rebase";
         gs = "git status";
+
+        # helix
+        vi = "hx";
+        vim = "hx";
 
         # git dotfiles
         gdtinit = "git clone --bare $CEESER_DOT_FILES_REPO $CEESER_DOT_FILES_PATH && git --git-dir=$CEESER_DOT_FILES_PATH config --local status.showUntrackedFiles no";

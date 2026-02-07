@@ -2,9 +2,16 @@
     (
         modifiers: [
             Super,
-            Shift,
+            Ctrl,
         ],
-        key: "Down",
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Up",
     ): Disable,
     (
         modifiers: [
@@ -24,48 +31,14 @@
             Ctrl,
             Shift,
         ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Alt,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Return",
-    ): System(Terminal),
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
         key: "Up",
     ): Disable,
     (
         modifiers: [
             Super,
         ],
-        key: "space",
-    ): System(Launcher),
+        key: "a",
+    ): Disable,
     (
         modifiers: [
             Super,
@@ -84,13 +57,28 @@
         modifiers: [
             Super,
         ],
-        key: "w",
+        key: "space",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "Left",
     ): Disable,
     (
         modifiers: [
             Super,
+            Ctrl,
         ],
         key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "Right",
     ): Disable,
     (
         modifiers: [
@@ -103,15 +91,9 @@
     (
         modifiers: [
             Super,
+            Alt,
         ],
-        key: "a",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Left",
+        key: "Up",
     ): Disable,
     (
         modifiers: [
@@ -122,14 +104,45 @@
     (
         modifiers: [
             Super,
+            Ctrl,
+            Shift,
         ],
+        key: "Down",
     ): Disable,
     (
         modifiers: [
             Super,
             Shift,
         ],
-        key: "Up",
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Left",
     ): Disable,
     (
         modifiers: [
@@ -137,7 +150,20 @@
             Alt,
             Shift,
         ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
         key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Down",
     ): Disable,
     (
         modifiers: [
@@ -149,30 +175,12 @@
     (
         modifiers: [
             Super,
-            Ctrl,
-            Shift,
         ],
-        key: "Down",
+        key: "t",
     ): Disable,
     (
         modifiers: [
             Super,
-            Alt,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Alt,
-            Shift,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
             Shift,
         ],
         key: "Up",
@@ -181,35 +189,43 @@
         modifiers: [
             Super,
         ],
-        key: "b",
-    ): Disable,
+        key: "v",
+        description: Some("Paste"),
+    ): Spawn("XF86Paste"),
     (
         modifiers: [
             Super,
-        ],
-        key: "t",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
+            Alt,
+            Shift,
         ],
         key: "Down",
     ): Disable,
     (
         modifiers: [
             Super,
-            Ctrl,
         ],
-        key: "Right",
     ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+    ): System(Terminal),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "c",
+        description: Some("Copy"),
+    ): Spawn("XF86Copy"),
     (
         modifiers: [
             Super,
@@ -220,29 +236,27 @@
     (
         modifiers: [
             Super,
-            Alt,
+        ],
+        key: "w",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
         ],
         key: "Left",
     ): Disable,
     (
         modifiers: [
             Super,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Alt,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Alt,
+            Ctrl,
             Shift,
         ],
-        key: "Down",
+        key: "Right",
     ): Disable,
 }
