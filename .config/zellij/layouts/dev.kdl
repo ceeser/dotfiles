@@ -1,0 +1,25 @@
+layout {
+    default_tab_template {
+        pane {
+            children
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+    tab name="Stats" {
+        pane
+    }
+    tab name="Dev" focus=true {
+        pane split_direction="horizontal" {
+            pane split_direction="vertical" {
+                pane
+                pane
+            }
+            pane
+        }
+    }
+    tab name="Terminal" {
+        pane
+    }
+} 
